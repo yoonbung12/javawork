@@ -25,7 +25,6 @@ public class Calculator {
 	float div(int num1, int num2) {
 		return (float)num1/num2;
 	}
-	
 	float circum(float r) {
 		return 2 * PI * r;	//int * float * float
 	}
@@ -42,6 +41,7 @@ public class Calculator {
 		System.out.println("1 * 2" + cal.multi(1, 2));
 		System.out.println("10 / 2" + cal.plus(10, 2));
 		
+		
 		//Scanner : 자원을 프로그램 으로 받아오는 역할.
 		Scanner scanner = new Scanner(System.in); //ctrl+shift +o
 		System.out.println("덧셈을 합니다. \n숫자1을 입력해주세요. ");
@@ -49,6 +49,7 @@ public class Calculator {
 		System.out.println("숫자2를 입력해주세요.");
 		int num2 = scanner.nextInt();
 		
+
 		System.out.println(num1 + "+" + num2 + "=" + cal.plus(num1, num2));
 		
 		System.out.println("----------------------");
@@ -58,6 +59,9 @@ public class Calculator {
 		System.out.println("입력 받은 반지름의 길이: " + r);
 		System.out.println("원의 둘레: " + cal.circum(r));
 		System.out.println("원의 넓이: " + cal.cirArea(r));
+		
+		
+		
 		
 	}
 
