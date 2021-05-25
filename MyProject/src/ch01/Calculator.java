@@ -25,6 +25,7 @@ public class Calculator {
 		cal.minus(10, 2);
 		cal.multi(10, 2);
 		cal.div(10, 2);
+		
 
 	}
 
