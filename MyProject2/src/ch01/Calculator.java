@@ -1,5 +1,7 @@
 package ch01;
 
+import java.util.*;
+
 public class Calculator {
 	static void add(int a, int b) {
 		System.out.println(a + b);
@@ -24,14 +26,16 @@ public class Calculator {
 		System.out.println(PI1 * r * r1);
 	}
 	
+	
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("반지름값음 입력하세요. \n r값:");
+		int r = scanner.nextInt();
+		
+		
 		Calculator cal = new Calculator();
-		cal.add(2, 2);
-		cal.minus(10, 2);
-		cal.multi(10, 2);
-		cal.divide(10, 2);
-		cal.round(2, PI, r);
-		cal.extent(PI1, r, r1);
+		cal.add(10, 20);
+		
 	}
 
 }
