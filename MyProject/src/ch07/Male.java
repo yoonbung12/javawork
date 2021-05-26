@@ -20,7 +20,7 @@ public class Male extends Person{
 		System.out.println("안녕하세요. 저는" + this.name + " 입니다." + this.age
 				+ " 살 입니다.");
 		System.out.println("저는 " + this.name + " 이고 " + "성은" + this.gender + "입니다.");
-		System.out.println(this.name + "은 살아 있다.");
+		System.out.println(this.name + "은 살아있습니다..");
 	}
 	
 	public static void main(String[] args) {
