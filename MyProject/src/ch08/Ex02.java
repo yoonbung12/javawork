@@ -26,9 +26,9 @@ public class Ex02 {
 		//기본 출력
 		for(int i = 0; i < arr.length; i++) {
 			for(int j = 0; j < arr[i].length; j++) {
-				System.out.print(arr[i][j] + "\t"); //열 출력
+				System.out.print(arr[i][j] + "\t"); 
 			}
-			System.out.println(); //행출력
+			System.out.println(); 
 		}
 		System.out.println("=================");
 		//증가 출력
