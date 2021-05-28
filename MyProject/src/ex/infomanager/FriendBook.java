@@ -8,7 +8,7 @@ public class FriendBook {
 		
 		FriendInfoHandler handler = new FriendInfoHandler(100);
 		
-		Scanner scanner = new Scanner(System.in);
+		Scanner s = new Scanner(System.in);
 		
 		while(true) { //아예정리를 끝내놓고 하는게 좋은 방법임...
 			System.out.println("** 메뉴선택 *******************");
