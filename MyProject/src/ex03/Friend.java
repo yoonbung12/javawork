@@ -1,4 +1,4 @@
-package ex02;	//조금있다가 다시 확인할것.수업끝나고 나서.
+package ex03;	//조금있다가 다시 확인할것.수업끝나고 나서.
 
 //상속을 목적으로 하는 클래스
 public abstract class Friend implements ShowData {
