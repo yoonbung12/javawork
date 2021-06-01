@@ -9,7 +9,7 @@ public class HashMapTest {
 		// Map : key - value 형식으로 저장한다.
 		// key -> 저장한 데이터를 식별하기위한 값, 중복 허용 x
 		// value -> 저장하고자 하는 데이터
-		HashMap<Integer, String> map = new HashMap<Integer, String>();
+		HashMap<Integer, String> map = new HashMap<Integer, String>(); //String, Person 넣어도됨.
 		
 		//데이터 저장 : put(e)
 		map.put(new Integer(1), "일번");
