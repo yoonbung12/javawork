@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.HashSet;
 
-public class FootballPlayer {
+public class FootballPlayer implements Comparable<FootballPlayer>{
 	String name;
 	int number;
 	String team;
@@ -17,12 +17,44 @@ public class FootballPlayer {
 		this.team = team;
 		this.age = age;
 	}
-	//2번문제를 위한
-	@Override
-	public int hashCode() {
-		return age%3;
-	}
+	
+	
 
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getNumber() {
+		return number;
+	}
+	public void setNumber(int number) {
+		this.number = number;
+	}
+	public String getTeam() {
+		return team;
+	}
+	public void setTeam(String team) {
+		this.team = team;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	@Override
+	public String toString() {
+		return "FootballPlayer [name=" + name + ", number=" + number + ", team=" + team + ", age=" + age + "]";
+	}
+	
+	//2번문제를 위한
+		@Override
+		public int hashCode() {
+		return age%3;
+	
+}		
 	@Override
 	public boolean equals(Object obj) {
 		
@@ -35,6 +67,21 @@ public class FootballPlayer {
 		}
 		return result;
 		
+	}
+	//3번의 오버라이딩
+	//팀 이름순으로 정렬.
+	//같은 팀의 선수들은 이름순으로 정렬
+	//같은 이름의 선수는 번호순으로 정렬
+	@Override
+	public int compareTo(FootballPlayer o) {
+		int result = this.team.compareTo(o.getTeam());
+		if(result == 0) {
+			result = this.name.compareTo(o.getName());
+			if(result == 0) {
+				result = this.number - o.getNumber();
+			}
+		}
+		return result;
 	}
 
 	public void playerInfo() {
@@ -68,5 +115,13 @@ public class FootballPlayer {
 			
 		}
 	}
+
+
+
+	
+
+
+
+	
 
 }
