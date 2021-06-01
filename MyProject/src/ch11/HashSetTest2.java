@@ -36,6 +36,16 @@ public class HashSetTest2 {
 
 	}
 
+	
+	
+
+}
+class SimpleNumber {
+	int num;
+	
+	SimpleNumber(int num) {
+		this.num = num;
+	}
 	@Override
 	public int hashCode() {		
 		return num%3;	//0, 1, 2
@@ -57,15 +67,6 @@ public class HashSetTest2 {
 		}
 		
 		return result;
-	}
-	
-
-}
-class SimpleNumber {
-	int num;
-	
-	SimpleNumber(int num) {
-		this.num = num;
 	}
 	
 	public String toString() {
