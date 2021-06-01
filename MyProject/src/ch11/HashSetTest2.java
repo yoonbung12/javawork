@@ -15,7 +15,7 @@ public class HashSetTest2 {
 		//저장 순서를 저장하지 않는다.
 		
 		//HashSet<String> hashSet = new HashSet<String>(); //앞에서 참조변수를 만들어서 뒤에 비워도 괜찮음.. 그러나 해주는게 좋은거!!
-		Set<SimpleNumber> hashSet = new HashSet<SimpleNumber>();
+		HashSet<SimpleNumber> hashSet = new HashSet<SimpleNumber>();
 		
 		//데이터 저장
 		hashSet.add(new SimpleNumber(10));
@@ -58,6 +58,7 @@ public class HashSetTest2 {
 		
 		return result;
 	}
+	
 
 }
 class SimpleNumber {
