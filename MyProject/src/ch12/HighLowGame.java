@@ -8,7 +8,7 @@ public class HighLowGame {
 
 	public static boolean chk1 = false;
 	public static void main(String[] args) {
-		
+	
 		CountDownThread1 ct1 = new CountDownThread1();
 		ct1.start();
 
