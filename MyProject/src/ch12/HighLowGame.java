@@ -15,16 +15,14 @@ public class HighLowGame {
 		
 		//② 사용자에게 숫자를 입력 받고 
 		Scanner s = new Scanner(System.in);
-		
-		System.out.println("사용자 숫자 입력: ");
-		
-		
+			
 		
 		//1. 랜덤 숫자 뽑기
 		RandomNumber r1 = new RandomNumber(0);
 		r1.randNum(); //확인차 넣어봄
 		//랜덤 숫자와 비교하고, 높은 숫자인지 낮은 숫자인지 출력
 		while(true) {
+			System.out.println("사용자 숫자 입력: ");
 			int num = s.nextInt();
 			
 		if(num == r1.getNumber()) {
