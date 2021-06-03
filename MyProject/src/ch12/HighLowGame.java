@@ -3,8 +3,8 @@ package ch12;
 import java.util.Scanner;
 
 public class HighLowGame {
-	//③ 10초 카운팅은 스레드를 이용해서 처리해봅시다.
-	//④ 10초 이전에 맞추면 미션 성공, 10초가 지나면 프로그램 종료하는 흐름으로 만들어봅시다.
+	
+	
 
 	public static boolean chk1 = false;
 	public static void main(String[] args) {
@@ -19,13 +19,15 @@ public class HighLowGame {
 		
 		//1. 랜덤 숫자 뽑기
 		RandomNumber r1 = new RandomNumber(0);
-		r1.randNum(); //확인차 넣어봄
+		r1.randNum(); 
 		//랜덤 숫자와 비교하고, 높은 숫자인지 낮은 숫자인지 출력
+		//④ 10초 이전에 맞추면 미션 성공, 10초가 지나면 프로그램 종료하는 흐름으로 만들어봅시다.
 		while(true) {
 			System.out.println("사용자 숫자 입력: ");
 			int num = s.nextInt();
 			
 		if(num == r1.getNumber()) {
+			
 			System.out.println("정답!! 프로그램종료합니다." );
 			s.close();
 			System.exit(0);
@@ -43,6 +45,7 @@ public class HighLowGame {
 	}
 
 }
+//③ 10초 카운팅은 스레드를 이용해서 처리해봅시다.
 class CountDownThread1 extends Thread {
 	public void run() {
 		System.out.println("게임을 시작합니다.10초안에 값을 입력하세요.");
@@ -64,7 +67,7 @@ class CountDownThread1 extends Thread {
 //① 1~100 사이의 랜덤 한 숫자를 추출합니다.
 //랜덤 숫자 클래스를 만듯것!!
 class RandomNumber {
-	int number;
+	int number = 0;
 	
 	//생성자
 	public RandomNumber(int number) { 
@@ -73,7 +76,7 @@ class RandomNumber {
 	//랜덤뽑기 메소드
 	public void randNum() {
 		number = (int)((Math.random() * 100) + 1);
-		System.out.println("랜덤숫자를 뽑습니다. :" + number);	
+		System.out.println("랜덤숫자를 뽑습니다. :" );	//답을 알고 싶으면 여기에 + number 하면됨!!
 	}
 	public int getNumber() {
 		return number;
