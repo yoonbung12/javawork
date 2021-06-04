@@ -9,36 +9,33 @@ public class HttpURLConnectionTest {
 
 	public static void main(String[] args) {
 		
-		String urlStr = "https://section.blog.naver.com/BlogHome.naver?directoryNo=0&currentPage=1&groupId=0";
+		String urlStr = "https://sports.news.naver.com/news.nhn?oid=410&aid=0000791096";
+		
 		
 		try {
 			URL url = new URL(urlStr);
 			
 			//HttpURLConnection : url.openConnection()
-			try {
-				HttpURLConnection hcon = (HttpURLConnection) url.openConnection();
-				
-				for(int i = 1; i <= 8; i++) {
-					System.out.println(hcon.getHeaderFieldKey(i));
-					System.out.println(" : " + hcon.getHeaderField(i));
-				}
-				
-				hcon.disconnect();
+			HttpURLConnection hcon = (HttpURLConnection) url.openConnection();
 			
-			
-			
-			
-			
-			
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			for(int i = 1; i <= 8; i++) {
+				System.out.println(hcon.getHeaderFieldKey(i));
+				System.out.println(" : " + hcon.getHeaderField(i));
 			}
+			
+			hcon.disconnect();
+			
 			
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		
+		
+		
 	}
 
 }
