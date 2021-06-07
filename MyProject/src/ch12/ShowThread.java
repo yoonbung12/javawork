@@ -24,5 +24,9 @@ public class ShowThread extends Thread { //스레드 클래스를 상속한다.!
 		}
 	}
 
-	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
 }

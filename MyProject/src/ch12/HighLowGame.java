@@ -11,6 +11,7 @@ public class HighLowGame {
 	
 		CountDownThread1 ct1 = new CountDownThread1();
 		ct1.start();
+		// TODO Auto-generated method stub
 
 		
 		//② 사용자에게 숫자를 입력 받고 

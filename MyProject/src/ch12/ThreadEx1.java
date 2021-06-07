@@ -1,4 +1,4 @@
-package ch12; 
+package ch12;
 
 import javax.swing.JOptionPane;
 

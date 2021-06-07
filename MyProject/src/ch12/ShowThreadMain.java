@@ -13,7 +13,7 @@ public class ShowThreadMain {
 		//스레드의 실행
 		t1.start();
 		t2.start();
+		// TODO Auto-generated method stub
 
 	}
-
 }

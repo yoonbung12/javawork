@@ -31,6 +31,7 @@ public class RunnableThread {
 	}
 
 }
+		// TODO Auto-generated method stub
 
 class AdderThread extends Sum implements Runnable{
 
