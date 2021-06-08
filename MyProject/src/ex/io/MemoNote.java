@@ -146,11 +146,11 @@ public class MemoNote {
 				break;
 			//메모 등록메소드
 			case 2:
-				
+				memoNote.writeMemo();
 				break;
 			//메모 보기메소드
 			case 3:
-				
+				memoNote.viewMemo();
 				break;
 			//종료
 			case 4:
