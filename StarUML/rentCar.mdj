@@ -60,7 +60,7 @@
 											"font": "Arial;13;1",
 											"left": 133,
 											"top": 63,
-											"width": 124.2236328125,
+											"width": 126.140625,
 											"height": 13,
 											"text": "렌터카 대여 프로그램"
 										},
@@ -74,7 +74,7 @@
 											"font": "Arial;13;0",
 											"left": 48,
 											"top": -112,
-											"width": 80.9072265625,
+											"width": 85.28076171875,
 											"height": 13,
 											"text": "(from Model1)"
 										},
@@ -95,7 +95,7 @@
 									"font": "Arial;13;0",
 									"left": 128,
 									"top": 56,
-									"width": 134.2236328125,
+									"width": 136.140625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF55bhXOAGK2Jw="
@@ -114,7 +114,7 @@
 							"font": "Arial;13;0",
 							"left": 128,
 							"top": 56,
-							"width": 134.2236328125,
+							"width": 136.140625,
 							"height": 25,
 							"nameCompartment": {
 								"$ref": "AAAAAAF55bhXOAGJ1ps="
@@ -175,7 +175,7 @@
 											"font": "Arial;13;0",
 											"left": -160,
 											"top": -16,
-											"width": 80.9072265625,
+											"width": 85.28076171875,
 											"height": 13,
 											"text": "(from Model1)"
 										},
@@ -355,7 +355,7 @@
 											"font": "Arial;13;0",
 											"left": 64,
 											"top": -248,
-											"width": 80.9072265625,
+											"width": 85.28076171875,
 											"height": 13,
 											"text": "(from Model1)"
 										},
@@ -627,7 +627,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": 103.6455078125,
-											"width": 80.9072265625,
+											"width": 85.28076171875,
 											"height": 13,
 											"text": "(from Model1)"
 										},
@@ -896,7 +896,7 @@
 											"font": "Arial;13;0",
 											"left": 13,
 											"top": 61,
-											"width": 80.9072265625,
+											"width": 85.28076171875,
 											"height": 13,
 											"text": "(from Model1)"
 										},
@@ -1343,9 +1343,9 @@
 												"$ref": "AAAAAAF55b0H3AUZtgw="
 											},
 											"font": "Arial;13;1",
-											"left": 268.5,
+											"left": 269,
 											"top": 163.5,
-											"width": 179,
+											"width": 180,
 											"height": 13,
 											"text": "신용카드를 이용하여 대여한다."
 										},
@@ -1359,7 +1359,7 @@
 											"font": "Arial;13;0",
 											"left": -80,
 											"top": -464,
-											"width": 80.9072265625,
+											"width": 85.28076171875,
 											"height": 13,
 											"text": "(from Model1)"
 										},
@@ -1378,9 +1378,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 263.5,
+									"left": 264,
 									"top": 156.5,
-									"width": 189.83544921875,
+									"width": 190,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF55b0H3AUahf0="
@@ -1480,7 +1480,7 @@
 							"containerChangeable": true,
 							"left": 224,
 							"top": 152,
-							"width": 268,
+							"width": 270,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAF55b0H3AUZtgw="
@@ -1554,7 +1554,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"width": 80.9072265625,
+											"width": 85.28076171875,
 											"height": 13,
 											"text": "(from Model1)"
 										},
@@ -1729,7 +1729,7 @@
 									"font": "Arial;13;0",
 									"left": 399,
 									"top": 311,
-									"width": 55.65625,
+									"width": 55.72607421875,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -1832,7 +1832,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"width": 80.9072265625,
+											"width": 85.28076171875,
 											"height": 13,
 											"text": "(from Model1)"
 										},
@@ -2002,7 +2002,7 @@
 											"font": "Arial;13;0",
 											"left": -16,
 											"top": -32,
-											"width": 80.9072265625,
+											"width": 85.28076171875,
 											"height": 13,
 											"text": "(from Model1)"
 										},
@@ -2187,7 +2187,7 @@
 											"font": "Arial;13;1",
 											"left": 293.5,
 											"top": 259.5,
-											"width": 107,
+											"width": 108,
 											"height": 13,
 											"text": "랜터카를 반납한다"
 										},
@@ -2201,7 +2201,7 @@
 											"font": "Arial;13;0",
 											"left": -112,
 											"top": -80,
-											"width": 80.9072265625,
+											"width": 85.28076171875,
 											"height": 13,
 											"text": "(from Model1)"
 										},
@@ -2222,7 +2222,7 @@
 									"font": "Arial;13;0",
 									"left": 288.5,
 									"top": 252.5,
-									"width": 117.61181640625,
+									"width": 118,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF55cA/Hwlcd3c="
@@ -2322,7 +2322,7 @@
 							"containerChangeable": true,
 							"left": 264,
 							"top": 248,
-							"width": 166,
+							"width": 167,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAF55cA/HwlbvW0="
@@ -2635,7 +2635,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 365,
+									"left": 366,
 									"top": 212,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -2655,7 +2655,7 @@
 										"$ref": "AAAAAAF55cCWxwoSvqQ="
 									},
 									"font": "Arial;13;0",
-									"left": 354,
+									"left": 355,
 									"top": 213,
 									"width": 53.49169921875,
 									"height": 13,
@@ -2678,7 +2678,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 336,
+									"left": 337,
 									"top": 209,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -2697,7 +2697,7 @@
 								"$ref": "AAAAAAF55b0H2wUYpnU="
 							},
 							"lineStyle": 1,
-							"points": "355:187;348:247",
+							"points": "356:187;349:247",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF55cCWxwoVEGM="
@@ -2752,7 +2752,7 @@
 									"font": "Arial;13;0",
 									"left": 434,
 									"top": 252,
-									"width": 55.65625,
+									"width": 55.72607421875,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -2845,7 +2845,7 @@
 											"font": "Arial;13;1",
 											"left": 252.5,
 											"top": 683.5,
-											"width": 140,
+											"width": 142,
 											"height": 13,
 											"text": "랜터카 재고를 확인한다."
 										},
@@ -2859,7 +2859,7 @@
 											"font": "Arial;13;0",
 											"left": -160,
 											"top": -48,
-											"width": 80.9072265625,
+											"width": 85.28076171875,
 											"height": 13,
 											"text": "(from Model1)"
 										},
@@ -2880,7 +2880,7 @@
 									"font": "Arial;13;0",
 									"left": 247.5,
 									"top": 676.5,
-									"width": 150.83544921875,
+									"width": 152,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF55cD6zwtLqRY="
@@ -2980,7 +2980,7 @@
 							"containerChangeable": true,
 							"left": 216,
 							"top": 672,
-							"width": 213,
+							"width": 215,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAF55cD6zwtKYOU="
@@ -3582,7 +3582,7 @@
 											"font": "Arial;13;1",
 											"left": 252.5,
 											"top": 507.5,
-											"width": 140,
+											"width": 142,
 											"height": 13,
 											"text": "원하는 장소로 이동한다."
 										},
@@ -3596,7 +3596,7 @@
 											"font": "Arial;13;0",
 											"left": -288,
 											"top": -64,
-											"width": 80.9072265625,
+											"width": 85.28076171875,
 											"height": 13,
 											"text": "(from Model1)"
 										},
@@ -3617,7 +3617,7 @@
 									"font": "Arial;13;0",
 									"left": 247.5,
 									"top": 500.5,
-									"width": 150.83544921875,
+									"width": 152,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF55cGDZw0T0oo="
@@ -3717,7 +3717,7 @@
 							"containerChangeable": true,
 							"left": 216,
 							"top": 496,
-							"width": 213,
+							"width": 215,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAF55cGDZg0SeXk="
@@ -3822,7 +3822,7 @@
 								"$ref": "AAAAAAF55cGDZg0RVh4="
 							},
 							"lineStyle": 1,
-							"points": "323:531;329:599",
+							"points": "324:531;329:599",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF55cHeVw4ZP1M="
@@ -3889,7 +3889,7 @@
 											"font": "Arial;13;0",
 											"left": -160,
 											"top": -144,
-											"width": 80.9072265625,
+											"width": 85.28076171875,
 											"height": 13,
 											"text": "(from Model1)"
 										},
@@ -4168,7 +4168,7 @@
 											"font": "Arial;13;1",
 											"left": 549,
 											"top": 669,
-											"width": 68.61181640625,
+											"width": 69.5703125,
 											"height": 13,
 											"text": "차고지 배차"
 										},
@@ -4182,7 +4182,7 @@
 											"font": "Arial;13;0",
 											"left": 64,
 											"top": -80,
-											"width": 80.9072265625,
+											"width": 85.28076171875,
 											"height": 13,
 											"text": "(from Model1)"
 										},
@@ -4203,7 +4203,7 @@
 									"font": "Arial;13;0",
 									"left": 544,
 									"top": 662,
-									"width": 78.61181640625,
+									"width": 79.5703125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF55cKPZxA1cRY="
@@ -4287,7 +4287,7 @@
 							"containerChangeable": true,
 							"left": 544,
 							"top": 608,
-							"width": 78.61181640625,
+							"width": 79.5703125,
 							"height": 80,
 							"nameCompartment": {
 								"$ref": "AAAAAAF55cKPZxA0u6M="
@@ -4412,7 +4412,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 510,
+									"left": 511,
 									"top": 596,
 									"height": 13,
 									"alpha": 0.7853981633974483,
@@ -4495,7 +4495,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 525,
-									"top": 550,
+									"top": 549,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -4540,7 +4540,7 @@
 								"$ref": "AAAAAAF55cKPZxAzOCI="
 							},
 							"lineStyle": 1,
-							"points": "550:607;502:547",
+							"points": "551:607;502:547",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF55cMM3xJRzgI="
@@ -5024,6 +5024,14 @@
 							}
 						}
 					]
+				},
+				{
+					"_type": "UMLActor",
+					"_id": "AAAAAAF56RYJyH77Hko=",
+					"_parent": {
+						"$ref": "AAAAAAF55bddlgFYX+4="
+					},
+					"name": "Actor1"
 				}
 			]
 		}
