@@ -1,6 +1,4 @@
-﻿-- 이름: demo_madang.sql
--- 설명
--- madang 스키마를 생성하고 MADANG 서점 실습테이블과 데이터를 입력한다.
+
 
 CREATE TABLE Book (
   bookid      NUMBER(2) PRIMARY KEY,
