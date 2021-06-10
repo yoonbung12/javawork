@@ -14,8 +14,9 @@ select ename, sal, (sal*12)+100 as upsal
 from emp
 order by sal*12 desc
 ;
---3. 급여가 2000을 넘는 사원의 이름과 급여를 표현,
---급여가 많은 것부터 작은 순으로 출력하시오.
+--3. 급여가 2000을 넘는 사원의 -> where
+--이름과 급여를 표현, ->컬럼
+--급여가 많은 것부터 작은 순으로 출력하시오. -> 정렬
 select ename, sal
 from emp
 where sal >= 2000
@@ -31,15 +32,15 @@ where empno = 7788
 --5. 급여가 2000에서 3000 사이에 포함되지 않는 사원의 이름과 급여를 출력하시오.
 select *
 from emp
-where sal >= 2000 and sal <=3000
---where sal between 2000 and 3000;
+--where sal < 2000 and sal >3000
+where sal not between 2000 and 3000;
 ;
 ​
 --6. 1981년 2월 20일 부터 1981년 5월 1일 사이에 입사한
 --사원의 이름, 담당업무, 입사일을 출력하시오.
 select *
 from emp
-where hiredate between '81/02/01' and '81/05/02'
+where hiredate between '81/02/20' and '81/05/01'
 order by hiredate
 ;
 --7. 부서번호가 20 및 30에 속한
@@ -47,6 +48,7 @@ order by hiredate
 --이름을 기준(내림차순)으로 영문자순으로 출력하시오.
 select *
 from emp
+--where deptno in(20, 30)
 where deptno =20 or deptno=30  
 order by ename desc
 ;
