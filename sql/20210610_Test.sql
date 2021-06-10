@@ -59,7 +59,8 @@ order by ename desc
 --이름순(오름차순)으로 출력하시오.
 select ename, sal, deptno
 from emp
-where deptno = 20 or deptno = 30
+--where(sal >= 2000 and sal <= 3000) and ( deptno = 20 or deptno =30)
+where sal between 2000 and 3000 and deptno in(20, 30)
 order by ename asc
 ;
 
@@ -69,9 +70,10 @@ order by ename asc
 select ename, hiredate
 from emp
 where hiredate like '%81/__/__'
+--where hiredate like '81%'
 ;
 
---10. 관리자가 없는
+--10. 관리자가 없는(mgr)
 --사원의 이름과 담당 업무를 출력하시오.
 select ename, job
 from emp
