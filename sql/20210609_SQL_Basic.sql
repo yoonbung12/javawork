@@ -74,3 +74,4 @@ select ename, empno, sal
 from emp
 where sal >= 3000
 ;
+
