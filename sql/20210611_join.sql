@@ -14,7 +14,8 @@ where emp.deptno = dept.deptno
 --부서명을 출력해봅시다.
 --출력해야하는 컬럼을 가지는 테이블을 확인해보자
 --이름 : emp, 부서명 : dept 
-select e.ename, d.dname
+select e.ename, d.dname, e.deptno
 from emp e, dept d
 where e.deptno = d.deptno --and ename = 'SCOTT'
+order by d.dname, e.ename
 ;
