@@ -132,4 +132,6 @@ select ename, deptno,
             when deptno =30 then 'SALESMAN'
             when deptno = 40 then 'OPERATIONS'
         end as deptname
-from emp;
+from emp
+order by deptname desc
+;
