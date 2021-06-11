@@ -10,10 +10,11 @@ from emp, dept
 where emp.deptno = dept.deptno
 ;
 
---이름이 scott인 사람의 부서명을 출력해봅시다.
+--이름이 scott인 사람의 where e.ename = 'scott'
+--부서명을 출력해봅시다.
 --출력해야하는 컬럼을 가지는 테이블을 확인해보자
 --이름 : emp, 부서명 : dept 
-select *
+select e.ename, d.dname
 from emp e, dept d
-where e.deptno = d.deptno
+where e.deptno = d.deptno --and ename = 'SCOTT'
 ;
