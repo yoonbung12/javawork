@@ -19,3 +19,10 @@ from emp e, dept d
 where e.deptno = d.deptno --and ename = 'SCOTT'
 order by d.dname, e.ename
 ;
+
+-- self JOIN : 자기 자신을 조인(참조)
+--emp -> mgr 컬럼이 emp.empno 참조
+select e.ename, e.mgr, m.ename
+from emp e, emp m
+where e.mgr = m.empno(+)
+;
