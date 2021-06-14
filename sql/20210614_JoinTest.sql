@@ -2,15 +2,21 @@
 --32. EQUI 조인을 사용하여 SCOTT 사원의 부서번호와 부서 이름을 출력하시오.
 select e.ename, d.dname, e.deptno
 from emp e, dept d
-where e.deptno = d.deptno and ename = 'SCOTT'
+where e.deptno = d.deptno and ename = 'SCOTT' --조인의 조건
 ;
-
+--ansi 이용
+select emp.ename, emp.empno, dept.dname
+from emp join dept
+using(deptno)
+where emp.ename = 'SCOTT'
+;
 ​-- 33.INNER JOIN과 ON 연산자를 사용하여 
 --사원 이름과 함께 
 --그 사원이 소속된 부서이름과 지역 명을 출력하시오.
 select e.ename, d.dname, d.loc
 from emp e INNER JOIN dept d
-on e.deptno = d.deptno
+on e.deptno = d.deptno  --조인의 조건
+where e.ename = 'SCOTT' --행을 선택하는 조건
 ;
 
 --36. 조인과 WildCARD를 사용하여
@@ -18,7 +24,14 @@ on e.deptno = d.deptno
 --모든 사원의 이름과 부서명을 출력하시오.
 select e.ename, d.dname, d.deptno
 from emp e, dept d
-where e.deptno = d.deptno and ename like '%A%'
+where e.deptno = d.deptno 
+and ename like '%A%'
+;
+--ansi
+select e.ename, d.dname
+from emp e join dept d
+using(deptno)
+where e.ename like '%A%'
 ;
 
 --37. JOIN을 이용하여
@@ -52,6 +65,15 @@ select e.deptno, d.ename
 from emp e, emp d
 where e.deptno = d.deptno and e.ename = 'SCOTT'
 ;
+
+--다른 방법
+select e.ename, e.deptno, s.ename
+from emp e, emp s
+where e.ename = 'SCOTT'
+and e.deptno = s.deptno
+and s.ename != 'SCOTT'
+;
+
 --41. SELF JOIN을 사용하여 
 --WARD 사원보다 늦게 
 --입사한 사원의 이름과 입사일을 출력하시오.
@@ -60,12 +82,16 @@ select e.ename, e.hiredate
 from emp e, emp d
 where d.ename = 'WARD' and e.hiredate > d.hiredate
 ;
+
 --42. SELF JOIN 을 사용하여
 --관리자보다 먼저 입사한 
 --모든 사원의 이름 및 입사일을 관리자의 이름 및 입사일과 함께 출력하시오.
 select * from emp
 where job = 'MANAGER'; 
+
 select *
 from emp e, emp m
-where e.mgr = m.empno and e.hiredate < m.hiredate
+where e.mgr = m.empno 
+and e.hiredate < m.hiredate
 ;
+--서브쿼리 사용도 가능
