@@ -28,6 +28,21 @@ create table emp01 (
     sal number(6, 2)
 );
 
+--서브 쿼리를 이용해서 기존 테이블의 구조를 복사하고 해당 튜플도 복사
+create table emp02
+as
+select * from emp
+;
+
+select * from emp02;
+
+create table emp03
+as
+select empno, ename, sal from emp
+;
+
+select * from emp03;
+
 create table emp04
 as
 select * from emp where deptno = 30
@@ -89,6 +104,15 @@ as
 select empno, ename, sal, job from emp where 1=0 --false값 갖도록
 ;
 
+--컬럼 레벨에서 제약 사항 정의
+create table emp02(
+    empno number(4) constraint emp02_empno_pk primary key, --not null unique,
+    ename varchar2(20) constraint emp02_ename_nn not null,
+    sal number(6, 2) constraint emp02_sal_ck check(sal > 500 and sal < 5000),
+    job varchar(20) default '미지정',
+    deptno number constraint emp02_deptno_fk references dept(deptno)
+);
+
 desc dept;
 
 desc emp02;
@@ -100,7 +124,7 @@ insert into emp02 values(null, null, 10000, 'MANAGER');
 
 select * from emp02;
 
---컬럼 레벨에서 제약 사항 정의
+--테이블 레벨에서 제약 사항 정의
 create table emp03 (
     empno number(4), --constraint emp02_empno_pk primary key, --not null unique,
     ename varchar2(20) constraint emp03_nn not null, --not null 제약은 컬럼 레벨에서만 정의 가능
