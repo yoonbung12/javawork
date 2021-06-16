@@ -15,7 +15,6 @@ create table phoneInfo_basic(
 );
 --1. phoneInfo_basic 테이블의 SELECT,
 --UPDATE, DELETE, INSERT 하는 SQL
-select * from phoneInfo_basic;
 --insert : create
 desc phoneInfo_basic;
 insert into phoneInfo_basic --not null인곳은 무조건 채워넣어야함!!!
@@ -30,22 +29,25 @@ insert into phoneInfo_basic values(20, 'Jong', '010-2303-3221', 'sseeue@naver.co
                                                 'seoul', '2021-06-15');
 insert into phoneInfo_basic values(30, 'kong', '010-2303-3321', 'sdue@naver.com',
                                                 'seoul', '2021-06-16');                                                
+--select : read
+select * from phoneInfo_basic;
+select * from phoneInfo_basic where idx = 2;
+
 --update
 --SCOTT의 이메일을 업데이트, 주소도 업데이트
 update phoneInfo_basic
 set fr_email = 'scott@naver.com', fr_address = 'SEOUL'
 where fr_name = 'SCOTT'; --idx값으로 해주는게 좋음 이름이 중복인 경우도 있을수 있어서.
-
+                        -- idx = 2도 가능 fr_name 말고
 --hong의 주소를 업데이트 하시오.
 update phoneInfo_basic
-set fr_address = 'Busan'
+set fr_address = 'Busan', fr_email = 'hong@naver.com'
 where idx = 10;
 
 --delete 
 delete from phoneInfo_basic; --전체 삭제
 delete from phoneInfo_basic where idx = 1; --idx =1 행을 삭제
 delete from phoneInfo_basic where fr_name = 'kong'; --'kong'이름이 있는 행 삭제
-select *from phoneInfo_basic;
 
 drop table phoneInfo_basic;
 
@@ -72,10 +74,18 @@ desc phoneInfo_basic;
 insert into phoneInfo_basic --not null인곳은 무조건 채워넣어야함!!!
 values (3, 'SON', '010-110-1100', 'son@gmail.com', 'korea', sysdate);
 
+insert into phoneInfo_basic
+values(6, 'woo', '019-0000-0000', 'woo@gmail.com', 'korea', sysdate);
+
 --2.univ 정보 입력
+desc phoneInfo_univ;
 insert into phoneInfo_univ
 values (1, 'COMPUTER', 4, 3) --3은 참조해서 써야된다(외래키)
 ;
+insert into phoneInfo_univ
+values(2, 'marketing', 4, 6)
+;
+
 
 --select : read 데이터 검색
 select fr_name, pu.fr_u_major, pu.fr_u_year 
@@ -89,7 +99,14 @@ update phoneInfo_univ
 set  fr_u_major = 'KOR ', fr_u_year = 1
 where idx = 1; 
 
-desc phoneInfo_univ;        
+--전공 수정
+update phoneInfo_univ
+set fr_u_major = 'ENGiNEER'
+where idx = 2
+;
+
+desc phoneInfo_univ; 
+
 drop table phoneInfo_univ;        
 
 --phoneInfo_com 테이블 만들기
