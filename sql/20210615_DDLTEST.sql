@@ -71,6 +71,7 @@ create table phoneInfo_univ(
 desc phoneInfo_basic;
 insert into phoneInfo_basic --not null인곳은 무조건 채워넣어야함!!!
 values (3, 'SON', '010-110-1100', 'son@gmail.com', 'korea', sysdate);
+
 --2.univ 정보 입력
 insert into phoneInfo_univ
 values (1, 'COMPUTER', 4, 3) --3은 참조해서 써야된다(외래키)
@@ -81,6 +82,12 @@ select fr_name, pu.fr_u_major, pu.fr_u_year
 from phoneInfo_basic pb, phoneInfo_univ pu
 where pb.idx = pu.fr_ref
 ;
+
+--update : update 데이터 수정
+--전공과 학년을 수정, idx 또는 참조키(외래키)
+update phoneInfo_univ 
+set  fr_u_major = 'KOR ', fr_u_year = 1
+where idx = 1; 
 
 desc phoneInfo_univ;        
 drop table phoneInfo_univ;        
@@ -98,5 +105,37 @@ create table phoneInfo_com (
         constraint pic_fr_ref_fk references phoneInfo_basic(idx)
         constraint pic_fr_ref_nn not null
 );
+--insert : create
+insert into phoneInfo_basic --not null인곳은 무조건 채워넣어야함!!!
+values (4, 'PARK', '010-777-7777', 'park@gmail.com', 'london', sysdate);
+
+insert into phoneInfo_com
+values(1, 'NAVER', 4);
+
+--select: read
+select fr_name, pb.fr_phonenumber, pb.fr_email, pb.fr_address, pc.fr_c_company
+from phoneInfo_basic pb, phoneInfo_com pc
+where pb.idx = pc.fr_ref
+;
+
+--update : update
+--회사정보를 수정
+update phoneInfo_com
+set fr_c_company = 'GOOGLE'
+where idx = 1;
+
+delete from phoneInfo_univ
+where idx =1;
+delete from phoneInfo_basic
+where idx=3;
+delete from phoneInfo_basic
+where idx =4;
+
+--전체 친구 정보
+select *
+from phoneInfo_basic pb, phoneInfo_univ pu, phoneInfo_com pc
+where pb.idx = pu.fr_ref(+) and pb.idx = pc.ref(+)
+;
+
 desc phoneInfo_com;
 drop table phoneInfo_com;        
