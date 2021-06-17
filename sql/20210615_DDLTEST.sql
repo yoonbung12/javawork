@@ -18,10 +18,10 @@ create table phoneInfo_basic(
 --insert : create
 desc phoneInfo_basic;
 insert into phoneInfo_basic --not null인곳은 무조건 채워넣어야함!!!
-values (1, 'KING', '010-000-0000', 'king@gmail.com', 'korea', sysdate);
+values (pi_idx_pk.nextval, 'KING', '010-000-0000', 'king@gmail.com', 'korea', sysdate);
 
 insert into phoneInfo_basic (idx, fr_name, fr_phonenumber)
-values(2, 'SCOTT', '010-100-000');
+values(pi_idx_pk.nextval, 'SCOTT', '010-100-000');
 
 insert into phoneInfo_basic values(10, 'Hong', '010-2303-3321', 'sdue@naver.com',
                                                 'seoul', '2021-06-16');
@@ -72,7 +72,7 @@ create table phoneInfo_univ(
 --1. basic 정보 입력
 desc phoneInfo_basic;
 insert into phoneInfo_basic --not null인곳은 무조건 채워넣어야함!!!
-values (3, 'SON', '010-110-1100', 'son@gmail.com', 'korea', sysdate);
+values (pi_idx_pk.nextval, 'SON', '010-110-1100', 'son@gmail.com', 'korea', sysdate);
 
 insert into phoneInfo_basic
 values(6, 'woo', '019-0000-0000', 'woo@gmail.com', 'korea', sysdate);
@@ -80,7 +80,7 @@ values(6, 'woo', '019-0000-0000', 'woo@gmail.com', 'korea', sysdate);
 --2.univ 정보 입력
 desc phoneInfo_univ;
 insert into phoneInfo_univ
-values (1, 'COMPUTER', 4, 3) --3은 참조해서 써야된다(외래키)
+values (1, 'COMPUTER', 4, pi_idx_pk.currval) --3은 참조해서 써야된다(외래키)
 ;
 insert into phoneInfo_univ
 values(2, 'marketing', 4, 6)
@@ -88,7 +88,7 @@ values(2, 'marketing', 4, 6)
 
 
 --select : read 데이터 검색
-select fr_name, pu.fr_u_major, pu.fr_u_year 
+select pb.idx, pu.idx ,fr_name, pu.fr_u_major, pu.fr_u_year 
 from phoneInfo_basic pb, phoneInfo_univ pu
 where pb.idx = pu.fr_ref
 ;
@@ -155,4 +155,11 @@ where pb.idx = pu.fr_ref(+) and pb.idx = pc.ref(+)
 ;
 
 desc phoneInfo_com;
-drop table phoneInfo_com;        
+drop table phoneInfo_com; 
+
+--대학친구, 회사 친구 테이블 -> 기본키(대리키) -> sequence 생성 -> insert 개선
+
+--sequence : 번호 재생기
+create sequence pi_idx_pk;
+create sequence pi_u_idx_pk start with 5 increment by 1;
+create sequence pi_c_idx_pk start with 5 increment by 1;
