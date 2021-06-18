@@ -6,8 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Scanner;
 
-public class JDBCTest {
+public class JDBCTestDeptDML {
 
 	public static void main(String[] args) {
 		
@@ -20,7 +21,7 @@ public class JDBCTest {
 		//Statement -> PreparedStatement : 성능 개선
 		PreparedStatement pstmt = null;
 		
-		
+		Scanner sc = new Scanner(System.in);
 		
 		try {
 			//1.드라이버 로드
@@ -35,52 +36,36 @@ public class JDBCTest {
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 			System.out.println("데이터베이스 연결 성공!!!");
 			
-			//3.sql처리
-		    
-			stmt = conn.createStatement();
-		    
-			int dno = 10;
-			String otype = "deptno";
+			//트렌젝션 설정
+			conn.setAutoCommit(false);
 			
-			String sqlSelect = 
-					"select * from dept where deptno = "+dno+"order by " + otype;
-		    
+			System.out.println("부서 정보 입력을 시작합니다.");
+			System.out.println("부서 이름을 입력해 주세요.");
+			String dname = sc.nextLine();
+			System.out.println("부서 위치를 입력해주세요.");
+			String loc = sc.nextLine();
 			
-		    rs = stmt.executeQuery(sqlSelect);
-		    
-		    //rs.next() -> 다음행의 존재 유무 확인
-		    while(rs.next()) {
-		    	int deptno = rs.getInt("deptno");
-		    	System.out.print(deptno + "\t");
-		    	String dname = rs.getString("dname");
-		    	System.out.print(dname + "\t");
-		    	String loc = rs.getString("loc");
-		    	System.out.println(loc + "\t");
-		    }
 			
-		    /////////////////////////////
-		    // PreparedStatement -> Sql 먼저 등록 -> 매개변수처럼 ?를 이용해서 나중에 변수를 바인딩
-		    
-		    System.out.println("PreparedStatement 사용");
-		    System.out.println("===========================");
-		    
-		    String sqlSelect2 = "select * from dept where deptno = ?";
-			pstmt = conn.prepareStatement(sqlSelect2);
-			//? 변수에 데이터 바인딩
-			pstmt.setInt(1, 10);
+			// 3.sql처리
+		    // 사용자에게 정보를 받아 부서 데이터를 입력하는 프로그램을 만들어 보자
+			String sql = "insert into dept01 values(deptno01_deptno_seq.nextval, ?, ?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "");
+			pstmt.setString(2, "");
 			
-			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				int deptno = rs.getInt("deptno");
-		    	System.out.print(deptno + "\t");
-		    	String dname = rs.getString("dname");
-		    	System.out.print(dname + "\t");
-		    	String loc = rs.getString("loc");
-		    	System.out.println(loc + "\t");
+			int result = pstmt.executeUpdate();
+			
+			if(result > 0) {
+				System.out.println("입력되었습니다.");
+			} else {
+				System.out.println("입력 실패!!!!!!");
 			}
 			
-		    
-		    
+			//트렌젝션 완료(성공)
+			conn.commit();
+			
+			// 4. 출력
+			
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 클래스를 찾지 못함!!!");
 			e.printStackTrace();
