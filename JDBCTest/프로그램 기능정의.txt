@@ -1,0 +1,6 @@
+프로그램 기능 정의
+1.데이터를 저장하는 클래스 정의
+ Value Object
+2.데이터베이스의  dept 테이블의 데이터를 CRUD 기능
+3.DAO : Data Access Object
+싱글톤 : 하나의 인스턴스만 생성해서 사용하도록 패턴
