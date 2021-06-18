@@ -50,6 +50,19 @@ public class DeptMain {
 			} else {
 				System.out.println("입력 실패");
 			}
+			/*
+			//Delete
+			//System.out.println("부서 정보를 삭제합니다.");
+			//System.out.println("삭제할 부서번호를 입력해주세요.");
+			//String deptno = sc.nextLine();
+			//int result = dao.deleteDept(conn, Integer.parseInt(deptno));
+			
+			//if(result > 0) {
+				//System.out.println("삭제 완료!!");
+			//} else {
+				//System.out.println("삭제 실패 : 해당 번호의 부서가 존재하지 않습니다.");
+			//}
+			 */
 		
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
