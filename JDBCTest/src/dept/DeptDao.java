@@ -26,6 +26,8 @@ public class DeptDao {
 			//결과 받아오기
 			rs = stmt.executeQuery(sql);
 			
+			list = new ArrayList<>();
+			
 			//데이터 Dept 객체로 생성 -> list에 저장
 			while(rs.next()) {
 				list.add(new Dept(rs.getInt(1), rs.getString(2), rs.getString(3)));
