@@ -77,9 +77,9 @@ public class DeptDao {
 			e.printStackTrace();
 		} finally {
 			
-			if(rs != null) {
-				rs.close();
-			}
+//			if(rs != null) {
+//				rs.close();
+//			}
 			
 			
 			if(pstmt != null) {
@@ -94,5 +94,10 @@ public class DeptDao {
 		return result;
 	}
 
-
+	// 3. Dept 테이블의 데이터 수정 메소드
+	// 반영된 행의 개수 반환
+	// 사용자로부터 데이터를 받아서 처리 -> Dept 객체
+	//int editDept(Connection conn, Dept dept) {
+		
+	//}
 }
