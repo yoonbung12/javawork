@@ -94,6 +94,8 @@ public class DeptManager {
 	
 	
 	// 데이터 수정
+	// 사용자로부터 데이터를 받아 수정 -> dao editDept() 메소드 이용
+	
 	
 	// 데이터 삭제
 	
