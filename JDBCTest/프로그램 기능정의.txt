@@ -4,4 +4,12 @@
 2.데이터베이스의  dept 테이블의 데이터를 CRUD 기능
 3.DAO : Data Access Object
 싱글톤 : 하나의 인스턴스만 생성해서 사용하도록 패턴
+
+1-리스트 출력 -> select 결과를 모아서 반환
+	          Dept 객체  -> 배열 또는 컬렉션
+2-입력 -> insert 데이터가 필요 Dept 객체 
+3-수정 -> update 데이터가 필요 Dept객체
+4-삭제 -> delete deptno 정수 받는다.
+
+
 4.UI: 1. 입력 2.검색 3.수정 4.삭제 5.exit
