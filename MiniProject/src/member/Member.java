@@ -1,8 +1,8 @@
 package member;
 
-import java.io.Serializable;
 
-public class Member implements Serializable { //implements Serializable 내일 확인후 지울지 말지
+
+public class Member  { //implements Serializable 내일 확인후 지울지 말지
 	
 	private int idx;
 	private String id;

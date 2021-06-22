@@ -25,7 +25,7 @@ public class MemberManager {
 			Connection conn = null;
 			
 			// 2.연결
-			String jdbcUrl = "jdbc:oracle:this@localhost:1521:xe";
+			String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 			String user = "hr";
 			String pw = "tiger";
 			
@@ -41,7 +41,7 @@ public class MemberManager {
 					
 					
 					for(Member member : list) {
-						System.out.printf("%s \t %s \t %s \t %s \t %s \n ", member.getName(), member.getCarreg(), member.getEmail(), member.getAddress());
+						System.out.printf("%s \t %s \t %s \t %s \t %s \n ", member.getIdx(),member.getName(), member.getCarreg(), member.getEmail(), member.getAddress());
 					}
 					System.out.println("-----------------------");
 					

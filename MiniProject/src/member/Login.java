@@ -19,7 +19,7 @@ public class Login {
 				Class.forName("oracle.jdbc.driver.OracleDriver");
 				System.out.println("드라이버 로드 성공");
 			
-				String jdbcUrl = "jdbc:oracle:this:@localhost:1521:xe"; //내일 다같이 모였을때 바꿀것.
+				String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe"; //내일 다같이 모였을때 바꿀것.
 				String user = "hr"; //""안에 들어있는 계정에 접근할 수있도록함
 				String pw = "tiger"; //내일 다같이 모여서 넣어봐야할듯
 				
