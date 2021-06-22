@@ -14,6 +14,7 @@ public class DeptMain {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 //			System.out.println("드라이버 로드 성골!");
+			manager.inputData();
 			manager.deptList();
 			
 			//2.연결 //DeptManager에서 사용하므로 없에도 괜찮음
