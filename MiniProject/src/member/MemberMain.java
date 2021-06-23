@@ -2,7 +2,7 @@ package member;
 
 import java.util.Scanner;
 
-public class MemberMain {
+public class MemberMain{
 
 	public static void main(String[] args) {
 			
@@ -29,6 +29,7 @@ public class MemberMain {
 				System.out.println("원하시는 기능의 번호를 입력해주세요.");
 				int num = Integer.parseInt(sc.nextLine());
 				
+				
 				switch(num) {
 				case 1:
 						manager.memberList();
@@ -44,7 +45,10 @@ public class MemberMain {
 				case 5:
 						System.out.println("프로그램을 종료합니다.");
 						return;
+				
+				
 				}
+				
 			}
 			
 			

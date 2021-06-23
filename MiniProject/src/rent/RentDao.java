@@ -46,7 +46,8 @@ public class RentDao {
 									rs.getString(4),
 									rs.getInt(5),
 									rs.getInt(6),
-									rs.getInt(7));
+									rs.getInt(7),
+									rs.getString(8));
 							
 							list.add(r);
 						}
@@ -94,6 +95,7 @@ public class RentDao {
 						pstmt.setInt(1, rent.getPay());
 						pstmt.setInt(2, rent.getRentperiod());
 						pstmt.setString(3, rent.getDate());
+						pstmt.setString(6, rent.getEnddate());
 						
 						result = pstmt.executeUpdate();
 						

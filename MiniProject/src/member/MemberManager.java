@@ -36,12 +36,12 @@ public class MemberManager {
 					
 					System.out.println("멤버 정보 리스트");
 					System.out.println("----------------------");
-					System.out.println("name \t carreg \t email \t address");
+					System.out.println("membercode \t name \t carreg \t email \t address");
 					System.out.println("--------------------------------");
 					
 					
 					for(Member member : list) {
-						System.out.printf("%s \t %s \t %s \t %s \t %s \n ", member.getIdx(),member.getName(), member.getCarreg(), member.getEmail(), member.getAddress());
+						System.out.printf("%d \t %s \t %s \t %s \t %s \n ", member.getMembercode(),member.getName(), member.getCarreg(), member.getEmail(), member.getAddress());
 					}
 					System.out.println("-----------------------");
 					

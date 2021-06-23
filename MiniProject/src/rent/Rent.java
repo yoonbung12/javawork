@@ -8,8 +8,14 @@ public class Rent {
 	private int carcode; 
 	private int membercode;
 	private int managercode;
+	private String enddate = rentperiod + date; //반납일
 	
-	public Rent (int rentcode, int pay, int rentperiod, String date, int carcode, int membercode, int managercode) {
+	
+	 //반납일 들어가 
+	
+	
+	
+	public Rent (int rentcode, int pay, int rentperiod, String date, int carcode, int membercode, int managercode,String enddate) {
 		this.rentcode = rentcode;
 		this.pay = pay;
 		this.rentperiod = rentperiod;
@@ -17,7 +23,20 @@ public class Rent {
 		this.carcode = carcode;
 		this.membercode = membercode;
 		this.managercode = managercode;
+		
 	}
+
+	public String getEnddate() {
+		return enddate;
+	} //반납일
+
+
+
+	public void setEnddate(String enddate) {
+		this.enddate = enddate;
+	} //반납일
+
+
 
 	public int getRentcode() {
 		return rentcode;

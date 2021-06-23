@@ -35,19 +35,19 @@ public class RentManager {
 					
 					System.out.println("렌트 정보 르시트");
 					System.out.println("-------------------------");
-					System.out.println("렌트번호 \t 렌트가격 \t 대여기간 \t 대여날짜 \t 차코드 \t 멤버코드 \t 매니저 코드");
+					System.out.println("렌트번호 \t 렌트가격 \t 대여기간 \t 대여날짜 \t 차코드 \t 멤버코드 \t 매니저 코드 \t 반납일");
 					System.out.println("--------------------------------");
 					
 					for(Rent rent : list) {
-						System.out.printf("%d \t %d \t %d \t %s \t %d \t %d \t %d ", 
+						System.out.printf("%d \t %d \t %d \t %s \t %d \t %d \t %d \t %s", 
 								rent.getRentcode(), 
 								rent.getPay(), 
 								rent.getRentperiod(), 
 								rent.getDate(),
 								rent.getCarcode(),
 								rent.getMembercode(),
-								rent.getManagercode()
-								
+								rent.getManagercode(),
+								rent.getEnddate()
 								
 								);
 						System.out.println();
@@ -78,12 +78,12 @@ public class RentManager {
 						
 						
 						System.out.println("렌트 정보를 입력합니다.");
-						System.out.println(" 렌트가격 대여기간 대여날짜 입력해주세요.");
+						System.out.println(" 렌트가격 대여기간 대여날짜   입력해주세요.");
 						
 						String inputData = sc.nextLine();
 						String[] rentdata = inputData.split(" ");
 						
-						Rent rent = new Rent(0,Integer.parseInt(rentdata[0]), Integer.parseInt(rentdata[1]), rentdata[2], 0,0,0);
+						Rent rent = new Rent(0,Integer.parseInt(rentdata[0]), Integer.parseInt(rentdata[1]), rentdata[2], 0,0,0, rentdata[6]);
 						
 						int result = dao.insertRent(conn, rent);
 						
@@ -115,12 +115,12 @@ public class RentManager {
 						conn = DriverManager.getConnection(jdbcUrl, user, pw);
 					
 						System.out.println("렌트 정보를 수정합니다.");
-						System.out.println("렌트번호 렌트가격 대여기간 대여날짜       입력해주세요.");
+						System.out.println("렌트번호 렌트가격 대여기간 대여날짜  반납일     입력해주세요.");
 						
 						String editData = sc.nextLine();
 						String[] eData = editData.split(" ");
 						
-						Rent rent = new Rent(0, Integer.parseInt(eData[1]), Integer.parseInt(eData[2]), eData[3], 0,0,0);
+						Rent rent = new Rent(0, Integer.parseInt(eData[0]), Integer.parseInt(eData[1]), eData[2], 0,0,0, eData[6]);
 					
 						int result = dao.editRent(conn, rent);
 						
