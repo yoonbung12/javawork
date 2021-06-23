@@ -4,7 +4,7 @@ package member;
 
 public class Member  { //implements Serializable 내일 확인후 지울지 말지
 	
-	private int idx;
+	private int membercode;
 	private String id;
 	private String pw;
 	private String name;
@@ -12,8 +12,8 @@ public class Member  { //implements Serializable 내일 확인후 지울지 말�
 	private String email;
 	private String address;
 	
-	public Member(int idx, String id, String pw, String name,  String carreg, String email, String address) {
-		this.idx = idx;
+	public Member(int membercode, String id, String pw, String name,  String carreg, String email, String address) {
+		this.membercode = membercode;
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
@@ -23,12 +23,12 @@ public class Member  { //implements Serializable 내일 확인후 지울지 말�
 	}
 	
 
-	public int getIdx() {
-		return idx;
+	public int getMembercode() {
+		return membercode;
 	}
 
-	public void setIdx(int idx) {
-		this.idx = idx;
+	public void setMembercode(int membercode) {
+		this.membercode = membercode;
 	}
 
 	public String getId() {
@@ -81,7 +81,7 @@ public class Member  { //implements Serializable 내일 확인후 지울지 말�
 
 	@Override
 	public String toString() {
-		return "Member [idx=" + idx + ", id=" + id + ", pw=" + pw + ", name=" + name + ", carreg=" + carreg + ", email="
+		return "Member [membercode=" + membercode + ", id=" + id + ", pw=" + pw + ", name=" + name + ", carreg=" + carreg + ", email="
 				+ email + ", address=" + address + "]";
 	}
 	
