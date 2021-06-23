@@ -38,7 +38,7 @@ public class MemberDao {
 			
 				try {
 					stmt = conn.createStatement();
-					String sql = "select * from member order by idx";
+					String sql = "select * from member order by membercode";
 				
 					// 결과 받아오기
 					rs = stmt.executeQuery(sql);
@@ -95,7 +95,7 @@ public class MemberDao {
 			
 				
 				try {
-					String sql = "insert into member values(MEMBER_IDX_SEQ.nextval, ?, ?, ?, ?, ?, ?)"; //이부분 확인해야함
+					String sql = "insert into member values(MEMBER_membercode_SEQ.nextval, ?, ?, ?, ?, ?, ?)"; //이부분 확인해야함
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1, member.getId());
 					pstmt.setString(2, member.getPw());
@@ -136,7 +136,7 @@ public class MemberDao {
 			
 				
 				try {
-					String sql = "update member set id=?, pw=?, name=?, carreg=?, email=?, address=? where idx=?"; //idx번호를 입력해서 그 행의 내용을 수정
+					String sql = "update member set id=?, pw=?, name=?, carreg=?, email=?, address=? "; //번호를 입력해서 그 행의 내용을 수정
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1, member.getId());
 					pstmt.setString(2, member.getPw());
@@ -144,7 +144,7 @@ public class MemberDao {
 					pstmt.setString(4, member.getCarreg());
 					pstmt.setString(5, member.getEmail());
 					pstmt.setString(6, member.getAddress());
-					pstmt.setInt(7, member.getIdx());
+					
 					
 					result = pstmt.executeUpdate();
 					
@@ -169,17 +169,17 @@ public class MemberDao {
 		// 4.Member 테이블의 데이터를 삭제
 		// 삭제된 행의 개수를 반환
 		// 사용자로부터 IDX 받아서 처리
-		int deleteMember(Connection conn, int idx) {
+		int deleteMember(Connection conn, int membercode) {
 			
 			int result = 0;
 			
 			//데이터 베이스 처리 sql
 			PreparedStatement pstmt = null;
-			String sql = "delete from member where idx =?";	
+			String sql = "delete from member where membercode =?";	
 			
 				try {
 					pstmt = conn.prepareStatement(sql);
-					pstmt.setInt(1, idx);
+					pstmt.setInt(1, membercode);
 					
 					result = pstmt.executeUpdate();
 					
