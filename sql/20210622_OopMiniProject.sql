@@ -1,7 +1,7 @@
 --OopMiniProject
 
 create table member(
-idx number(4) constraint member_idx_pk primary key,
+membercode number(4) constraint member_mcode_pk primary key,
 id varchar2(20) not null,
 pw varchar2(20) not null,
 name varchar2(20) not null,
@@ -28,17 +28,17 @@ insert into member values
 insert into member values
 (5, 'member5', '123456', '베일', '567890-1678901', 'member5@google.com', 'SEOUL');
 
-
+commit;
 create table car(
-idx number(4) constraint car_idx_pk primary key,
+carcode number(4) constraint car_carcode_pk primary key,
 carnumber varchar2(20) not null,
 carname varchar2(20) not null,
 carsize varchar2(10) not null,
 carseat number(2) not null,
 caryear number(4) not null,
 fuel varchar2(20) not null
-)
-;
+);
+
 desc car;
 select * from car;
 
@@ -56,11 +56,11 @@ START WITH 1;
 
 
 create table manager(
-idx number(4) constraint manager_idx_pk primary key,
+managercode number(4) constraint manager_managercode_pk primary key,
 mid varchar2(20) not null,
 mpw varchar2(20) not null
-)
-;
+);
+
 desc manager;
 select * from manager;
 
@@ -74,14 +74,20 @@ START WITH 1;
 
 -----------------------------------------------------
 create table rent(
-idx number(4) constraint rent_idx_pk primary key,
-pay INTEGER not null,
-rentperiod number(1) not null,
-carcode number constraint rent_carcode_fk REFERENCES car(idx),
-membercode number constraint rent_memcode_fk REFERENCES member(idx),
-managercode number constraint rent_manacode_fr REFERENCES manager(idx)
-)
-;
+rentcode number(4) constraint rent_rentcode_pk primary key, --대여 번호
+pay INTEGER not null,  --가격지불
+rentperiod number(1) not null, --대여기간
+rent_date date, --대여 날짜
+carcode number constraint rent_carcode_fk REFERENCES car(carcode),
+membercode number constraint rent_memcode_fk REFERENCES member(membercode),
+managercode number constraint rent_managercode_fr REFERENCES manager(managercode)
+);
+CREATE SEQUENCE rent_rentcode_SEQ
+INCREMENT BY 1
+START WITH 1;
+
+insert into rent values(1, 1000, 2, '2021/06/21', 1, 1 , 1);
+commit;
 
 desc rent;
 select * from rent;
@@ -89,4 +95,15 @@ select * from rent;
 CREATE SEQUENCE rent_idx_SEQ
 INCREMENT BY 1
 START WITH 1;
+
+create table rent_order (
+order_num number(20) primary key,
+order_membercode number(4) references member(membercode) on delete cascade,
+order_carname varchar2(20),
+order_date date,
+order_time varchar2(20)
+);
+
+
+
 -----------------------------------------------------
