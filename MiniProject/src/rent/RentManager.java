@@ -35,13 +35,24 @@ public class RentManager {
 					
 					System.out.println("렌트 정보 르시트");
 					System.out.println("-------------------------");
-					System.out.println("렌트번호 \t 렌트가격 \t 대여기간 \t 대여날짜");
+					System.out.println("렌트번호 \t 렌트가격 \t 대여기간 \t 대여날짜 \t 차코드 \t 멤버코드 \t 매니저 코드");
 					System.out.println("--------------------------------");
 					
 					for(Rent rent : list) {
-						System.out.printf("%d \t %d \t %d \t %s", rent.getRentcode(), rent.getPay(), rent.getRentperiod(), rent.getDate());
+						System.out.printf("%d \t %d \t %d \t %s \t %d \t %d \t %d ", 
+								rent.getRentcode(), 
+								rent.getPay(), 
+								rent.getRentperiod(), 
+								rent.getDate(),
+								rent.getCarcode(),
+								rent.getMembercode(),
+								rent.getManagercode()
+								
+								
+								);
+						System.out.println();
 					}
-					
+					System.out.println();
 					System.out.println("-------------------------------------");
 				
 				
@@ -67,12 +78,12 @@ public class RentManager {
 						
 						
 						System.out.println("렌트 정보를 입력합니다.");
-						System.out.println("렌트번호 렌트가격 대여기간 대여날짜       입력해주세요.");
+						System.out.println(" 렌트가격 대여기간 대여날짜 입력해주세요.");
 						
 						String inputData = sc.nextLine();
 						String[] rentdata = inputData.split(" ");
 						
-						Rent rent = new Rent(0, Integer.parseInt(rentdata[1]), Integer.parseInt(rentdata[2]), rentdata[3], 0,0,0);
+						Rent rent = new Rent(0,Integer.parseInt(rentdata[0]), Integer.parseInt(rentdata[1]), rentdata[2], 0,0,0);
 						
 						int result = dao.insertRent(conn, rent);
 						

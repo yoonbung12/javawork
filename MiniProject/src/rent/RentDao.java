@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class RentDao {
 		
@@ -31,7 +32,7 @@ public class RentDao {
 			
 					try {
 						stmt = conn.createStatement();
-						String sql = "select * from rent oder by rentcode";
+						String sql = "select * from rent_view order by rentcode";
 						
 						rs = stmt.executeQuery(sql);
 						
@@ -86,14 +87,13 @@ public class RentDao {
 			
 					
 					try {
-						String sql = "insert into Rent values(Rent_rentcode_SEQ.nextval,?,?,?, ?, ?, ?)";
+						String sql = "insert into rent_view values(Rent_rentcode_SEQ.nextval,"
+								+ "?,?,?,"
+								+ "1,1,1)";
 						pstmt = conn.prepareStatement(sql);
 						pstmt.setInt(1, rent.getPay());
 						pstmt.setInt(2, rent.getRentperiod());
 						pstmt.setString(3, rent.getDate());
-						pstmt.setInt(4, rent.getCarcode());
-						pstmt.setInt(5, rent.getMembercode());
-						pstmt.setInt(6, rent.getManagercode());
 						
 						result = pstmt.executeUpdate();
 						
@@ -158,7 +158,7 @@ public class RentDao {
 			
 			
 					try {
-						String sql = "delete * from rent where rentcode=?";
+						String sql = "delete from rent where rentcode=?";
 						pstmt = conn.prepareStatement(sql);
 						pstmt.setInt(1, rentcode);
 						

@@ -52,7 +52,7 @@ insert into car values(6, '6666', 'CARNIVAL', 'BIG', 9, 2021, '가솔린');
 CREATE SEQUENCE car_idx_SEQ
 INCREMENT BY 1
 START WITH 1;
-
+select * from car;
 
 
 create table manager(
@@ -103,7 +103,17 @@ order_carname varchar2(20),
 order_date date,
 order_time varchar2(20)
 );
+--view
+create or replace view rent_view
+as
+select *
+from rent
+order by rentcode
+;
 
+select * from rent_view
+order by rentcode;
+commit;
 
-
+insert into rent_view values(Rent_rentcode_SEQ.nextval,1001,3,'20210622', car_carcode_SEQ.currval, 1,member_membercode_SEQ.currval);
 -----------------------------------------------------
