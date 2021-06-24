@@ -77,12 +77,12 @@ public class RentManager {
 						
 						
 						System.out.println("렌트 정보를 입력합니다.");
-						System.out.println(" 렌트가격 대여기간 대여날짜   입력해주세요.");
+						System.out.println("렌트가격 대여기간 대여날짜   입력해주세요.");
 						
 						String inputData = sc.nextLine();
 						String[] rentdata = inputData.split(" ");
-						
-						Rent rent = new Rent(0,Integer.parseInt(rentdata[0]), Integer.parseInt(rentdata[1]), rentdata[2], 0,0,0);
+													//가격 대여기간 
+						Rent rent = new Rent(0, Integer.parseInt(rentdata[0]), Integer.parseInt(rentdata[1]), rentdata[2], 0 , 0, 0 );
 						
 						int result = dao.insertRent(conn, rent);
 						

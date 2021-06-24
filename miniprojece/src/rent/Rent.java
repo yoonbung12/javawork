@@ -4,18 +4,18 @@ public class Rent {
 	private int rentcode; //대여 번호
 	private int pay; //대여 가격
 	private int rentperiod; //대여기간 
-	private String sysdate; // 대여 날짜
+	private String date; // 대여 날짜
 	private int carcode; 
 	private int membercode;
 	private int managercode;
-	
+	private int enddate = rentperiod + Integer.parseInt(date); //반납일
 	
 	
 	 
 	
 	
 	
-	public Rent (int rentcode, int pay, int rentperiod, String date, int carcode, int membercode, int managercode) {
+	public Rent (int rentcode, int pay, int rentperiod, String date, int carcode, int membercode, int managercode,int enddate) {
 		this.rentcode = rentcode;
 		this.pay = pay;
 		this.rentperiod = rentperiod;
@@ -23,8 +23,19 @@ public class Rent {
 		this.carcode = carcode;
 		this.membercode = membercode;
 		this.managercode = managercode;
+		this.enddate = enddate;
 		
 	}
+
+	public int getEnddate() {
+		return enddate = rentperiod + Integer.parseInt(date);
+	} //반납일
+
+
+
+	public void setEnddate(int enddate) {
+		this.enddate = enddate;
+	} //반납일
 
 
 
@@ -87,7 +98,7 @@ public class Rent {
 	@Override
 	public String toString() {
 		return "Rent [rentcode=" + rentcode + ", pay=" + pay + ", rentperiod=" + rentperiod + ", date=" + date
-				+ ", carcode=" + carcode + ", membercode=" + membercode + ", managercode=" + managercode +"]";
+				+ ", carcode=" + carcode + ", membercode=" + membercode + ", managercode=" + managercode + ", enddate=" + enddate +"]";
 	}
 	
 }

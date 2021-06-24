@@ -46,7 +46,8 @@ public class RentDao {
 									rs.getString(4),
 									rs.getInt(5),
 									rs.getInt(6),
-									rs.getInt(7));
+									rs.getInt(7),
+									rs.getInt(8));
 							
 							list.add(r);
 						}
@@ -89,12 +90,12 @@ public class RentDao {
 					try {
 						String sql = "insert into rent_view values(Rent_rentcode_SEQ.nextval,"
 								+ "?,?,?,"
-								+ "1,1,1)";
+								+ "1,1,1, ?)";
 						pstmt = conn.prepareStatement(sql);
 						pstmt.setInt(1, rent.getPay());
 						pstmt.setInt(2, rent.getRentperiod());
 						pstmt.setString(3, rent.getDate());
-						
+						pstmt.setInt(6, rent.getEnddate());
 						
 						result = pstmt.executeUpdate();
 						

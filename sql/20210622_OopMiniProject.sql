@@ -60,7 +60,6 @@ from dual
 ;
 
 select date, rent_date + 1 from dual;
-select date
 
 create table manager(
 managercode number(4) constraint manager_managercode_pk primary key,
@@ -85,7 +84,6 @@ rentcode number(4) constraint rent_rentcode_pk primary key, --대여 번호
 pay INTEGER not null,  --가격지불
 rentperiod number(1) not null, --대여기간
 rent_date date, --대여 날짜
---대여기간을 더하여 반납해야할 날짜
 carcode number constraint rent_carcode_fk REFERENCES car(carcode),
 membercode number constraint rent_memcode_fk REFERENCES member(membercode),
 managercode number constraint rent_managercode_fr REFERENCES manager(managercode)
@@ -102,13 +100,23 @@ membercode number constraint rent_memcode_fk REFERENCES member(membercode),
 managercode number constraint rent_managercode_fr REFERENCES manager(managercode)
 );
 --반납일 추가
-alter table rent add enddate date;
+select * from rent;
+commit;
+Alter table rent ADD enddate date;
+
+insert into rent values ( 1, 20, 2, '20210202', 1, 1, 1, );
+commit;
+
+select dummy from dual where enddate > To_date('20210623', 'yyyymmdd');
+
+
+
+alter table rent add enddate (renperiod+date);
 select * from rent_view order by rentcode;
 select * from rent;
+select TO_Char(date + 1, 'yyyy/mm/dd') from dual;
 
 
-
-alter table rent add 
 CREATE SEQUENCE rent_rentcode_SEQ
 INCREMENT BY 1
 START WITH 1;
@@ -130,7 +138,7 @@ order_carname varchar2(20),
 order_date date,
 order_time varchar2(20)
 );
-
+commit;
 --view
 create or replace view rent_view
 as

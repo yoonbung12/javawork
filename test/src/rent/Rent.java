@@ -4,7 +4,7 @@ public class Rent {
 	private int rentcode; //대여 번호
 	private int pay; //대여 가격
 	private int rentperiod; //대여기간 
-	private String sysdate; // 대여 날짜
+	private String date; // 대여 날짜
 	private int carcode; 
 	private int membercode;
 	private int managercode;
