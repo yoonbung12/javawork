@@ -93,7 +93,7 @@ public class RentDao {
 						pstmt = conn.prepareStatement(sql);
 						pstmt.setInt(1, rent.getPay());
 						pstmt.setInt(2, rent.getRentperiod());
-						pstmt.setString(3, rent.getDate());
+						pstmt.setString(3, rent.getSysDate());
 						
 						
 						result = pstmt.executeUpdate();
@@ -128,7 +128,7 @@ public class RentDao {
 						pstmt = conn.prepareStatement(sql);
 						pstmt.setInt(1, rent.getPay());
 						pstmt.setInt(2, rent.getRentperiod());
-						pstmt.setString(3, rent.getDate());
+						pstmt.setString(3, rent.getSysDate());
 						pstmt.setInt(4, rent.getRentcode());
 						
 						result = pstmt.executeUpdate();

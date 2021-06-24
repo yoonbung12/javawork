@@ -15,11 +15,11 @@ public class Rent {
 	
 	
 	
-	public Rent (int rentcode, int pay, int rentperiod, String date, int carcode, int membercode, int managercode) {
+	public Rent (int rentcode, int pay, int rentperiod, String sysdate, int carcode, int membercode, int managercode) {
 		this.rentcode = rentcode;
 		this.pay = pay;
 		this.rentperiod = rentperiod;
-		this.date = date;
+		this.sysdate = sysdate;
 		this.carcode = carcode;
 		this.membercode = membercode;
 		this.managercode = managercode;
@@ -52,12 +52,12 @@ public class Rent {
 		this.rentperiod = rentperiod;
 	}
 
-	public String getDate() {
-		return date;
+	public String getSysDate() {
+		return sysdate;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setSysDate(String sysdate) {
+		this.sysdate = sysdate;
 	}
 
 	public int getCarcode() {
@@ -86,7 +86,8 @@ public class Rent {
 
 	@Override
 	public String toString() {
-		return "Rent [rentcode=" + rentcode + ", pay=" + pay + ", rentperiod=" + rentperiod + ", date=" + date
+		return "Rent [rentcode=" + rentcode + ", pay=" + pay + ", rentperiod=" + rentperiod + ", sysdate=" + sysdate
+				
 				+ ", carcode=" + carcode + ", membercode=" + membercode + ", managercode=" + managercode +"]";
 	}
 	

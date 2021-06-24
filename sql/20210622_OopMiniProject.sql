@@ -83,28 +83,30 @@ create table rent(
 rentcode number(4) constraint rent_rentcode_pk primary key, --대여 번호
 pay INTEGER not null,  --가격지불
 rentperiod number(1) not null, --대여기간
-rent_date date, --대여 날짜
+rentdate  date default sysdate, --대여 날짜
 carcode number constraint rent_carcode_fk REFERENCES car(carcode),
 membercode number constraint rent_memcode_fk REFERENCES member(membercode),
 managercode number constraint rent_managercode_fr REFERENCES manager(managercode)
 );
 
-create table rent(
-rentcode number(4) constraint rent_rentcode_pk primary key, --대여 번호
-pay INTEGER not null,  --가격지불
-rentperiod number(1) not null, --대여기간
-rent_date date, --대여 날짜
---대여기간을 더하여 반납해야할 날짜
-carcode number constraint rent_carcode_fk REFERENCES car(carcode),
-membercode number constraint rent_memcode_fk REFERENCES member(membercode),
-managercode number constraint rent_managercode_fr REFERENCES manager(managercode)
-);
---반납일 추가
+
 select * from rent;
-commit;
 Alter table rent ADD enddate date;
 
-insert into rent values ( 1, 20, 2, '20210202', 1, 1, 1, );
+---- Test 반납일
+create table rentday (
+rentday1 number(1) not null,
+rentday2 number(2) not null,
+rentday3 number(3) not null
+);
+select * from rentday;
+insert into rentday values(1, 2, 3);
+
+
+
+
+insert into rent values ( 1, 20, 2, '20210202', 1, 1, 1, '20210204');
+insert into rent values ( 2, 22, 2, '20210201', 1, 1, 1, '20210203');
 commit;
 
 select dummy from dual where enddate > To_date('20210623', 'yyyymmdd');

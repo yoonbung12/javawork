@@ -43,7 +43,7 @@ public class RentManager {
 								rent.getRentcode(), 
 								rent.getPay(), 
 								rent.getRentperiod(), 
-								rent.getDate(),
+								rent.getSysDate(),
 								rent.getCarcode(),
 								rent.getMembercode(),
 								rent.getManagercode()
