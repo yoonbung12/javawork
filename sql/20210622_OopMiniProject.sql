@@ -30,11 +30,17 @@ carsize varchar2(10) not null,
 carseat number(2) not null,
 caryear number(4) not null,
 fuel varchar2(20) not null,
-rent char(1) constraint car_rent_ck check(rent = '0' or rent = '1') 
+rent char(1) constraint car_rent_ck check(rent = '0' or rent = '1'),
+pricecode number(1) constraint car_pcode_fk references carprice(pcode) on delete cascade
 -- rent 는 대여현황을 체크하기 위한 컴럼으로 
 -- 0 이면 대여가 가능한 상태임을 나타내고 1이면 대여중임을 나타낸다
-)
+)--carcode number constraint rent_carcode_fk REFERENCES car(carcode) on delete cascade
 ;
+insert into car values (car_carcode_seq.nextval, 1111, '아방이', '중', 5, 2015, '휘발유', '0', 2);
+insert into car values (car_carcode_seq.nextval, 2222, '레이', '소', 5, 2015, '휘발유', '0', 1);
+insert into car values (car_carcode_seq.nextval, 333, '카니발', '대', 9, 2015, '휘발유', '0', 3);
+
+
 --manager 테이블 생성
 create table manager(
 managercode number(4) constraint manager_managercode_pk primary key,
@@ -147,13 +153,40 @@ alter table rent add constraint rent_ccode_fk FOREIGN key (carcode) REFERENCES c
 alter table rent add constraint rent_memcode_fk FOREIGN key (membercode) REFERENCES member(membercode) on delete cascade;
 alter table rent add constraint rent_manacode_fk FOREIGN key (managercode) REFERENCES manager(managercode) on delete cascade;
 
+--차 종류별 테이블( 가격)
+create table smallCar (
+sccode number(4) constraint smallcar_sccode_pk primary key,
+sprice number(8) not null
+);
+insert into smallcar values(1, 10000);
+
+create table middleCar (
+mccode number(4) constraint middlecar_mccode_pk primary key,
+mprice number(8) not null
+);
+insert into middlecar values(1,  20000);
+
+create table bigcar (
+bccode number(4) constraint bigcar_bccode_pk primary key,
+bprice number(8) not null
+);
+insert into bigcar values(1, 30000);
+
+--통합된 걸로 하나 (차가격)
+create table carprice(
+pcode number(4) constraint carprice_pcode_pk primary key,
+price number(8) not null
+);
+insert into carprice values(1, 10000);
+insert into carprice values(2, 20000);
+insert into carprice values(3, 30000);
+
+alter table car add pricecode number(1)  --여기는 ok
+constraint car_pcode foreign key (pcode) 
+references carprice(pcode);
 
 
-
-
-
-
-
+select * from rent;
 
 --커밋
 commit;
