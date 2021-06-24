@@ -4,6 +4,7 @@ drop table rent;
 drop table member;
 drop table car;
 drop table manager;
+drop  table carprice;
 
 --데이터 삭제
 delete from member;
@@ -177,9 +178,11 @@ create table carprice(
 pcode number(4) constraint carprice_pcode_pk primary key,
 price number(8) not null
 );
-insert into carprice values(1, 10000);
-insert into carprice values(2, 20000);
-insert into carprice values(3, 30000);
+select * from carprice;
+
+insert into carprice values(1, 10000); --결제 가격
+insert into carprice values(2, 20000); --결제 가격
+insert into carprice values(3, 30000); --결제 가격
 
 alter table car add pricecode number(1)  --여기는 ok
 constraint car_pcode foreign key (pcode) 
@@ -188,25 +191,51 @@ references carprice(pcode);
 
 select * from rent;
 
---커밋
-commit;
 
 
+--결제 테이블(결제코드, 결제 금액)
+create table pay(
+paycode number(4) constraint pay_paycode_pk primary key,
+pay number(8) not null --가진돈이라고 표현을 해야하나,,
+);
+
+desc pay;
+select * from pay;
+--insert
+insert into pay values( pay_paycode_seq.nextVal, 10000);
+insert into pay values( pay_paycode_seq.nextVal, 20000);
 
 
+--결제 조인
+select p.pay
+from pay p, carprice cp
+where p.pay(+) = cp.price
+;
 
+--결제 서브쿼리(차가격이랑 결제)
+select pay
+from pay 
+where pay = ( select price
+                from carprice
+                where price 
+            
+);
 
+--pay sequence
+create sequence pay_paycode_seq
+increment by 1
+start with 1;
 
 
 
 
 
 --sequence
-
 CREATE SEQUENCE member_membercode_SEQ
 INCREMENT BY 1
 START WITH 1;
-
+--pay view
+create or 
 
 --view
 create or replace view rent_view
@@ -218,7 +247,7 @@ order by rentcode
 
 select * from rent_view
 order by rentcode;
+
+--커밋
 commit;
-
-
 -----------------------------------------------------
