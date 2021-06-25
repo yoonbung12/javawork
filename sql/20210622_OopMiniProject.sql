@@ -48,7 +48,7 @@ mid varchar2(20) not null,
 mpw varchar2(20) not null
 )
 ;
-
+--rent 테이블 생성
 create table rent(
 rentcode number(4) constraint rent_rentcode_pk primary key,
 pay number(6) not null,
@@ -60,8 +60,13 @@ managercode number constraint rent_managercode_fk REFERENCES manager(managercode
 )
 ;
 
-select sysdate from dual;
+--페이 테이블 생성( 페이 코드만들고, 지불을 어떻게 할것 인지 --20210625
+create table pay (
+paycode number(4) constraint pay_paycode_pk primary key,
+smallpay number(8) not null,
 
+)
+;
 
 insert into rent values(rent_rentcode_seq.nextval,10000,3,sysdate+3,(select carcode from car where carnumber = 1111),(select membercode from member where carreg = 1111),1);
 select * from rent where 
