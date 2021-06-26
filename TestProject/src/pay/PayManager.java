@@ -69,12 +69,12 @@ public class PayManager {
 					conn = DriverManager.getConnection(jdbcUrl, user, pw);
 				
 					System.out.println("결제 정보를 입력합니다.");
-					System.out.println("결제가격 결제완료");
+					System.out.println("결제가격 결제완료 렌트코드");
 					
 					String inputData = sc.nextLine();
 					String[] payData = inputData.split(" ");
 					
-					Pay pay = new Pay(0,Integer.parseInt(payData[0]),payData[1],0);
+					Pay pay = new Pay(0,Integer.parseInt(payData[0]),payData[1], Integer.parseInt(payData[2]));
 					
 					int result = dao.insertPay(conn, pay);
 					

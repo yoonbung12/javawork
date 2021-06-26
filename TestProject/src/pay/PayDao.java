@@ -79,15 +79,16 @@ public class PayDao {
 		
 			
 						try {
-							String sql = "insert into pay_view values(Pay_paycode_SEQ.nextval,?,?" 
-									+ "?"
-									+ "1)";
+							String sql = "insert into pay_view values(pay_paycode_SEQ.nextval,?,?,?) ";
 							pstmt = conn.prepareStatement(sql);
 							pstmt.setInt(1, pay.getPaymoney());
 							pstmt.setString(2,  pay.getPaysucc());
+							pstmt.setInt(3, pay.getRentcode());
+							
+							result = pstmt.executeUpdate();
 						} catch (SQLException e) {
 							// TODO Auto-generated catch block
-							e.printStackTrace();
+							e.printStackTrace(); 
 						} finally {
 							if(pstmt != null) {
 									try {

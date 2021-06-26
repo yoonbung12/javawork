@@ -52,7 +52,7 @@ mpw varchar2(20) not null
 --rent 테이블 생성
 create table rent(
 rentcode number(4) constraint rent_rentcode_pk primary key,
-pay number(6) not null,
+pay number(6) not null, --가격
 rentperiod number(1) constraint rent_period_ck check(rentperiod between 1 and 3)  not null,
 rent_date date default sysdate , --대여 날짜
 carcode number constraint rent_carcode_fk REFERENCES car(carcode) on delete cascade constraint rent_carcode_uk unique,
@@ -65,7 +65,7 @@ insert into rent values(rent_rentcode_seq.nextval, 1000, 2, sysdate+1, 0,0,0);
 select r.pay from rent r, pay p where r.pay = p.paymoney(+);
 --rent char(1) constraint car_rent_ck check(rent = '0' or rent = '1')
 
-
+insert into rent values(rent_rentcode_seq.nextval,20000,2,sysdate+2,0,0,0);
 insert into rent values(rent_rentcode_seq.nextval,10000,3,sysdate+3,(select carcode from car where carnumber = 1111),(select membercode from member where carreg = 1111),1);
 select * from rent where 
 select to_char(rent_date, 'yyyy-mm-dd hh24:mi:ss') from rent;
@@ -198,12 +198,14 @@ select * from rent;
 --결제 테이블(결제코드, 결제 금액)-------------------------------------------------------
 create table pay(
 paycode number(4) constraint pay_paycode_pk primary key,
-paymoney number(8),
+paymoney number(8) constraint pay_paymoney_ck check(paymoney= 10000 or paymoney=20000 or paymoney=30000), --결제 금액을 제약 조건으로 (소,중,대)
 paysucc char(1)constraint  pay_paysucc_ck check(paysucc ='0' or paysucc='1'), --결제 실패 성공
 rentcode number(4) constraint pay_rentcode_fk references rent(rentcode) on delete cascade --외래키
 );
+desc pay;
+drop table pay;
 
-
+insert into pay_view values(pay_paycode_seq.nextval,100, 1, 1);
 select paymoney
 from pay
 where paymoney =( select rentperiod*pay 
