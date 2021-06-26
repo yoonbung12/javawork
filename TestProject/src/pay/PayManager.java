@@ -55,8 +55,8 @@ public class PayManager {
 				e.printStackTrace();
 			}
 		}
-		
-		//데이터 입력
+		//이게 있을 필요가 있나??
+		//데이터 입력 
 		void inputData() {
 			
 			Connection conn = null;
@@ -106,7 +106,7 @@ public class PayManager {
 									System.out.println("가격을 입력하세요:");
 									int price = sc.nextInt();
 									
-									System.out.println("결과값은:" + rentperiod * price);
+									System.out.println("렌트비는:" + rentperiod * price);
 									
 									System.out.println("지불할금액을 입력하세요");
 									int paymoney = sc.nextInt();
@@ -127,8 +127,8 @@ public class PayManager {
 								}
 							
 					}
-				void rentSucces() {
-					
+				void rentpay2() {
+						
 				}
 				
 		

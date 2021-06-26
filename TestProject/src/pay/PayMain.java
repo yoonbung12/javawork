@@ -20,7 +20,8 @@ public class PayMain {
 					System.out.println("-------------------------");
 					System.out.println("1. 결제 리스트");
 					System.out.println("2. 결제 정보 입력");
-					System.out.println("3. 지불할 가격 입력");
+					System.out.println("3.결제를 시작하세요");
+					
 					
 					System.out.println("원하시는 기능의 번호를 입력해주세요.");
 					int num = Integer.parseInt(sc.nextLine());
@@ -34,6 +35,7 @@ public class PayMain {
 							break;
 					case 3:
 							manager.rentPay();
+							
 							break;
 							
 					case 5:

@@ -159,7 +159,7 @@ public class RentDao {
 			
 			
 					try {
-						String sql = "delete from rent where rentcode=?";
+						String sql = "delete from rent where rentcode=?"; //pay
 						pstmt = conn.prepareStatement(sql);
 						pstmt.setInt(1, rentcode);
 						
@@ -182,6 +182,7 @@ public class RentDao {
 					}
 					return result;
 		}
+		//렌트 가격 지불
 		int PayTest(Connection conn,int paymoney ,int rentperiod,int pay ) { //렌트에 페이 있는것사용? 
 			int result = 0;
 			
@@ -219,6 +220,6 @@ public class RentDao {
 		}
 		//int PayTest2(Connection conn, int paymoney, int rentperiod,int pay) {
 			
-		}
+		
 		
 }
