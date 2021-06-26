@@ -234,13 +234,7 @@ increment by 1
 start with 1;
 --삭제 할때
 drop sequence pay_paycode_seq;
---pay view
-create or replace view pay_view
-as
-select *
-from pay
-order by paycode
-;
+
 select * from pay_view order by paycode;
 
 --sequence
@@ -259,6 +253,37 @@ order by rentcode
 
 select * from rent_view
 order by rentcode;
+
+select * from pay;
+select * from rent;
+
+-- pay 테이블 -> rent 테이블 pay 컬럼으로 값을 저장 
+--rent 테이블에서 pay의 값을 update -> 값을 입력 수정 되게?  ==> pay 테이블은 참조만 값이 들어있기 때문에 
+drop table pay;
+create table pay(
+paycode number(4) constraint pay_paycode_pk primary key,
+paymoney number(8) constraint pay_paymoney_ck check(paymoney= 10000 or paymoney=20000 or paymoney=30000), --결제 금액을 제약 조건으로 (소,중,대)
+carsize varchar2(10) not null
+--rentcode number(4) constraint pay_rentcode_fk references rent(rentcode) on delete cascade --외래키
+);
+select * from pay;
+
+insert into pay values(pay_paycode_seq.nextval, 10000,'small');
+insert into pay values(pay_paycode_seq.nextval, 20000,'middle');
+insert into pay values(pay_paycode_seq.nextval, 30000,'big');
+
+--pay view
+create or replace view pay_view
+as
+select *
+from pay
+order by paycode
+;
+
+
+
+
+
 
 --커밋
 commit;

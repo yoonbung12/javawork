@@ -4,14 +4,12 @@ public class Pay {
 	
 		private int paycode;
 		private int paymoney;
-		private String paysucc;
-		private int rentcode;
+		private String carsize;
 		
-		public Pay(int paycode, int paymoney, String paysucc, int rentcode) {
+		public Pay(int paycode, int paymoney, String carsize) {
 			this.paycode = paycode;
 			this.paymoney = paymoney;
-			this.paysucc = paysucc;
-			this.rentcode = rentcode;
+			this.carsize = carsize;
 		}
 
 		public int getPaycode() {
@@ -30,26 +28,18 @@ public class Pay {
 			this.paymoney = paymoney;
 		}
 
-		public String getPaysucc() {
-			return paysucc;
+		public String getCarsize() {
+			return carsize;
 		}
 
-		public void setPaysucc(String paysucc) {
-			this.paysucc = paysucc;
-		}
-
-		public int getRentcode() {
-			return rentcode;
-		}
-
-		public void setRentcode(int rentcode) {
-			this.rentcode = rentcode;
+		public void setCarsize(String carsize) {
+			this.carsize = carsize;
 		}
 
 		@Override
 		public String toString() {
-			return "결제 [페이코드=" + paycode + ", 결제금액=" + paymoney + ", 결제성공=" + paysucc + ", 렌트코드="
-					+ rentcode + "]";
+			return "Pay [paycode=" + paycode + ", paymoney=" + paymoney + ", carsize=" + carsize + "]";
 		}
-		
+
+				
 }

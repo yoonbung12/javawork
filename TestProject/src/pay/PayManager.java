@@ -113,6 +113,7 @@ public class PayManager {
 									
 									System.out.println("결과값은:" + rentperiod * price);
 									if(((rentperiod*price) - paymoney)== 0) {
+						
 										System.out.println("결제를 하겠습니다");
 									} else {
 										System.out.println("결제를 하지 못하였습니다. 다시 결제하세요.");
@@ -127,8 +128,14 @@ public class PayManager {
 								}
 							
 					}
-				void rentpay2() {
+				void inputData2() {
 						
+					Connection conn = null;
+					
+					String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
+					String user = "hr";
+					
+					
 				}
 				
 		

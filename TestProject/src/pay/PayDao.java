@@ -38,8 +38,7 @@ public class PayDao {
 				while(rs.next()) {
 					Pay p = new Pay(rs.getInt(1),
 							rs.getInt(2),
-							rs.getString(3),
-							rs.getInt(4));
+							rs.getString(3));
 					
 					list.add(p);
 				}
@@ -79,11 +78,11 @@ public class PayDao {
 		
 			
 						try {
-							String sql = "insert into pay_view values(pay_paycode_SEQ.nextval,?,?,?) ";
+							String sql = "insert into pay values(pay_paycode_seq.nextval,?,?";
 							pstmt = conn.prepareStatement(sql);
 							pstmt.setInt(1, pay.getPaymoney());
-							pstmt.setString(2,  pay.getPaysucc());
-							pstmt.setInt(3, pay.getRentcode());
+							pstmt.setString(2,  pay.getPaysucc ());
+							
 							
 							result = pstmt.executeUpdate();
 						} catch (SQLException e) {
