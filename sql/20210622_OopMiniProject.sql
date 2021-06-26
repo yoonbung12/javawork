@@ -5,6 +5,7 @@ drop table member;
 drop table car;
 drop table manager;
 drop  table carprice;
+drop table pay;
 
 --데이터 삭제
 delete from member;
@@ -20,8 +21,7 @@ name varchar2(20) not null,
 carreg varchar2(14) constraint member_carrg_uk unique not null,
 email varchar2(40) not null,
 address varchar2(40) not null
-)
-;
+);
 --car 테이블 생성
 create table car(
 carcode number(4) constraint car_carcode_pk primary key,
@@ -60,14 +60,11 @@ membercode number constraint rent_membercode_fk REFERENCES member(membercode) on
 managercode number constraint rent_managercode_fk REFERENCES manager(managercode) on delete cascade
 )
 ;
+insert into rent values(rent_rentcode_seq.nextval, 1000, 2, sysdate+1, 0,0,0);
+--paysucc char(5) check(paysucc in('false', 'true'))
+select r.pay from rent r, pay p where r.pay = p.paymoney(+);
+--rent char(1) constraint car_rent_ck check(rent = '0' or rent = '1')
 
---페이 테이블 생성( 페이 코드만들고, 지불을 어떻게 할것 인지 --20210625
-create table pay (
-paycode number(4) constraint pay_paycode_pk primary key,
-smallpay number(8) not null,
-
-)
-;
 
 insert into rent values(rent_rentcode_seq.nextval,10000,3,sysdate+3,(select carcode from car where carnumber = 1111),(select membercode from member where carreg = 1111),1);
 select * from rent where 
@@ -159,24 +156,24 @@ alter table rent add constraint rent_ccode_fk FOREIGN key (carcode) REFERENCES c
 alter table rent add constraint rent_memcode_fk FOREIGN key (membercode) REFERENCES member(membercode) on delete cascade;
 alter table rent add constraint rent_manacode_fk FOREIGN key (managercode) REFERENCES manager(managercode) on delete cascade;
 
---차 종류별 테이블( 가격)
-create table smallCar (
-sccode number(4) constraint smallcar_sccode_pk primary key,
-sprice number(8) not null
-);
-insert into smallcar values(1, 10000);
-
-create table middleCar (
-mccode number(4) constraint middlecar_mccode_pk primary key,
-mprice number(8) not null
-);
-insert into middlecar values(1,  20000);
-
-create table bigcar (
-bccode number(4) constraint bigcar_bccode_pk primary key,
-bprice number(8) not null
-);
-insert into bigcar values(1, 30000);
+----차 종류별 테이블( 가격)
+--create table smallCar (
+--sccode number(4) constraint smallcar_sccode_pk primary key,
+--sprice number(8) not null
+--);
+--insert into smallcar values(1, 10000);
+--
+--create table middleCar (
+--mccode number(4) constraint middlecar_mccode_pk primary key,
+--mprice number(8) not null
+--);
+--insert into middlecar values(1,  20000);
+--
+--create table bigcar (
+--bccode number(4) constraint bigcar_bccode_pk primary key,
+--bprice number(8) not null
+--);
+--insert into bigcar values(1, 30000);
 
 --통합된 걸로 하나 (차가격)
 create table carprice(
@@ -198,49 +195,57 @@ select * from rent;
 
 
 
---결제 테이블(결제코드, 결제 금액)
+--결제 테이블(결제코드, 결제 금액)-------------------------------------------------------
 create table pay(
 paycode number(4) constraint pay_paycode_pk primary key,
-pay number(8) not null --가진돈이라고 표현을 해야하나,,
+paymoney number(8),
+paysucc char(1)constraint  pay_paysucc_ck check(paysucc ='0' or paysucc='1'), --결제 실패 성공
+rentcode number(4) constraint pay_rentcode_fk references rent(rentcode) on delete cascade --외래키
 );
 
+
+select paymoney
+from pay
+where paymoney =( select rentperiod*pay 
+                from rent);
+                
+                
+desc car;
+desc rent;
 desc pay;
 select * from pay;
 --insert
-insert into pay values( pay_paycode_seq.nextVal, 10000);
-insert into pay values( pay_paycode_seq.nextVal, 20000);
+insert into pay values( pay_paycode_seq.nextVal, 20000, '1', 0);
+insert into pay values( pay_paycode_seq.nextVal, 30000);
 
 
---결제 조인
-select p.pay
-from pay p, carprice cp
-where p.pay(+) = cp.price
+--결제 조인(rent, carprice, pay)
+select r.pay,p.pay,cp.price
+from rent r, carprice cp, pay p
+where r.pay = p.pay         --페이랑 렌트엮고 --차가격이랑 렌트엮고
+and cp.price = r.pay
 ;
-
---결제 서브쿼리(차가격이랑 결제)
-select pay
-from pay 
-where pay = ( select price
-                from carprice
-                where price 
-            
-);
 
 --pay sequence
 create sequence pay_paycode_seq
 increment by 1
 start with 1;
-
-
-
-
+--삭제 할때
+drop sequence pay_paycode_seq;
+--pay view
+create or replace view pay_view
+as
+select *
+from pay
+order by paycode
+;
+select * from pay_view order by paycode;
 
 --sequence
 CREATE SEQUENCE member_membercode_SEQ
 INCREMENT BY 1
 START WITH 1;
---pay view
-create or 
+
 
 --view
 create or replace view rent_view
