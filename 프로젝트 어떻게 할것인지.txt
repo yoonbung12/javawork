@@ -1,0 +1,14 @@
+6/28
+1.Html5,css3,javaScripy 끝나면 키오스크 만들것(화면설계)
+2.결제 테이블 하나 만드는걸로( 발표후 수정하고 추가할것들)
+--추가할것
+-> rent클래스 -> dao -> daoManager
+->account(결제) -> memberDao ->
+-> memberDao,ManagerDao-> 클래스분리
+-> 인터페이스 , 상속의 사용?? -> 오버로딩,오버라이딩 사용해보기
+->static : db연결, 해제 하나의 클래스로 사용
+->관리자 db를 새로 하나 만들어서 manager 클래스와 연동시킬 수 있도록 수정
+--수정
+->memberDao,ManagerDao -> 클래스 분리
+--보완
+->UI쪽 실행흐름 확인 후 리팩토링
