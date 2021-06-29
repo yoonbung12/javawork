@@ -1,0 +1,5 @@
+ /* 외부 스타일시트 코드 작성하기 */
+h1 {
+    color: white;
+    background: blue;
+}
