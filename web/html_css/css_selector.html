@@ -12,6 +12,13 @@
             padding: 0;
         }
 
+        h1::selection. p::selection {
+
+        }
+
+        hr {
+            margin: 50px 0;
+        }
 
         /* 전체 선택자 */
         * {
@@ -150,20 +157,117 @@
         }
 
         input:enabled {
-            width : 200px;
+            /* width : 200px;
             height: 35px;
-            font-size: 1.2m;    /*120%  */
+            font-size: 1.2m;    120%  */
         }
 
         input:focus {
-            border: 5px solid red;
+            border: 5px solid red ;
         }
 
+        div.box {
+            width: 500px;
+            height: 150px;
+            border: 1px solid black;
+        }
 
+        #chk {
+            
+        }
+
+        input[type=checkbox]:checked {
+            width : 30px;
+            height: 30px;
+        }
+
+        input[type=checkbox]:checked+div{
+            /* background-color: blanchedalmond; */
+            /* height: 0px;
+            /* overflow: hidden; */  /*이거 말고도 아래방식도있음 */
+            display: none;
+        }
+        label {
+            font-size: 200%;
+            font-weight: bold;
+        }
+
+        ol{
+            overflow: hidden;
+            /* list-style: none; */
+        }
+
+        ol>li {
+            float : left;
+            /* width : 100px; */
+            padding: 5px 30px;
+        }
+
+        ol>li:nth-child(2n) {
+            background-color: chartreuse;
+        }
+
+        ol>li:nth-child(2n+1) {
+            background-color: blue;
+        }
+
+        ol>li:first-child{
+            border-radius: 10px 0 0 10px;
+        } 
+        ol>li:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+
+        ol>li:hover {
+            background-color: darkcyan;
+            color: white;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: mediumvioletred;
+        }
+
+        a:visited {
+            color: mediumvioletred;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
     </head>
 
     <body>
+
+        <ol>
+            <li><a href="http://www.naver.com">naver</a></li>
+            <li>two</li>
+            <li>three</li>
+            <li>four</li>
+            <li>five</li>
+            <li>six</li>
+            <li>seven</li>
+        </ol>
+
+
+
+
+        <hr>
+
+        <label for="chk"> check</label>
+        <input id="chk" type="checkbox">
+        <div class="box">
+            <h1>개인정보보호정책</h1>
+            <p>
+                개인 정보를 활용합니다.
+            </p>
+        </div>
+
+
+
+        <hr>
 
         <input>
 
