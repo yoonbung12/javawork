@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pratice</title>
+        
+        <style>
+            /* 스타일 시트의 사용 */
+            * {
+                 /* color: red; */
+             }
+
+             h1 {
+                 /* color: blue; */
+             }
+             p {
+                 color: black;
+             }
+             /* body Tag, p Tag, h1 Tag, h2 Tag..... */
+             body, p, h1{
+                 margin: 0;
+                 padding: 30;
+                 
+             }
+
+             #header {
+                 /* width: 800px;
+                 margin: 0 auto;
+                 background: red; */
+             }
+
+             #wrap {
+                 width: 800px;
+                 margin: 0 auto;
+
+             }
+
+             #aside {
+                 width: 200px; background: blue;
+             }
+             #Content {
+                 width: 600px; background: green;
+             }
+             .select {
+                color: red;
+             }
+             .item {
+                color: red;
+                /* background: black; */
+             }
+             .header {
+                 background: blue;
+             }
+             .select {
+                 color: blue
+             }
+             input[type=text] {
+                 
+                 background: black;
+             }
+             input[type="password"] {
+                 background: red;
+             }
+             img[src$=png] {
+                 border: 3px solid red;
+             }
+             img[src$=gif] {
+                 border: 3px solid blue;
+             }
+             img[src$=jpg] {
+                 border: 3px solid black;
+             }
+
+             #header h1 {
+                 /* color: red; */
+             }
+             #section h1 {
+                 color: orange;
+             }
+             #section p {
+                 color: blue;
+             }
+             #bald h1, h2 {
+                 /* color: red; */
+             }
+             #bald h1, #bald h2 {
+                 color: red;
+             }
+             /* 자손 선택자  */
+             #header>h1 {
+                 color: red;
+             }
+             #section>h1 {
+                 color: orange;
+             }
+             h1+h2 {
+                 /* color: orange; */
+             }
+             h1~h2 {
+                 color: orange;
+             }
+             h1:hover { /*커서 올린곳만 변함 */
+                 /* color: red; */
+             }
+             h1:active {
+                 color: red;
+             }
+             /* 상태 선택자 */
+             input:enabled {
+                 background-color: blue;
+             }
+             input:disabled {
+                 background-color: black;
+             }
+             input:focus {
+                 background-color:orange;
+             }
+             /* checkbox의 태그가 체크되었을때 속성적용*/
+             input[type=checkbox]:checked+div {
+                 height: 0px;
+             }
+             div {
+                 overflow:hidden;
+                 width: 650px;
+                 height: 300px;
+
+             }
+             ul {
+                 overflow:hidden;
+             }
+             li{
+                 list-style: none;
+                 float:left;
+                 padding: 15px;
+                 color: black;
+             }
+             li:first-child {
+                 border-radius: 10px 0 0 10px;
+             }
+             li:last-child {
+                 border-radius: 0 10px 10px 0;
+             }
+             li:nth-child(2n) {
+                 background-color: #ff0003;
+             }
+             li:nth-child(2n+1) {
+                 background-color: #800000;
+             }
+             p::first-letter {
+                 font-size: 3em;
+             }
+             p::first-line {
+                 color:blue;
+             }
+
+             p::selection {
+                 background: red;
+             }
+             a {
+                 text-decoration: none;
+             }
+             a:visited {
+                 color: yellow;
+             }
+
+
+
+        </style>
+
+
+    </head>
+
+
+    <body>
+
+
+        <h1><a>Nothing</a></h1>
+        <h1><a href="http://www.naver.com">Naver</a></h1>
+        <h1><a href="http://www.daum.net">Daum</a></h1>
+
+
+
+        <hr>
+        <h1>Lorem ipsum dolor sit amet</h1>
+        <p>Lorem ipsum dolor sit amet</p>
+        <p>Aenean ac erat et massa vehicula</p>
+
+        <hr>
+        <ul>
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+            <li>four</li>
+            <li>five</li>
+            <li>six</li>
+            <li>fseven</li>
+        </ul>
+
+
+        <hr>
+        <input type="checkbox">
+        <div>
+            <h1>Coke is good</h1>
+            <p>i can drink a cup of coke</p>
+        </div>
+
+
+
+        <hr>
+        <h2>Enabled</h2>
+        <input>
+        <h2>Disabled</h2>
+        <input disabled="disabled">
+
+        <hr>
+        <h1>User Action Selector</h1>
+
+        <hr>
+        <h1>Header - 1</h1>
+        <h2>Header - 2</h2>
+        <h2>Header - 2</h2>
+        <h2>Header - 2</h2>
+        <h2>Header - 2</h2>
+        <h2>Header - 2</h2>
+
+
+        <hr>
+        <div id="header">
+            <h1 class="title">Lorem ipsum</h1>
+            <div id="nav">
+                <h1 class="title">Navigation</h1>
+            </div>
+        </div>
+        <div id="section">
+            <h1 class="title">Lorem ipsum</h1>
+            <p>Lorem ipsum dolor sit ame,</p>
+        </div>
+
+
+        
+        
+        <hr>
+        <div id="bald">
+            <h1 class="title">Coke is Good</h1>
+            <div id="nav">
+                <h2>Navigation</h2>
+            </div>
+        </div>
+        <div id="section">
+            <h2 class="title">Coke is Good</h2>
+            <p>Coke is good drink,so i think so good to drink coke </p>
+        </div>
+
+        <hr>
+        <div id="header">
+            <h1 class="title">Lorem ipsum </h1>
+            <div id="nav">
+                <h1>Navigation</h1>
+            </div>
+        </div>
+        <div id="section">
+            <h1 class="title">starbucks</h1>
+            <p>Starbucks are most popular in the world.
+                so i think starbucks one of the best of coffeFrench
+            </p>
+        </div>
+
+        <hr>
+
+        <img src="a.png" width="200" height="250">
+        <img src="b.gif" width="200" height="250">
+        <img src="c.jpg" width="200" height="250">
+
+
+        <hr>
+
+        <form>
+            <input type="text">
+            <input type="password">
+        </form>
+
+        <hr>
+        <h1 class="item header">Lorem ipsum</h1>
+
+        <hr>
+        <ul>
+            <li class="select">사과</li>
+            <li>바나나</li>
+            <li class="select">자몽</li>
+            <li>자두</li>
+        </ul>
+
+
+        <hr>
+        <div id="header">
+                <h1>Header</h1>
+        </div>
+        <div id="wrap">
+            <div id="aside">
+                <h1>Aside</h1>
+            </div>
+            <div id="Content">
+                <h1>Content</h1>
+            </div>
+        </div>
+
+        <hr>
+        <h1>Star Link</h1>
+        <p>Is this starLink possible?</p>
+
+    </body>
+</html>
