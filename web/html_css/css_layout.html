@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       * {
+           margin:0;
+           padding:0;
+       }
+       
+       .border{
+            border: 1px solid #AAA;
+            text-align: center;
+       }
+       body {
+           padding-top: 30px;
+       }
+
+       .text {
+            text-align: center;
+       }
+       .font_size_200p {
+            font-size: 200%;
+       }
+       .div_aligin_center {
+           margin: 0 auto;
+       }
+
+       header {
+            width: 798px;
+            height: 80px;
+            border: 1px solid #AAA;
+            text-align: center;
+            line-height: 80px;
+            font-size: 200%;
+            margin-top: 30px;
+        }
+        nav {
+            width: 798px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        section {
+            width: 598px;
+            height: 400px;
+            float: left;
+        }
+        aside {
+            width: 198px;
+            height: 200px;
+
+            float: left;
+        }
+        #wrap {
+            width: 800px;
+            overflow: hidden;
+        }
+        footer {
+            width: 798px;
+            height: 100px;
+            line-height: 100px;
+        }
+        
+        
+
+    </style>
+
+</head>
+<body>
+    <header class="border text_center font_size_200p div_aligin_center">header</header>
+    <nav class="border text_center font_size_200p div_aligin_center">메뉴 영역</nav>
+    <div id="wrap" class="div_aligin_center">
+        <section class="border text_center font_size_200p">
+            <article>내용</article>
+        </section>
+        <aside class="border text_center font_size_200p">
+            서브 메뉴 영역
+        </aside>
+    </div>
+    <footer class="border text_center font_size_200p div_aligin_center">footer</footer>
+
+</body>
+</html>
