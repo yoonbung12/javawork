@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding: 70px;
+        }
+
+
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: 10px solid #000;
+            padding: 20px; /* 이거 늘리면 넓이도 늘어난다는것*/
+            padding-left: 50px;
+            /* margin을 이용하면 특정한곳까지 이동 가능!!! */
+            margin-top:50px;
+            margin-left:300px;
+        }
+
+        #box2 {
+            width: 200px;
+            height: 100px;
+
+            border: 5px solid #ddd;
+
+            border-radius: 50px 10px;
+        }
+        
+        #circle {
+            width:200px;
+            height:200px;
+            border: 1px solid #ddd;
+            margin-bottom: 50px;
+
+            border-radius: 50%;
+
+            background-image: url(../images/미니언즈.jpg);
+            background-size: 100%;
+        }
+        body {
+            padding: 50px;
+        }
+
+        
+
+        #box3 {
+            /* display: none; */
+            display:inline;
+            background-color: blanchedalmond;
+
+
+        }
+        a{
+            background-color: chartreuse;
+            display: inline-block;
+
+            width: 300px;
+            height: 300px;
+
+            background-image: url(../images/스따링크.jpg);
+            background-size: contain;
+        }
+        
+        body {
+            background-image:
+            url(../images/미니언즈.jpg),
+            url(../images/미니언즈2.jpg);
+            background-size: 200px 150px;
+            /* background-size: 100% 150px; */
+            /*                                  width height */
+            /* background-size: 100%; */
+            /* background-size: contain; */
+
+
+            /* background-repeat: no-repeat; */
+            /* background-repeat: repeat-x; */
+            /* background-repeat: repeat-y; */
+            background-repeat: no-repeat;
+
+            background-attachment: fixed; /* 화면에 붙어서 스크롤 내리면 따라감*/
+        
+            background-position: bottom right;
+        }
+
+
+
+    </style>
+    </head>
+<body>
+
+
+
+
+
+
+    <hr>
+    <span>text s-1</span>
+    <div id="box3">text div</div>
+    <a href="#"></a>
+    <span>text s-2</span>
+
+    <hr>
+
+    <div id="circle"></div>
+
+    <div id="box2"></div>
+
+    
+    <div id="box1">text</div>
+    <div id="box1">text</div>
+
+
+
+</body>
+
+</html>
