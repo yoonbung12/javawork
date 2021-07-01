@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #total_wrap { /*테두리와 라인 높이 */
+            border: 1px solid red;
+            line-height: 40px;
+        }
+        /* 첫 블록 */
+        #header {
+            width: 800px;
+            height: 120px;
+            text-align: left;
+        }
+
+        /* 네비게이션*/
+        nav {
+            width: 800px;
+            height: 50px;
+            line-height: 50px;
+            border-top: 1px solid red;
+            border-bottom: 1px solid red;
+        }
+        nav> ul {
+            margin-left: 10px;
+        }
+        nav li {
+            float: left;
+            list-style: none;
+            width: 70px;
+        }
+        
+        
+        /* 탐색 스타일 설정 */
+        #search {
+            float:right;
+            margin-right: 10px;
+        }
+
+        #search> input {
+            margin: 0;
+            border:1px solid blue;
+        }
+        
+        #search > input[type=text] {
+            width: 140px;
+            height: 20px;
+            margin-right: 0;
+            border-radius: 10px 0 0 10px;
+        }
+        #search > input[type=submit] {
+            width: 60px;
+            height: 20px;
+            margin-right: 0;
+            background-color: #eee;
+        }
+
+        /* section 스타일 설정 */
+        section {
+            width: 600px;
+            float: left;
+        }
+
+        /* 아티클 스타일 설정 */
+        article {
+            border-bottom: 1px solid #aaa;
+            padding-bottom: 10px;
+        }
+
+        article > h1 {
+            margin: 30px 0 0 10px;
+            font-size: 24px;
+        }
+        article > p {
+            margin: 10px 10px;
+        }
+        article > img {
+            margin: 10px 10px;
+        }
+        /* aside 스타일 설정 */
+        aside {
+            width: 200px;
+            float:left;
+        }
+        aside > h1 {
+            font-size: 18px;
+            margin: 30px 5px 5px 0;
+
+        }
+
+        aside li {
+            list-style: none;
+            margin: 5px 10px;
+        }
+        /* footer스타일 설정 */
+        footer {
+            width: 800px;
+            clear: both;
+            color: blue;
+            height: 30px;
+            line-height:  30px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 전체를 감싸는 블록 -->
+    <div id="total_wrap">
+        
+        <!-- 1번째 블록 -->
+        <header>
+            <h1>HTML5 Example Preview</h1>
+            <p>비트캠프 아카데미</p>
+        </header>
+
+        <!-- 네비게이션 (2번째 블록) -->
+        <nav>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+            </ul>
+
+            <!--검색 창 -->
+            <!-- sumbit 데이터 전송 버튼 -->
+            <div id="search">
+                <input type="text">
+                <input type="submit">
+            </div>
+        </nav>
+
+        <!-- 컨텐츠 영역 -->
+        <div>
+            <!-- section영역 -->
+            <section>
+                <!-- article영역 -->
+                <article>
+                    <h1>HTML5 개요와 활용</h1>
+                    <p>2021년7월1일</p>
+                    <img src="http://placehod.it/430x280">
+                    <p>나는 잘 모르겠으나 코카콜라만큼 위대한 음료수는 존재하지 않는다.</p>
+                </article>
+
+                <hr>
+                
+                <article>
+                    <h1>Coke 의 영향력</h1>
+                    <p>2021년 7월</p>
+                    <img src="http:placehod.it/430x280">
+                    <p>다시 한번 코카콜라가 몸에 좋지 않다는 것을 알지만 나한테 있어서 최고의 음료수다</p>
+                    <p>마무리를 짓도록 하겠다.</p>
+                </article>
+            </section>
+
+            <!-- aside 영역 -->
+            <aside>
+                <h4>카테고리</h4>
+                <ul>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                </ul>
+                
+                <h4>최근글</h4>
+                <ul>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                </ul>
+            </aside>
+        </div>
+        <!-- 컨텐츠 영역 마무리 -->
+        <footer>
+            Created By Byeongwoo
+        </footer>
+    </div>
+    
+</body>
+</html>
