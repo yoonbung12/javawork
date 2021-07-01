@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        div.box {
+            width:100px;
+            height:100px;
+
+            position: absolute;
+        }
+        #b1 {
+            background-color: red;
+            left: 50px;
+            top: 50px;
+            z-index: 1000;
+        }
+        #b2 {
+            background-color: green;
+            left:100px;
+            top:100px;
+            z-index: 999;
+        }
+        #b3 {
+            background-color: blue;
+            left:150px;
+            top:150px;
+            /* z-index: 1000; */
+        }
+
+        header {
+            font-size: 2.0em;
+            border: 1px solid #ddd;
+        }
+
+        footer {
+            border: 1px solid #ddd;
+        }
+
+        #wrap {
+            height: 100px;
+            width: 500px;
+            border: 1px solid #ddd;
+            overflow:auto;
+            
+            position: relative;
+            
+            /* overflow: auto; */
+            overflow-y: auto;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    
+
+
+    <header>헤더영역입니다.</header>
+
+    <div id="wrap">
+
+    <div id="b1" class="box"></div>
+    <div id="b2" class="box"></div>
+    <div id="b3" class="box"></div>
+
+    </div>
+
+    <footer>
+        푸터 영역입니다.
+    </footer>
+</body>
+</html>
