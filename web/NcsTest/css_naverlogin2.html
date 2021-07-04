@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="naverlogin2.css">
+</head>
+<body>
+    <!-- 헤더 시작-->
+    <header>
+        <h1>
+            <img src="../images/네이버로고2.png">
+        </h1>
+    </header>
+    <!-- 헤더 끝 -->
+
+    <!-- contetnt  시작 -->
+    <div class="content">
+        <div class="join_group">
+            <!-- 아이디 입력 -->
+            <h4 class="join_title">아아디</h4>
+            <dvi class="content_input">
+                <input type="text">
+                <span>@naver.com</span>
+            </dvi>
+            <!-- 비밀번호 입력 -->
+            <h4 class="join_title">비밀번호</h4>
+            <div class="content_input">
+                <input type="text">
+            </div>
+
+            <!-- 비밀번호 재확인 -->
+            <h4 class="join_title">비밀번호 재확인</h4>
+            <div class="content_input">
+                <input type="text">
+            </div>
+        </div>
+        <div class="row_group">
+            <!-- 이름 -->
+            <h3 class="join_title">이름</h3>
+            <div class="content_input">
+                <input type="text">
+            </div>
+
+            <!-- 생년,월,일 -->
+            <div class="join_birth">
+                <h4 class="join_title">생년월일</h4>
+                <input type="text" value="(4자리)년">
+                
+                <!-- 월 고르기(select 사용) -->
+                <select>
+                    <option value="1" selected>월</option>
+                    <option value="2">1</option>
+                </select>
+                <input class="day" type="text" value="일">
+            </div>
+
+            <!-- 성별 고르기 -->
+            <h4 class="join_title">성별</h4>
+            <div class="gender">
+                <!-- select 사용 -->
+                <select>
+                    <option value="성별" selected>성별</option>
+                    <option value="남성">남자</option>
+                    <option value="여성">여성</option>
+                </select>
+
+                <!-- 본인 이메일 확인 -->
+                <h4 class="join_title">본인 확인 이메일</h4>
+                <div class="content_input">
+                    <input type="text" value="입력">
+                </div>
+
+                <!-- 휴대폰전화번호 -->
+                <div class="cellphone_join_group">
+                    <h4 class="join_title">휴대전화번호</h4>
+                    <div class="country">
+                        <!-- 나라 선택(select) -->
+                        <select>
+                            <option value="82">대한민국 +82</option>
+                        </select>
+
+                    </div>
+                    <div id="phonenumber">
+                        <div>
+
+                        </div>
+                        <button>인증번호 받기</button>
+                    </div> 
+                    <!-- 인증번호 받기 -->  
+                    <div class="code_number">
+                        <input type="text" value="인증번호 입력하시오.">
+                    </div>
+                </div>
+                <!-- 가입하기 버튼 -->
+                <button class="join_btn">가입하기</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- content 끝 -->
+
+    <!-- footer 시작 -->
+    <footer>
+        <ul>
+            <li>이용약관</li>
+            <li>개인정보처리방침</li>
+            <li>책임의 한계와 법적고지</li>
+            <li>회원정보</li>
+            <li>고객센터</li>
+        </ul>
+        <!-- 바닥글(그림) -->
+        <div class="address">
+            <img src="../images/네이버 로고3(바닥글).png">
+            naver Copyright NAVER Crop.All Rights Reserved
+        </div>
+    </footer>
+    <!-- footer 끝 -->
+</body>
+</html>
