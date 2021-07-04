@@ -1,10 +1,10 @@
-@charset "utf-8"
+@charset "utf-8";
 
 * {
     padding: 0;
     margin:0;
     font-family: "돋움체",Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 body {
@@ -12,164 +12,146 @@ body {
 }
 /* header영역 */
 header{
-    width: 780px;
-    height: 40px;
-    margin: 0 auto;
-    padding: 40px 0 30px;
-}
-
-header>h1 {
+    width: 760px;
     height: 50px;
+    margin: 5px auto;
+    padding: 60px 0 30px;
 }
-header>h1>img {
-    width: 260px;
-    margin: 0 248px;
+body {
+    background-color: #eee;
 }
-/* header End  */
+/* header시작 */
+header{
+    height: 44px;
+}
+header>h1 {
+    width:240px;
+    margin: 0 230px;
+}
 
- /* content */
- .content {
-     padding: 30px;
-     width: 400px;
-     margin: 0 auto;
- }
- .join_title {
-     margin: 17px 0 6px;
-     font-size: 15px;
- }
- .join_title>span {
-     color: #8e8e8e;
-     font-size: 10px;
- }
- span{
-     font-size: 15px;
-     /* margin-bottom: 20px auto;  */
- }
- .content_input {
-     background-color: #fff;
-     width: 390px;
-     height: 20px;
-     border: 1px solid white;
-     padding: 8px 15px 8px 14px;
- }
- .content_input>input {
-     width: 350px;
-     height: 22px;
-     padding: 0 20px 0 0;
-     border: none;
- }
- .content_input>span {
-     color: #8e8e8ee7;
-     float:right;
-     line-height: 20px;
-     font-size:  15px;
- }
- .join_birth> input {
-     width: 110px;
-     height: 20px;
-     border: 1px solid rgba(221, 221, 221, 0.925);
-     padding: 10px 12px;
-     margin-right: 10px;
-     font-size:  16px;
-     color: #AAA;
- }
- .join_birth> select {
-     width: 80px;
-     height: 38px;
-     border: 1px solid #eee;
-     margin-right:  3px;
-     font-size: 13px;
-     color: #aaa;
- }
- .day {
-     width: 60px;
-     height: 30px;
-     margin-left: 10px;
- }
- .gender {
-     width: 420px;
-     height: 25px;
-     background-color: white;
-     padding: 8px 5px 8px 10px; 
- }
- select {
-     width: 420px;
-     height: 25px;
-     border: none;
-     margin-right: 3px;
-     font-size: 16px;
-     color: black;
- }
- .cellphone_join_group> div {
-     width: 400px;
-     height: 26px;
-     background-color: white;
-     margin-bottom: 12px;
-     padding: 8px 5px 8px 10px;
- }
- #phonenumber{
-     width: 430px;
-     height: 30px;
-     background-color: #eee;
-     margin-bottom:  10px;
-     padding: 0;
- }
- #phonenumber> div {
-     width: 280px;
-     height: 8px;
-     background-color: white;
-     padding: 8px 5px 8px 10px;
-     float: left;
- }
- #phonenumber > button {
-     float: right;
-     background-color: #03c75be7;
-     height: 20px;
-     width: 110px;
-     border: none;
-     color: white;
-     font-size: 12px;
- }
- .code_number >input{
-    background-color:white;
-    width:400px;
-    height: 20px;
+.content{
+    width: 400px;
+    margin: 0 auto;
+}
+
+.join_title{
+    margin: 16px 0 7px;
+}
+.join_title>span {
+    color: #8e8e8eea;
+    font-size: 12px;
+}
+.content_input {
+    background-color: white;
+    width:420px;
+    height: 25px;
+    border: 1px solid white;
+    padding: 8px 16px 8px 12px;
+}
+.content_input> input {
+    width: 240px;
+    height: 25px;
+    padding: 0 20px 0 0;
     border: none;
-    font-size: 14px;
- }
- .join_btn {
-     background-color: #03c75be7;
-     width: 400px;
-     height: 53px;
-     border: none;
-     color: white;
-     font-size: 15px;
- }
- footer{
-     width: 750px;
-     height: 30px;
-     margin: 0 auto;
-     padding: 25px 0 12px;
- }
- footer img {
-     height: 10px;
- }
- ul {
-     width: 750px;
-     height: 15px;
-     margin: 0 auto;
- }
- ul:first-child {
-     margin-left: 60px;
+}
+.content_input>span {
+    color: #8e8e8eea;
+    float: right;
+    line-height: 15px;
+    font-size: 15px;
+}
+.join_birth> input{
+    width: 160px;
+    height: 25px;
+    border: 1px solid rgb(221, 221, 221);
+    margin-right: 7px;
+    font-size: 15px;
+    color:rgba(173, 173, 173, 0.938);
+}
+.join_birth> select{
+    width: 110px;
+    height: 30px;
+    border:1px solid white;
+    margin-right: 5px;
+    font-size: 15px;
+    color: gray;
+}
+.gender {
+    width: 400px;
+    height: 25px;
+    background-color:  white;
+    padding: 8px 6px 8px 12px;
+}
+select {
+    width: 400px;
+    height: 25px;
+    border: none;
+    margin-right: 4px;
+    font-size: 15px;
+    color: black;
+}
+.cellphone_join_group> div {
+    width: 420px;
+    height: 25px;
+    margin-bottom: 12px;
+    background-color: white;
+    padding: 10px 8px 10px 15px;
+}
+#phonenumber {
+    width: 420px;
+    height: 38px;
+    background-color: white;
+    margin-bottom: 12px;
+    padding:5px;
+}
+#phonenumber>div {
+    width: 280px;
+    height:20px;
+    background-color: white;
+    padding: 10px 6px 10px 12px;
+    float: left;
+}
+#phonenumber>button {
+    float: right;
+    background-color: #03c75bdc;
+    height: 40px;
+    width:100px;
+    border:none;
+    color:#03c75bdc;
+    font-size: 15px;
+}
+.code_number > input{
+    background-color: white;
+    width: 400px;
+    height: 24px;
+    border:none;
+    font-size: 15px;
+}
 
- }
- li {
-     list-style: none;
-     float: left;
-     margin-left: 12px;
-     font-size: 14px;
- }
- .address {
-     padding-left: 150px;
-     padding-top: 12px;
- }
+footer{
+    width: 730px;
+    height: 30px;
+    margin: 0 auto;
+    padding: 25px 0 13px;
+}
+footer img {
+    height: 11px;
+}
+ul {
+    width: 730px;
+    height: 15px;
+    margin:0 auto;
+}
+ul:first-child {
+    margin-left: 30px;
+}
+li {
+    list-style: none;
+    float: left;
+    margin-left: 12px;
+    font-size: 15px;
+}
+.address {
+    padding-left: 140px;
+    padding-top: 12px;
+}
