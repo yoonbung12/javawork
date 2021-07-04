@@ -17,7 +17,7 @@ table, input,
 header, nav, aside, section, article,
 p {
     font-size: 16px;
-    font-family:  '돋움체', Arial, Helvetica, sans-serif
+    font-family:  '돋움체', Arial, Helvetica, sans-serif;
 }
 body {
     background-color: cornsilk;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="KO">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,42 +9,94 @@
 
 </head>
 <body>
-    <!-- 전체 틀-->
+    <!-- 메인 틀-->
     <div id= "main_wrap">
 
-        <!-- header -->
-        <header>
+        <!--로고영역 시작-->
+        <div id="logo_area">
+            <img class="fb_logo" src="../images/facebook.svg"  > <!--height="300" width="300" */-->
+            <p>Facebokk에서 전세계에 있는 친구, 가족,지인들과 함께 이야기를 나눠보세요.</p>
+        </div>
+        <!-- 로고영역 끝 -->
 
-        <!--이미지, 환영문구 -->
-        <img src="../images/facebook.svg" height="300" width="300" > <!--height="300" width="300" */-->
-        <p>Facebokk에서 전세계에 있는 친구, 가족,</p>
-        <p> 지인들과 함께 이야기를 나눠보세요.</p>
-        
-        </header>
-        
-        <!-- 로그인 section 부분 -->
-        <section class="login-input-wrap"> 
-        
-        <div >
-            <input placeholder="Username" type="text">
-        </div>
-        
-        <div>
-            <input placeholder="Password" type="password">
-       
-        </div>
-        
-        <div class="login-button-wrap">
-            <button>로그인</button>
-        </div>
+        <!-- 로그인 section영역 시작-->
+        <section id="login-input-wrap"> 
+            <div id="login_area_in">
+                <input class="Username" type="text" value="이메일 또는 전화번호">
+                <input class="Password" type="password" value="비밀번호">
+                <button class="login_btn">로그인</button>
+                <a href=""> 비밀번호를 잊으셨나요?</a>
+                <button class="create_btn">새 계정 만들기</button>
+            </div>
+            <div class="ad">
+                유명인, 밴드, 비즈니스를 위한 <span>페이지 만들기</span>
+            </div>
         </section>
-        <!-- 로그인 section 부분 끝 -->
+        <!-- 로그인 section영역 부분 끝 -->
 
     </div>
+    <!-- 메인틀 끝 -->
+    
+    <!-- footer 영역 시작 -->
+    <footer>
+        <div>
+            <ul>
+                <li>한국어</li>
+                <li>English(US)</li>
+                <li>Tiếng Việt</li>
+                <li>Bahasa Indonesia</li>
+                <li>ภาษาไทย</li>
+                <li>Español</li>
+                <li>中文(简体)</li>
+                <li>日本語</li>
+                <li>Português (Brasil)</li>
+                <li>Français (France)</li>
+                <li>Deutsch</li>
+                <li></li>
+                <button>+</button>
+            </ul>
+
+        </div>
+        <hr>
+        <div>
+            <ul>
+                <li>가입하기</li>
+                <li>로그인</li>
+                <li>Messenger</li>
+                <li>Facebook Lite</li>
+                <li>Watch</li>
+                <li>사람</li>
+                <li>페이지</li>
+                <li>페이지 카테고리</li>
+                <li>장소</li>
+                <li>게임</li>
+                <li>위치</li>
+                <li>Marketplace</li>
+                <li>Facebook Pay</li>
+                <li>그룹</li>
+                <li>채용 정보</li>
+                <li>Oculus</li>
+                <li>Portal</li>
+                <li>Instagram</li>
+                <li>지역</li>
+                <li>기부캠페인</li>
+                <li>서비스</li>
+                <li>투표 정보 센터</li>
+                <li>정보</li>
+                <li>광고 만들기</li>
+                <li>페이지 만들기</li>
+                <li>개발자</li>
+                <li>채용 정보</li>
+                <li>개인정보처리방침</li>
+                <li>쿠키</li>
+                <li>AdChoices</li>
+                <li>이용 약관</li>
+                <li>고객 센터</li>
+            </ul>
+        </div>
+        <div class="fb">Facebook © 2021</div>
+    </footer>
 
     
-    <div>
-
-    </div>
 </body>
 </html>

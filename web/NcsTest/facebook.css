@@ -6,57 +6,162 @@ font-family: 'Nanum Gothic', sans-serif;
 font-family: 'Sunflower', sans-serif; 
 */
 
+/* 공통으로 사용할 클래스 */
+
 * {
     margin: 0;
     padding: 0;
 }
-html, body, div, h1, h2, h3, h4, h5, h6,
-table, input,
-header, nav, aside, section, article
-{
-    font-size: 16px;
-    font-family: '돋움체', Arial, Helvetica, sans-serif
 
-}
-p {
-    font-size: 20px;
-    font-family: 'Nanum Gothic', sans-serif ;
-}
-body {
-    background-color: #eee;
-}
-/* 전체 요소를 감싸는 블록 */
-#main_wrap {
-    width: 989px;
-    background-color: #fff;
-
-    border: 1px solid #AAA;
-    
-    margin: 10px auto;
-
-    padding: 10px;
-}
-/* header 영역 */
-header {
-    padding: 5px;
-}
-header>p { /* 이거를 굳이 쓸필요가 없는것 같은데...*/
-    font-size: 18px;
-    font-family: 'Nanum Gothic', sans-serif;
-}
-
-
-/* section 부분 */
+html, body,footer,div, li,
 section {
-    height: 20px;
-    border-top: 1px solid #AAA;
-    float:right;
-    margin: 10px;
-    border-radius: 10px 10px 10px 10px;
-
+    font-size: 16px;
+    font-family: '돋움체', Arial, Helvetica, sans-serif;
 }
-.login-input-wrap {
-    padding-bottom: 100px;
+li {
+    margin-left: 20px;
+    list-style: none;
+    font-size: 12px;
+    color: #AAA;
+    font-weight: 500;
+    display:block;
+    float:left;
+    font-family: Arial, Helvetica, sans-serif
+}
+section {
+    float: right;
+    margin-right: 400px;
+    margin-top: 200px;
+}
+/* main 영역 */
+#main_wrap {
+    height: 550px;
+    padding:72px 0 110px 0;
+    background-color: #f6f6f6ce;
+}
+#main_wrap>div {
+    margin:0 ;
+    padding: 20px;
+    width: 900px; 
+}
+/* 이부분 생각좀 해볼 것 */
+ #logo_area {
+    float: left;
+    width: 300px;
+    /* width:300px;
+    margin-left: 350px;
+    padding-left: 300px; */
+}  
+.fb_logo {
+    padding-top: 100px;
+    padding-bottom: 0;
+}
+#logo_area>p {
+    font-size: 30px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+#login_input_wrap {
+    margin-top: 100px;
+    width:400px;
+    height: 500px;
+    float: right;
+}
+#login_area_in {
+    width: 410px;
+    height: 350px;
+    background-color: #eee;
+    box-shadow:2px 2px 2px #ddd;
+    border-radius: 10px;
+}
+
+#login_area_in>input {
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 17px;
+    color: gray;
+    padding: 14px 16px;
+    height:22px;
+    width: 350px;
+}
+
+#login_area_in >button {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+.Username {
+    margin: 30px 8px 10px 15px;
+}
+.Password {
+    margin: 15px;
+    margin-top: 0px;
+}
+.login_btn {
+    height:46px;
+    width: 360px;
+    margin-left: 15px;
+
+    color: white;
+    background-color: #1877f2;
+    border: 1px solid #1877f2;
+    border-radius: 7px;
+}
+#login_area_in>a {
+    display:block;
+    padding: 16px 10px;
+    text-align: center;
+    color: #1877f2;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid #ddd;
+}
+
+#login_area_in>a:hover {
+    text-decoration:underline;
+}
+.create_btn {
+    height: 48px;
+    width: 145px;
+
+    background-color: #42B72A;
+    border: 1px solid #42B72A;
+    border-radius: 5px;
+    color: white;
+
+    margin: 15px 120px;
+}
+.ad {
+    text-align: center;
+    margin:15px 20px;
+    font-size: 13px;
+}
+.ad>span {
+    font-weight: bold;
+    font-size: 13px;
+}
+footer ul {
+    height: 50px;
+    margin-top: 5px;
+    padding: 10px 10px 15px 15px;
+}
+footer li {
+    line-height: 30px;
+}
+footer button {
+    height: 30px;
+    width: 30px;
+    margin-left: 30px;
+    margin-top: 0px;
+    font-size: 20px;
+}
+.fb {
+    margin-top: 15px;
+    padding: 10px 33px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: gray;
 }
  
 
@@ -65,4 +170,4 @@ section {
 
 
 
-/* 공통으로 사용할 클래스 */
+
