@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 회원가입</title>
+    <link rel="stylesheet" href="naverlogin3.css">
+</head>
+<body>
+    <div id="main_wrap">
+        <!-- header시작 -->
+        <header>
+            <h1>
+                <img src="../images/네이버로고2.png" alt="naverLogo" width="240px">
+
+            </h1>
+        </header>
+        <!-- header end -->
+
+        <!-- section 시작 -->
+        <section>
+            <div id="id" class="div_margin">
+                <div id="id2">
+                    <h3>아이디</h3>
+                    <input type="text" name="id">
+                    <span class="emailset">@naver.com</span>
+                </div>
+            </div>
+            <div class="div_margin">
+                <h3>비밀번호</h3>
+                <input type="password" name="pw">
+            </div>
+            <div class="div_margin">
+            <h3>비밀번호 확인</h3>
+            <input type="password" name="pwcheck">
+            </div>
+            <div class="div_margin">
+                <h3>이름</h3>
+                <input type="text" name="name">
+            </div>
+            <div id="birthday" class="div margin">
+                <h3>생년월이</h3>
+                <div>
+                    <input type="text" name="yy" placeholder="년(4자)">
+                    <select>
+                        <option  class="month" value>월</option>
+                    </select>
+                    <input type="text" name="yy" placeholder="일">
+                </div>
+            </div>
+            <div id="sex" class="div_margin">
+                <h3>성별</h3>
+                <select class="selectionbox_set">
+                    <option value="남성">남성</option>
+                    <option value="여성">여성</option>
+                </select>
+            </div>
+            <div id="email" class="div_margin">
+                <h3>본인 확인 메일</h3>
+                <span>(선택)</span>
+                <input type="text" placeholder="선택입력">
+            </div>
+            <div id="phonenumber" class="div_margin">
+                <h3>핸드폰 번호</h3>
+                <select class="selectbox_set">
+                    <option>대한민국 +82</option>
+                </select>
+                    <input id="phone1" type="text" placeholder="전화번호 입력">
+                    <input type="button" value="인증번호 받기">
+                <input type="text" placeholder="인증번호를 입력하세요."> 
+            </div>
+            <div id="joinbtn" class="div_margin">
+                <input type="submit" value="가입하기">
+
+            </div>
+        </section>
+        <!-- section end -->
+
+        <!-- footer 시작 -->
+        <footer>
+            <ul>
+                <li class="border_right"><a href="#"></a>이용약관</li>
+                <li class="border_right"><a href="#"></a><b>개인정보처리방침</b></li>
+                <li class="border_right"><a href="#">책임의 한계와 법적 고지</a></li>
+                <li><a href="#">회원정보 고객센터</a></li>
+            </ul>
+            <div class="div_margin">
+                <img src="../images/네이버 로고3(바닥글).png" alt="naverLogo" width="80px">
+                Copyright<b>NAVER Corp.</b> All Rights Reserved.
+            </div>
+        </footer>
+        <!-- footer end -->
+    </div>
+    
+</body>
+</html>

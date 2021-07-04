@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0;
+}
+html, body, div, h1, h2, h3,h4, span, input, header,
+section,article,footer {
+    font-size: 15px;
+    font-family: Dotum, "돋움",Arial, Helvetica, sans-serif;
+    
+}
+
+body {
+    background-color: #f5f6f7;
+}
+
+#main_wrap {
+    width: 800px;
+    margin: 10px auto;
+    font-size: 15px;
+}
+
+/* header */
+header {
+    text-align: center;
+    margin: 30px;
+    margin-top: 40px;
+}
+
+/* section */
+section {
+    margin: 50px auto;
+    width: 60%;
+}
+/* input 설정 */
+input {
+    width: 400px;
+    height: 30px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+    padding-left:  10px;
+}
+
+/* select */
+select {
+    width: 380px;
+    margin-top: 5px;
+    padding-left: 10px;
+    height: 30px;
+    border: 1px solid #ddd;
+}
+
+/* id */
+#id2 {
+    display:block;
+    position: relative; /*위치 선정*/
+}
+#id2>span {
+    position: absolute;
+    top: 30px;
+    right: 70px;
+    line-height: 18px;
+    color: #8e8e8ee1;
+}
+h3 {
+    font-size: 15px;
+}
+/* 생년월일 */
+#birthday>div {
+    display:flex;
+    width: 410px;
+}
+#birthday>div>input {
+    width: 130px;
+    margin-left: 10px;
+    padding-left: 5px;
+}
+#birthday>div> *+* {
+    margin-left: 10px;
+}
+
+/* email */
+#email h3 {
+    display: inline-block;
+}
+#email span {
+    font-size: 13px;
+    color: rgba(128, 128, 128, 0.973);
+}
+/* phone */
+#phone1 {
+    width: 270px;
+}
+#phonenumber input[type="button"] {
+    width: 125px;
+    padding: 5px;
+    height: 30px;
+    background-color: #03c75a;
+    color: white;
+}
+
+#joinbtn input[type="submit"]{
+    background-color: #03c75a;
+    color: white;
+    width: 412px;
+}
+
+/* footer */
+footer {
+    font-size: 12px;
+    margin: 20px 0;
+    text-align: center;
+}
+footer ul {
+    display: inline;
+    list-style: none;
+}
+footer>ul>li{
+    display: inline;
+}
+footer a {
+    color:black;
+    text-decoration: none;
+}
+.border_right{
+    border-right: 1px solid #aaa;
+    padding-right: 5px;
+}
