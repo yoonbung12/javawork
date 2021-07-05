@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 기본 문법</title>
+    <!-- javascript는 HTML 문서 안에서 실행 합니다.-->
+    <!-- <script> ... </script -->
+    <!-- 자바스크립트는 head 태그 사이에 위치, body 태그 안에도 위치가 가능 -->
+    <!-- HTML의 문서는 1라인부터 아래도 실행된다! 
+        -> 필요에 따라 자바스크립트의 위치를 변경해주어야 한다. -->
+
+    <script>
+        //alert 함수는 사용자에 경고 메시지를 출렵합니다.
+        //alert('Javascript! Hello~!!');
+    </script>
+
+    <!-- 복합 대입 연산자의 사용 -->
+    <!-- <script>
+
+        //브라우저가 html문서의 내용을 모두 로드 했을때 발생하는 이벤트 속성
+        //이벤트 속성에는 핸들러(이벤트 처리 함수)를 등록한다.
+        window.onload= function() { //<!-- on 이 들어가면 이벤트 속성-->
+
+            var list='';
+            // list = list + '<ul>\n';
+            // list = list + '<li>Javascript</li>\n';
+            // list = list + ' <li>JQuery</li>\n';
+            // list = list + '</ul>\n';
+            list +=  '<ul>\n';
+            list +=  '<li>Javascript</li>\n';
+            list +=  ' <li>JQuery</li>\n';
+            list +=  '</ul>\n';
+
+
+            console.log('출력할 html', list); //모든 타입의 데이터를 출력
+        
+            //html 문서의 body 태그에 list가 가지는 문자열을 HTML 태그로 삽입
+            
+            // 문서객체 캐스팅 -> 태그를 자바스크립의 객체로 만드는것******
+            document.body.innerHTML = document.body.innerHTML + list;
+
+            // 문서객체를 캐스팅 -> html 컨트롤
+
+        }  
+
+    </script> -->
+
+
+</head>
+
+<body>
+    <!-- <script>
+        alert('body 태그 안에 스크립트를 작성했습니다.');
+    </script> -->
+    
+</body>
+
+<!-- <script>
+    alert('body 태그 밖에 \n "스크립트"를 작성했습니다.');
+    // \n은 줄 바꿈
+    alert('<a href="https://www.naver.com"> \n naver</a>');
+    
+    alert('<a href="https://www.naver.com">naver</a>');
+    // alert("<a href='https://www.naver.com'>naver</a>");
+    // alert("<a href=\"https://www.naver.com\">naver</a>");
+    // 동적으로 쓸수 있음(서버로 갈수 없음)!!!
+
+</script> -->
+
+
+</html>
+<!-- <script>
+    // javascript에서의 숫자는 정수와 실수를 구분하지 않고 하나의 타입으로 관리
+    // 숫자 -> number 타입 하나로 처리
+    var num = 10;
+    alert(num);
+    num = 10.2;
+    alert(num);
+    alert(5+3 * 2); //3*2 -> 5+ 6
+    alert((5+3)*2);
+    //  ; 문장의 종결을 의미하는 ; 을 생략가능 하지만 붙이자!!!!
+</script> -->
+
+
+<!-- 비교 연산자: > < >= <= == !=   -->
+<!-- 문자열간의 크기 비교가 가능 -> 유니코드 값으로 비교!! -->
+<!-- <script>
+    alert('가'=='가 : ' +('가'=='가'));
+    alert('가'=='하 : ' +('가'=='하'));
+    alert('가'>'가 : '  +('가'>'가'));
+    alert('가'=='하');
+    alert('가' > '하');
+    alert('가' < '하');
+    // true => 1, false => 0
+    alert('true>false:' + (true>false));
+</script> -->
+
+<!-- 논리부정 연산자 -->
+<!-- <script>
+    alert(true);
+    alert(false);
+
+    // 논리부정연산자 : !
+    alert( '!true : ' + !true);
+    alert('!false : ' + !false);
+
+    var num =10;
+    var chk = num>0 && num<100; //0보다 크고 100보다 작은지 체크 논리연산
+
+    if(num>0) {
+        // 조건식의 결과가 true일때 실행하는 블록({})
+        alert('num 변수의 값은 0보다 큰 값 입니다.');
+    }
+    if(chk) {
+        alert('num의 값은 0보다 크고 100보다 작은 숫자입니다.');
+    }
+    
+    
+</script> -->
+
+
+<!-- 변수 할당 -->
+<!-- <script>
+
+    // javascript 의 변수
+    // 변수는 해당 값을 저장하는 것이 아니라 값이 저장된 메모리의 주소값을 저장!!
+
+    // 변수의 선언 : var 키워드 사용
+    // var 식별자;
+    // 변수 pi 선언
+
+    var pi; //변수 pi 생성 -> undefined 값이 초기화
+    alert(pi); //undefined
+    // 변수 pi에 값을 할당(대입)
+
+    pi = 3.141592; //숫자 타입의 값을 저장 -> 정수와 실수를 구분하지 않는다.
+    alert(pi); //3.141592
+
+    // 변수 선언과 할당을 한번에 처리, 초기화
+    var PI = 3.14;
+    alert(PI);
+</script> -->
+
+
+
+<!-- <script>
+
+// <!-- Javascript의 타입 -->
+// <!-- 1. 문자열 : '', "" -->
+// <!-- 2. 숫자, : 정수, 실수를 구분하지 않고 하나의 타입으로 처리, 8바이트 부동소수점 형식으로 저장 -->
+// <!-- 3. bool: true / false 논리값을 저장 -->
+// <!-- 4. 함수 : 함수를 저장 -->
+// <!-- 5. 객체: 객체를 저장 -->
+// <!-- 6. undefined : undefined 상태의 값을 저장 -->
+
+    var srt = 'String!!!';
+    var num = 100;
+    var check = false;
+    var printStr= function(){ alert('함수를 저장하는 변수로 호출')}; //익명 함수로 정의
+    var objectVar= {
+        name: 'SON',
+        age: 30, 
+        hello: function(){
+            alert('메소드 호출');
+        } 
+    }; //객체를 정의하는 간단한 방법
+    
+    // alert(str);
+    // alert(num);
+    // alert(check);
+    // alert(printStr);
+    // alert(objectVar);
+
+    // 함수 호출
+    printStr();
+
+    //객체 참조
+    alert(objectVar.name);
+    alert(objectVar.age);
+    objectVar.hello();
+
+    // 내장함수 객체 생성
+    var now = new Date();
+    alert(now);
+
+    //객체 정의 : 속성(객체가 가지는 변수), 메소드(객체가 가지는 기능(함수))
+    var person = {
+        name: 'SON',
+        age: 30,
+        hello: function() {
+
+        }
+    };
+</script> -->
+
+
+<!-- <script>
+
+    var value= 10;
+    value += 20;
+    alert(value);
+
+    // var value = 'Javascript';
+    value = 'Javascript'
+    alert(value);
+
+</script> -->
+
+<!-- <script> so hard
+
+    var obj = {};
+
+    var value11;
+
+    // 자료형의 확인(검사): typeof
+    console.log(' \'string\'의 type : ', typeof ('String'));
+    cosole.log('273 의 type : ', typeof(273));
+    console.log('true 의 type : ', typeof true);
+    console.log('function 의 type : ', typeof(func));
+    console.log('object 의 type: ', typeof(obj));
+    console.log('정의되지 않은 변수 type: ', typeof(value11));
+
+
+    // if(typeof(273)=='number') {
+    //     alert('숫자 데이터 입니다.');
+    // }
+
+</script> -->
+
+
+<!-- <script>
+    
+    //window 객체에서 제공하는 기본 함수
+    // alert('String'); //데이터를 출력
+    // var str = prompt('숫자를 입력하세요~!!' , '123');
+    // console.log('str : ' , typeof str);
+    // alert(str);
+    var chk = confirm('정말 삭제하시겠습니까?');
+    console.log('chk : ' ,  chk);
+    console.log('chk : ' , typeof chk);
+    
+    if(chk) {
+        alert('데이터를 삭제하는 코드가 실행됩니다.');
+
+    } else {
+        alert('데이터를 삭제하지 않습니다.');
+    }
+</script> -->
+
+<script>
+
+    // 문자열과 다른 타입간의 덧셈 : 문자열 우선 연산
+    // console.log(273 + '22');   //숫자 + 문자 => 문자 + 문자
+    // console.log('273' + 22);   //문자 + 숫자 => 문자 + 문자
+    // console.log('273' + '22');  //문자 + 문자 
+    // console.log(273 + 22);      //숫자 + 숫자
+
+    // 덧셈을 제외한 나머지 사칙연산의 경우 숫자 우선으로 연산.
+    console.log('12 * 5');
+    console.log('12' * 5);  //문자 * 숫자 -> 숫자 * 숫자
+    console.log(12 * '5');  //숫자 * 문자 -> 숫자 * 숫자
+    console.log('12' * '5');//문자 * 문자 -> 숫자 * 숫자
+    
+    var year = prompt('태어난 년도를 입력해주세요.');
+    var numberVal = Number(year);
+    console.log('numberVal type : ' , typeof numberVal);
+    console.log(numberVal);
+    console.log(numberVal + 10);
+    console.log(isNaN(numberVal)); //이부분 좀 잘 볼것 (숫자 연산을 위해서 isNaN 사용)
+
+    // isNaN(숫자데이터) -> NaN 일때 true값 변환
+    if( !isNaN(numberVal)) {
+        //year문자열을 숫자 타입으로 자동 형변환
+        alert(2021-numberVal + '살 입니다.');  // year 문자열을 숫자 타입으로 자동 형변환!
+    } else {
+        alert('정상적인 숫자 데이터를 입력해주세요.');
+
+    }
+      
+
+    
+
+</script>
