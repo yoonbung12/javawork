@@ -249,7 +249,9 @@
     }
 </script> -->
 
-<script>
+
+
+<!-- <script>
 
     // 문자열과 다른 타입간의 덧셈 : 문자열 우선 연산
     // console.log(273 + '22');   //숫자 + 문자 => 문자 + 문자
@@ -264,14 +266,18 @@
     console.log('12' * '5');//문자 * 문자 -> 숫자 * 숫자
     
     var year = prompt('태어난 년도를 입력해주세요.');
-    var numberVal = Number(year);   //숫자 타입으로 강제적인 형변환
+    // var year= 2000;
+    var numberVal = Number(year);   
+    // Number() ->숫자 타입으로 강제적인 형변환, 문자열이 숫자 형식이 아닌경우 NaN 사용
     console.log('numberVal type : ' , typeof numberVal);
     console.log(numberVal);
     console.log(numberVal + 10);
     console.log(isNaN(numberVal)); //이부분 좀 잘 볼것 (숫자 연산을 위해서 isNaN 사용)
 
     // isNaN(숫자데이터) -> NaN 일때 true값 변환
-    if( !isNaN(numberVal)) {
+    // if( !isNaN(numberVal)) {
+    //if(Boolean(numberVal)) {
+    if(!!numberVal) {
         //year문자열을 숫자 타입으로 자동 형변환
         alert(2021-numberVal + '살 입니다.');  // year 문자열을 숫자 타입으로 자동 형변환!
     } else {
@@ -279,7 +285,71 @@
 
     }
       
+    //boolean 타입으로 강제 형변환
+    //boolean () => 논리값 반환
+    // 0, NaN, ''(공백문자), null, undefined => false
+    // 나머지 모두 true
+    console.log('Boolean(0)', Boolean(0));
+    console.log('Boolean(NaN)' ,Boolean(NaN));
+    console.log('Boolean(\'\')', Boolean(''));
+    console.log('Boolean(null)' , Boolean(null));
+    console.log('Boolean(undefined)' ,Boolean(undefined));
+
+    //논리부정 연산자 사용시  
+    //0, NaN, '', null, undefined 다섯개의 데이터는 자동으로 형변환 -> (!!두개쓴이유는 자동형변환때문)falseㄹ 변환
+    console.log(!!0);
+    console.log(!!NaN);  
+    console.log(!!'');  
+    console.log(!!null);
+    console.log(!!undefined);
+
+    //비교연산의 경우 0 == false, '' == false
+    console.log('0 == false' ,0 == false);
+    console.log('\'\' ==false ' , ''==false);
+    console.log('\'\' == 0 ' , '' == 0);
+    console.log('\'273\'==273' , '273' ==273);
 
     
+    //비교연산의 경우 0 == false, '' == false => false
+    //데이터의 비교와 타입의 일치 여부도 확인
+    console.log('0 === false' ,0 === false);
+    console.log('\'\' ===false ' , ''===false);
+    console.log('\'\' === 0 ' , '' === 0);
+    console.log('\'273\'===273' , '273' ===273);
 
+    //매개변수로 값을 받는다.
+    // window.event 객체를 핸들러 함수의 매개변수로 받는다.
+    // e <- 매개변수
+    true || alert('좌변이 true입니다.');
+    false || alert('좌변이 false입니다.');
+    //numberVal || alert('좌변이 false입니다.');
+    //e==null || alert('좌변이 false입니다.');
+</script> -->
+
+<script>
+
+    //배열 : 여러개의 변수를 하나의 묶음으로 관리
+    //배열의 생성 : [] 
+    //배열의 요소는 타입으로 제한을 두지 않는다.
+    // 배열도 객체다
+    var arr1= [1,2,3,4,5];
+    
+    console.log(typeof arr1);
+
+    // alert();
+    console.log('arr1', arr1);
+
+    // 요소는 어떠한 타입이 와도 된다.
+    var arr2= [100, 'String', function(){}, {}, [1, 100]];
+    console.log('arr2', arr2);
+
+    // for 반복문을 이용한 요소 출력
+    for(var i=0; i< arr1.length; i++) {
+        console.log(i, arr2[i]);
+    }
+
+    // for in 반복문을 통해서 배열의 요소를 일괄 출력
+    for(var e in arr1){
+        console.log(arr1[e]);
+    }
 </script>
