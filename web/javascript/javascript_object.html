@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Object</title>
+
+    <!-- <script>
+
+        //객체 정의 => {}     (6.2)
+        var obj= {
+            // 속성의 정의 => 속성이름 : 데이터
+            // 여러개의 속성을 정의할 때는, 애용해서 추가해주면 된다.
+            name:'손흥민',
+            age: 30,
+            //함수-> 객체안에 존재하는 함수는 메소드라 칭한다.
+            hello: function() { 
+                alert('안녕하세요.' + this.name + '입니다. 저의 나이는 ' + this.age +'세 입니다.');
+            }
+
+        };
+        console.log('obj type : ', typeof obj, obj);
+
+        obj.hello();
+        console.log('이름 : ' , obj.name);
+    </script> -->
+
+    
+    <!-- <script>
+        // 객체의 속성을 동적으로 추가(6.5)
+        var player = {};
+        //console.log(player);
+
+        //속성 추가
+        player.name = '손흥민';
+        player.team = 'Tot';
+        player.number = 7;
+        player.play = function() {
+            alert('앞으로 달려갑니다.!!!!!');
+        };
+        player.address = '런던';
+
+        //속성의 삭제
+        delete player.address;
+        console.log(player);
+
+    </script> -->
+
+    <script>
+        // 학생들의 과목점수를 저장하는 배열
+        // 학생들의 과목 점수들은 객체로 생성 -> 배열로 객체를 저장
+        var students = [];
+        // 배열(객체)에 요소를 추가하는 메소드
+        students.push({name:'AAA', kor: 90, eng: 90, math: 60});
+        students.push({name:'BBB', kor: 60, eng: 80, math: 70});
+        students.push({name:'CCC', kor: 70, eng: 80, math: 90});
+        students.push({name:'DDD', kor: 40, eng: 60, math: 90});
+        students.push({name:'EEE', kor: 50, eng: 40, math: 30});
+        students.push({name:'FFF', kor: 80, eng: 30, math: 40});
+        students.push({name:'GGG', kor: 40, eng: 90, math: 50});
+        students.push({name:'HHH', kor: 60, eng: 40, math: 90});
+        students.push({name:'III', kor: 30, eng: 10, math: 90});
+        students.push({name:'JJJ', kor: 50, eng: 10, math: 10});
+
+    </script>
+
+
+
+
+
+
+
+</head>
+<body>
+    
+</body>
+</html>
