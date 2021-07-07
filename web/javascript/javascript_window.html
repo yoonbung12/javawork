@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Window Object</title>
+    <script>
+
+        // var output = '';
+
+        // for(var key in window) {
+        //     output += '['+key+']' + window[key] + '\n';
+        // }
+        // console.log(output);
+    
+        //  새로운 브라우저 생성
+        // window.open();
+        
+        // window.open('http://www.naver.com','newwindow','width=300, height=400');
+
+        // var child = window.open('', 'child', 'width=350, height=300');
+
+        // var html = '<h1 onclick="self.close();">윈도우 닫기</h1>';
+
+        // child.document.write('<h1>부모 윈도우에서 텍스트를 추가</h1>' + html);
+
+        // console.log(screen);
+
+        // console.log(location);
+
+        // setTimeout(function(){
+        //     location.href='http://www.naver.com';
+        // }, 3000);
+
+        // if(confirm('네이버 페이지로 이동하시겠습니까?')){
+        //     location.href='http://www.naver.com';
+        // }
+
+        // console.log(navigator);
+
+        window.onload = function(){
+
+            // 태그 생성, 텍스트 생성 -> 태그에 텍스트를 붙여준다.
+
+            // h1 tag 생성
+            var header = document.createElement('h1');
+
+            // 텍스트 Node 생성
+            var text = document.createTextNode('Hello DOM');
+
+            // tag에 텍스트노드를 적용
+            header.appendChild(text);  // <h1>Hello DOM</h1>
+
+            // body 태그에 h1 태그를 적용
+            document.body.appendChild(header);
+
+            // img 태그 생성 -> 속성도 적용
+            var img = document.createElement('img');
+            // img.src = '../images/미니언즈.jpg';
+            // img.width = 300;
+            // img.height = 250;
+            img.setAttribute('src','../images/미니언즈.jpg');
+            img.setAttribute('width', 300);
+
+            // 지정된 속성이 아닌 속성을 추가
+            img.setAttribute('data-role', 'image');
+
+            document.body.appendChild(img);
+
+        }
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>
