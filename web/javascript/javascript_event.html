@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Event</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: greenyellow;
+        }
+        h2 {
+            background-color: khaki;
+        }
+    </style>
+
+    <script>
+
+        // 이벤트 적용 : 캐스팅 -> 이벤트 속성에 핸들러를 할당
+        window.onload = function() {
+
+            //이벤트 적용: 캐스팅 -> 이벤트 속성에 핸들러를 할당
+            //h1 태그를 캐스팅
+            var header = document.getElementById('btn');
+            // 이벤트 속성에 핸들러 할당
+            header.onclick = function(){
+                alert('h1태그에 마우스 클릭!!!!');
+
+                // 이벤트 제거
+                header.onclick = null;
+            };
+            
+            document.getElementById('btn1').onclick = function(){
+                // document.getElementById('btn1').style.backgroundcolor='black';
+                // document.getElementById('btn1').style.color='white';
+                // this -> 이벤트가 발생한 객체를 가리킨다.
+                this.style.backgroundColor='black';   
+                this.style.color='white';
+            }
+
+            // 버튼A 버튼B 를 클릭할때 클릭횟수를 화면에서 출력
+            // 버튼과 출력 영역을 캐스팅
+            var btnA = document.getElementById('btnA');
+            var btnB = document.getElementById('btnB');
+            var cntA = documnet.getElementById('cntA');
+            var cntB = documnet.getElementById('cntB');
+            
+            // 버튼에 클릭이벤트 연결
+            btnA.onclick = function(){
+                // 카운트를 증가시키고 화면을 갱신
+                var cnt = Number(cntA.innerText) + 1;
+                cntA.innerText = cnt;
+            }
+            btnB.onclick = function(){
+                // 카운트를 증가시키고 화면을 갱신
+                // var cnt = Number(cntB.innerText) + 1;
+                cntB.innerText = Number(cntB.innerText) + 1;
+
+                // 이벤트의 갈제 발생
+                btnA.onclick();
+            }
+
+            // form 태그 캐스팅
+            var form = document.getElementById('myForm');
+            form.onsubmit = function() {
+                console.log('submit 이벤트');
+                
+                var id = document.getElementById('userID').value;
+                console.log(typeof id, id);
+                if(id.length<1) {
+                    alert('아이디를 입력해주세요.');
+                    return false;
+                }
+
+
+            }
+
+            var p1 = document.getElementById('p1');
+            p1.onclick = function(e) {
+                var event = e || window.event;
+
+                alert('P Click');
+
+                // IE 일때
+                event.cancelBubble = true;
+                // IE 이외의 브라우저일때
+                if(event.stopPropagation) {
+                    event.stopPropagation();
+                }
+            }
+
+        };
+
+        function mClick(){
+            alert('클릭했어요');
+        }
+
+    </script>
+
+</head>
+<body>
+    <!-- 이벤트 버블링 -->
+    <div style="border: 2px solid black;"onclick="alert('div1')">
+        <div style="border: 2px solid khaki;" onclick="alert('DIV2')">
+            <h1 style="border: 2px solid blue; width:50%;" onclick="alert('H1')">
+                <p style="border: 2px solid red;" onclick="alert('p')">클릭하세요.</p>
+            </h1>
+        </div>
+    </div>
+
+
+
+    <!-- 디폴트 이벤트제거 -->
+
+            <!-- ?userID=cool&userPW=1234& -->
+
+            <!--post는 naver뒤에 따라 붙는것이없음 -->
+    <form id="myForm" action="http://www.naver.com" method="GET">  
+        
+        id<input type="text" id="userID" name="userID"><br>
+        pw<input type="password" name="userPW"><br>
+        <input type="submit" value="로그인">
+
+    </form>
+
+
+
+
+    <button id='btnA'>ButtonA</button>
+    <input id='btnB' type="button" value="ButtonB">
+    <!-- <input type="submit" value="ButtonC"> -->
+
+    <h3>Button A - <span id="cntA">0</span></h3>
+    <h3>Button B - <span id="cntB">0</span></h3>
+
+    <h1 id='btn'>Click</h1>
+
+    <h2 onclick="mClick()">클릭!!!!!</h2>
+
+    <h1 id="btn1">클릭하세요</h1>
+
+</body>
+</html>
