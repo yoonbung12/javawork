@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원관리 프로그램</title>
+    <link rel="stylesheet" href="default.css">
+    <script src="manager.js"></script>
+
+</head>
+
+<body>
+    
+    <!-- header시작 -->
+    <header>
+        <h1 class="title_font">Member Manager</h1>
+    </header>
+    <!-- header end -->
+
+    <!-- 회원 등록 폼 시작 -->
+    <div id="regFormArea">
+        <h2 class="title_font">회원 정보 등록</h2>
+        <form id="regForm">
+            <table>
+                <tr>
+                    <td>
+                        <label for="userID">아이디</label>
+                        <input type="text" id="userID" placeholder="아이디를 입력해주세요.">
+                        <div class="msg"></div>
+                    </td>
+                    <td>
+                        <label for="pw">비밀번호</label>
+                        <input type="password" id="pw" placeholder="비밀번호 입력해주세요.">
+                        <div calss="msg"></div>
+                    </td>
+                    <td>
+                        <label for="repw">비밀번호 확인</label>
+                        <input type="password" id="repw" placeholder="다시한번 비밀번호를 입력해주세요.">
+                        <div calss="msg"></div>
+                    </td>
+                    <td>
+                        <label for="userName">이름</label>
+                        <input type="text" id="userName" placeholder="이름을 입력해주세요.">
+                    </td>
+                    <td>
+                        <input type="submit" value="등록">
+                        <input type="reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <!-- 회원 등록 폼 끝 -->
+
+    <div id="listArea">
+
+        <h2 class="title_font">회원 리스트</h2>
+        <table>
+            <tbody id="list">
+                <tr>
+                    <td>순번(index)</td>
+                    <td>아이디</td>
+                    <td>비밀번호</td>
+                    <td>이름</td>
+                    <td>관리</td>
+                </tr>
+            </tbody>
+            <!-- <tr>
+                <td>0</td>
+                <td>cool</td>
+                <td>1111</td>
+                <td>COOL</td>
+                <td>수정 | 삭제</td>
+            </tr> -->
+        </table>
+
+    </div>
+    
+</body>
+</html>
