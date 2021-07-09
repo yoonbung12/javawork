@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu {
+            list-style: none;
+            overflow: hidden;
+        }
+
+        .floatLeft{
+            float:left;
+        }
+        h1 {
+            color: aqua;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+    <script>
+        // 문서 객체의 클래스 속성 추가,제거
+        $(document).ready(function(){
+            // 버튼 캐스팅 -> 이벤트 연결
+            $('#btn01').click(function(){
+                $('#menu>li').addClass('floatLeft');
+            });
+
+            $('#btn02').click(function(){
+                $('#menu>li').removeClass('floatLeft');
+            });
+
+            // 속성의 값을 반환하는 메소드
+            var srcPath = $('.img').attr('src');
+            console.log('이미지 경로', srcPath);
+            // 속성의 값을 정의
+            // $('.img').attr('width', 200);
+            // $('.img').attr('width', function(index){
+            //     return(index+1)*100;
+            // });
+                $('.img').attr({
+                    width : 100,
+                    height: function(index){
+                        return(1+index)*100;
+                    }
+
+                });
+
+                $('.img').removeAttr('height');
+
+
+                // 태그의 css 속성값 확인
+                var color = $('h1.title').css('color');
+                console.log(color);
+
+                // css 적용
+                // $('h1').css('background', 'red');
+                var colors= ['black', 'white', 'yellow'];
+                // $('h1').css('background', function(index){
+                //     return colors[index];
+                // });
+
+                    $('h1').css({
+                        color: 'green',
+                        backgroundColor : function(index){
+                            return colors[index];
+                        }
+                    });
+
+                    var strHtml = $('h1').html();
+                    console.log('html() : ', strHtml);
+                    
+                    console.log($('#menu').html());
+                    console.log($('#menu').text());
+
+
+                    $('div').html(function(index, html){
+                        console.log(index, html);
+                        $(this).html('<h1>' + html + index +'!!!!!'+'</h1>');
+                    });
+
+                    $('#btn03').click(function(){
+                        $('#menu').remove();
+                    });
+                    $('#btn04').click(function(){
+                        $('#menu').empty();
+                    });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div>DIV - 0</div>
+    <div>DIV - 0</div>
+    <div>DIV - 0</div>
+
+
+    <h1 class="title">header - 0</h1>
+    <h1>header - 1</h1>
+    <h1>header - 2</h1>
+
+    <img class="img" src="../images/미니언즈2.jpg">
+    <img class="img" src="../images/미니언즈2.jpg">
+    <img class="img" src="../images/미니언즈2.jpg">
+
+    <ul id="menu">
+        <li>menu - 1</li>
+        <li>menu - 2</li>
+        <li>menu - 3</li>
+        <li>menu - 4</li>
+        <li>menu - 5</li>
+
+    </ul>
+    <button id="btn01">변경</button>
+    <button id="btn02">초기화</button>
+    <button id="btn03">메뉴 삭제</button>
+    <button id="btn04">내용 삭제</button>
+</body>
+</html>
