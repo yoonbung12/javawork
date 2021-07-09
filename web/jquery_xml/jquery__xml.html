@@ -47,21 +47,22 @@
         var html = '';
 
         $(xmlDoc).find('link').each(function(index){
+
             var name = $(this).find('name').text();
             var url = $(this).find('url').text();
             console.log(name, url);
             // console.log()
 
             html += '<div>';
-            html += '   <h1></h1>';
+            html += '   <h1>'+name+'</h1>';
             html += '   <p>'+url+'</p>';
             html += '</div>';
         });
 
         $(document).ready(function(){
-
+            $('body').html(html);
         });
-        $('body').html(html);
+        
 
     </script>
 </head>
