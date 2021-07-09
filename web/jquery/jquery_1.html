@@ -15,6 +15,12 @@
 
             $('*').css('color', 'red');
 
+            var value = $('input[type=text]').val(); //get 메소드 호출, var:전역변수,함수
+            // var userid = document,querySelector('#userID').value 
+            console.log(value);
+
+            // $('input[type=text]').val('안녕');
+            $('input:text').val('안녕하세요'); //jquery는 이렇게 쓸수 있음 간단하게 나옴
 
         });
 
@@ -23,6 +29,8 @@
 
 
 <body>
+
+    <input id="userID" type="text" value="Hello~~!">
 
     <h1>안녕하세요.</h1>
     <h2>안녕하세요.</h2>
