@@ -5,6 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jquery</title>
+    <style>
+        #wrap {
+            overflow: hidden;
+        }
+        .title {
+            background-color: crimson;
+            color: white;
+            float: left;
+        }
+    </style>
     <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
 
     <script>
@@ -13,7 +23,7 @@
         // document 객체를 -> jquery 객체로 변환
         $(document).ready(function() {
 
-            $('*').css('color', 'red');
+            // $('*').css('color', 'red');
 
             var value = $('input[type=text]').val(); //get 메소드 호출, var:전역변수,함수
             // var userid = document,querySelector('#userID').value 
@@ -22,6 +32,73 @@
             // $('input[type=text]').val('안녕');
             $('input:text').val('안녕하세요'); //jquery는 이렇게 쓸수 있음 간단하게 나옴
 
+            // 5초 후에 select의 선택 항목의 value 값을 확인
+           setTimeout(function(){
+               var selVal = $('select>option:selected').val();
+               console.log(selVal);
+
+                var chk = $('input:checkbox:checked').val();
+                console.log(chk);
+
+           },5000);
+
+           // 7필터 선택자
+           $('table tr:odd').css('background-color', '#DDD');   //tr:odd배열의 형태
+           //$('table tr:even').css('background-color', '#AAA');
+           // filter 메소드를 이용해서 탐색
+           $('table tr').filter(':even').css('background-color', 'red');
+           
+           $('table tr:first').css('background-color', '#000').css('color', '#fff');
+           $('table tr:last').css('background-color', '#FFF').css('color', '#000');
+           
+           // 8배열 관리
+           // 배열을 다루는 .each() 메소드
+           // $.each(배열원본, callback : 배열의 하나의 요소를 처리하는 함수, 매개변수 배열의 index 값, 요소 데이터)
+           // 배열생성
+           var links = [
+               {name:'네이버', url:'http://www.naver.com'},
+               {name:'다음', url:'http://www.daum.net'},
+               {name:'카카오', url:'http://www.kakao.com'}
+        ];
+
+           var output = '';
+
+           $.each(links, function(index, item){
+                console.log(index, item.name);
+                output += '<a href="'+item.url+'">'+item.name+'</a>\n';
+            });
+            console.log(output);
+
+            
+            // console.log($('body').html());  // getter
+
+            // document.body.innerHTML=output;
+            // $('body').html(output);
+            $('links').html(output);
+
+            $('h1').each(function(index, item){
+                console.log(index, item.innerHTML);
+                console.log(index, $(item).html());
+            });
+
+            // $('h1').addClass('title');
+
+            $('h3').filter(function(index){
+                return index%3 == 0;
+
+            }).css({
+                backgroundColor: 'black',
+                color: 'white'
+            });
+
+            $('h2').css('background', 'orange').filter(':even').css('color', 'white').end().filter(':odd').css('color', 'red');
+
+            $('h1').eq(1).css('background', 'orange');
+            $('h1').last().css('background', 'blue');
+            $('h1').first().css('background', 'green');
+
+            $('h1').css('background', 'gray').add('h3').css('float', 'left');
+        
         });
 
     </script>
@@ -30,9 +107,78 @@
 
 <body>
 
+     
+    <h2>header - 0</h2>
+    <h2>header - 0</h2>
+    <h2>header - 0</h2>
+    <h2>header - 0</h2>
+    <h2>header - 0</h2>
+
+
+    <h3>header - 0</h3>
+    <h3>header - 1</h3>
+    <h3>header - 2</h3>
+    <h3>header - 3</h3>
+    <h3>header - 4</h3>
+    <h3>header - 5</h3>
+
+    <div id="wrap">
+    <h1>header - 0</h1>
+    <h1>header - 1</h1>
+    <h1>header - 2</h1>
+    <h1>header - 3</h1>
+    <h1>header - 4</h1>
+    </div>
+
+    <div id="links"></div>
+
+    <table border=1>
+        <thead>
+            <tr>
+                <td></td>
+                <td>월</td>
+                <td>화</td>
+                <td>수</td>
+                <td>목</td>
+                <td>금</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1교시</td>
+                <td>국</td>
+                <td>영</td>
+                <td>수</td>
+                <td>사</td>
+                <td>과</td>
+                </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>2교시</td>
+                <td>과</td>
+                <td>수</td>
+                <td>영</td>
+                <td>국</td>
+                <td>체</td>
+            </tr>
+        </tfoot>
+    </table>
+    <hr>
+
+
+
+    개인정보 보호정책 보기 <input type="checkbox" value="ok">
+
+    <select>
+        <option value="21">2021</option>
+        <option>2020</option>
+        <option>2019</option>
+    </select>
+
     <input id="userID" type="text" value="Hello~~!">
 
-    <h1>안녕하세요.</h1>
-    <h2>안녕하세요.</h2>
+    <!-- <h1>안녕하세요.</h1>
+    <h2>안녕하세요.</h2> -->
 </body>
 </html>
