@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div>img {
+            width: 250px;
+            height: 200px;
+        }
+        #banner {
+            width: 250px;
+            height: 200px;
+            border: 10px solid #AAA;
+        
+        }
+    </style>
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+    <script>
+        
+        $(document).ready(function(){
+            setInterval(function(){
+                $('#banner>img').first().appendTo('#banner');
+            }, 6000);
+        });
+
+
+    </script>
+
+</head>
+<body>
+    <div id="banner">
+        <img src='../images/미니언즈2.jpg'>
+        <img src='../images/스따링크.jpg'>
+        <img src='../images/미니언즈.jpg'>
+        <img src='../images/미니언즈.jpg'>
+    </div>
+</body>
+</html>
