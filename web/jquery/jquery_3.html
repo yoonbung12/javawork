@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div>img {
+            width: 250px;
+            height: 200px;
+        }
+        #banner {
+            width: 250px;
+            height: 200px;
+            border: 10px solid #AAA;
+        }
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    
+    <script>
+
+        $(document).ready(function(){
+
+            // 동적 html 요소 생성
+            $('<h1></h1>');
+            $('<h1></h1>').html('Hello~!!!!');
+            $('<h1>hello~~!!!</h1>');
+
+            // 요소를 추가하자
+            $('<h1></h1>').html('Hello~!!!').appendTo('body');
+            $('<h1>Hello~!!! Javascript</h1>').appendTo('body');
+
+            // $('<img>').attr('src', '../미니언즈.jpg').attr('width', 100).appendTo('body');
+            $('<img>').attr({
+                src: '../images/미니언즈.jpg',
+                width: 400
+            }).prependTo('body');   //위쪽으로 올라와야 한다면 prependTo 이다.
+            
+            var html1 = '<a href="#">test</a>';
+            var html2 = '<p>TEST</p>';
+            var html3 = '<div>DIV-0</div>';
+
+            $('body').append('<h3>Hello~!!! JS</h3>');
+            $('body').append(html1, html2, html3);
+
+            // 배열 생성
+            var links = [
+               {name:'네이버', url:'http://www.naver.com'},
+               {name:'다음', url:'http://www.daum.net'},
+               {name:'카카오', url:'http://www.kakao.com'}
+            ];
+
+            $('div').append(function(index){
+
+                return '<h3><a href=" '+links[index].url+'">'+links[index].name+'</a></h3>';
+
+            });
+
+            setInterval(function(){
+                $('#banner>img').first().appendTo('#banner');
+            }, 3000);
+            
+        
+        });
+
+    </script>
+</head>
+<body>
+
+    <div id="banner">
+        <img src='../images/미니언즈2.jpg'>
+        <img src='../images/스따링크.jpg'>
+        <img src='../images/미니언즈.jpg'>
+        <img src='../images/미니언즈.jpg'>
+    </div>
+    
+</body>
+</html>
