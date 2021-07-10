@@ -53,17 +53,18 @@
     </div>
     <!-- 회원 등록 폼 끝 -->
 
+    <!-- 회원 리스트 시작 -->
     <div id="listArea">
 
         <h2 class="title_font">회원 리스트</h2>
         <table>
             <tbody id="list">
                 <tr>
-                    <td>순번(index)</td>
-                    <td>아이디</td>
-                    <td>비밀번호</td>
-                    <td>이름</td>
-                    <td>관리</td>
+                    <th>순번(index)</th>
+                    <th>아이디</th>
+                    <th>비밀번호</th>
+                    <th>이름</th>
+                    <th>관리</th>
                 </tr>
             </tbody>
             <!-- <tr>
@@ -75,6 +76,44 @@
             </tr> -->
         </table>
 
+    </div>
+    <!-- 회원 리스트 끝 -->
+
+    <!-- 회원 정보 수정 시작 -->
+    <div id="editFormArea">
+        
+        <div id="div_header">
+            <h2 class="title_font">회원 정보 수정</h2>
+            <div><a href="javascript:editMemberClose">닫기</a></div>
+        </div>
+        
+        <form id="editForm"> 
+            <table>
+                <tr>
+                    <td>아이디</td>
+                    <td><input type="text" id="editId" disabled> <!--readonly쓰면 수정 불가-->
+                        <input type="hidden" id = "index">
+                    </td> 
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="password" id="editPw" required> </td>
+                </tr>
+                <tr>
+                    <td>비밀번호 확인</td>
+                    <td><input type="password" id="editRePw" required></td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td><input type="text" id="editName" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="수정">
+                    </td>
+                </tr>
+            </table>
+        </form>
     </div>
     
 </body>
