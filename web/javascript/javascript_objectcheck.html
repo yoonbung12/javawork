@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Object</title>
+
+    <!-- <script>
+        // 객체 정의 => {}
+        var obj = {
+            // 속성의 정의 => 속성이름 : 데이터
+            // 여러개의 속성을 정의할 때는 , 이용해서 추가해주면 된다.
+            name:'손흥민',
+            age:30,
+            // 함수-> 객체안에 존재하는 함수는 메소드라 칭한다.
+            hello:function(){ 
+                alert('안녕하세요.'+ this.name + '입니다. 저의 나이는 '+ this.age + '세 입니다.');
+            }
+        };
+        console.log('obj type : ' + typeof obj , obj);
+        obj.hello();
+        console.log('이름 : ', obj.name);
+    </script> -->
+    <!-- <script>
+        // 객체의 속성을 동적으로 추가
+        var player = {};
+        //console.log(player);
+        // 속성 추가
+        player.name = '손흥민';
+        player.team = 'Tot';
+        player.number = 7;
+        player.play = function (){
+            alert('앞으로 달려갑니다!!!');
+        };
+        player.address = '런던';
+        // 속성의 삭제
+        delete player.address;
+        console.log(player);
+    </script> -->
+
+    <!--     <script>
+        window.onload = function () {
+            // 학생들의 과목점수를 저장하는 배열
+            // 학생들의 과목 점수들은 객체로 생성 -> 배열로 객체를 저장
+            var students = [];
+            // 배열(객체)에 요소를 추가하는 메소드
+            students.push({ name: 'AAA', kor: 90, eng: 50, math: 50 });
+            students.push({ name: 'BBB', kor: 60, eng: 60, math: 60 });
+            students.push({ name: 'CCC', kor: 70, eng: 70, math: 70 });
+            students.push({ name: 'DDD', kor: 40, eng: 100, math: 80 });
+            students.push({ name: 'EEE', kor: 50, eng: 60, math: 90 });
+            students.push({ name: 'FFF', kor: 80, eng: 70, math: 60 });
+            students.push({ name: 'GGG', kor: 60, eng: 90, math: 50 });
+            students.push({ name: 'HHH', kor: 90, eng: 90, math: 60 });
+            students.push({ name: 'III', kor: 100, eng: 70, math: 80 });
+            students.push({ name: 'JJJ', kor: 50, eng: 80, math: 100 });
+    
+            // 각 요소 객체체에 메소드를 추가
+            // 합을 구해서 반환하는 메소드
+            // 평균값을 구해서 반환하는 메소드
+            for (var i = 0; i < students.length; i++) {
+                // 합을 구하는 메소드
+                students[i].getSum = function () {
+                    return this.kor + this.eng + this.math;
+                }
+                // 평균값을 구하는 메소드
+                students[i].getAvg = function () {
+                    return this.getSum() / 3;
+                }
+                // 데이터 출력 메소드
+                students[i].print = function () {
+                    return this.name + ' : ' + this.getSum() + ' : ' + this.getAvg();
+                }
+            }
+    
+            //var html = '<h3> 이름 : 총점 : 평균 </h3>';
+            var html = '<table border="1">';
+            html += '   <tr>';
+            html += '       <th>이름</th>';
+            html += '       <th>총점</th>';
+            html += '       <th>평균</th>';
+            html += '   </tr>';
+            for (var i = 0; i < students.length; i++) {
+                /* body 테그에 요소들을 추가 */
+                html += '   <tr>';
+                html += '       <td>'+students[i].name+'</td>';
+                html += '       <td>'+students[i].getSum()+'</td>';
+                html += '       <td>'+students[i].getAvg()+'</td>';
+                html += '   </tr>';
+                //html += '<h3>' + students[i].print() + '</h3>';
+            }
+            html += '</table>'
+            document.body.innerHTML = html;
+        }
+    </script> -->
+
+    <script>
+
+        // 생성자 함수 : new 키워드로 객체를 생성해주는 함수
+        // 생성자 함수의 이름(식별자)는 대문자로 시작
+        function Student(name, kor, eng, math) {
+            // 속성
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.math = math;
+
+            // 총점을 구하는 메소드
+            // this.getSum = function () {
+            //     return this.kor + this.eng + this.math;
+            // }
+
+            // 평균점수를 구하는 메소드
+            // this.getAvg = function () {
+            //     return this.getSum() / 3;
+            // }
+
+            // html을 만들어주는 메소드
+            // this.makeHtml = function () {
+            //     html = '';
+            //     html += '   <tr>';
+            //     html += '       <td>' + this.name + '</td>';
+            //     html += '       <td>' + this.getSum() + '</td>';
+            //     html += '       <td>' + this.getAvg() + '</td>';
+            //     html += '   </tr>';
+            //     return html;
+            // }
+
+        }
+        // var st = new Student('한국', 100, 50, 80);
+        // console.log(typeof st);
+        // console.log(st);
+
+
+        // prototype을 이용한 공통 메소드 정의 
+        Student.prototype.getSum = function () {
+            return this.kor + this.eng + this.math;
+        }
+        Student.prototype.getAvg = function () {
+            return this.getSum() / 3;
+        }
+        // Student.prototype.makeHtml = function () {
+        //     html = '';
+        //     html += '   <tr>';
+        //     html += '       <td>' + this.name + '</td>';
+        //     html += '       <td>' + this.getSum() + '</td>';
+        //     html += '       <td>' + this.getAvg() + '</td>';
+        //     html += '   </tr>';
+        //     return html;
+        // }
+        Student.prototype.toString = function () {
+            html = '';
+            html += '   <tr>';
+            html += '       <td>' + this.name + '</td>';
+            html += '       <td>' + this.getSum() + '</td>';
+            html += '       <td>' + Math.round(this.getAvg()) + '</td>';
+            html += '   </tr>';
+            return html;
+        }
+
+
+
+        window.onload = function () {
+
+            // Students 타입의 객체들을 저장하는 배열생성
+            var students = [];
+            students.push(new Student('AAA', 100, 80, 90));
+            students.push(new Student('BBB', 40, 80, 70));
+            students.push(new Student('CCC', 50, 70, 60));
+            students.push(new Student('DDD', 70, 60, 50));
+            students.push(new Student('EEE', 80, 50, 80));
+            students.push(new Student('FFF', 90, 80, 90));
+            students.push(new Student('GGG', 50, 90, 60));
+            students.push(new Student('HHH', 60, 80, 80));
+            students.push(new Student('III', 70, 80, 90));
+            students.push(new Student('JJJ', 80, 100, 80));
+
+            students.sort(function(left, right){
+                return right.getSum()-left.getSum();
+            });
+
+            students = students.slice(0,5);
+
+            var html = '<table border="1">';
+            html += '   <tr>';
+            html += '       <th>이름</th>';
+            html += '       <th>총점</th>';
+            html += '       <th>평균</th>';
+            html += '   </tr>';
+
+            for (var i = 0; i < students.length; i++) {
+                html += students[i];
+            }
+            html += '</table>';
+
+            //console.log(html);
+
+            document.body.innerHTML = html;
+
+        }
+
+    </script>
+
+    <!-- <script>
+        // 생성자 함수에서 캡슐화
+        // 변수의 은닉 : 변수에 직접 참조를 하지 못하도록 처리
+        function Rect(w, h){
+            // this.width = w;
+            // this.height = h;
+            var width = w;
+            var height = h;
+            this.getWidth = function(){
+                return width;
+            }
+            this.getHeight = function(){
+                return height;
+            }
+        }
+        Rect.prototype.getArea = function(){
+            return this.getWidth() * this.getHeight();
+        }
+        var rec = new Rect(10,5);
+        rec.width = -2; // 오류
+        console.log('Rect(10,5) area : ', rec.getArea());
+    </script> -->
+
+    <!-- <script>
+        var num = 100;
+        var objNum = new Number(100);
+        console.log(typeof num, num);
+        console.log(typeof objNum, objNum);
+    </script> -->
+
+    <!-- <script>
+        // Number 객체
+        var number = 273.12345;
+        console.log(typeof number);
+        var objNumber = new Number(number);
+        console.log(objNumber.toExponential());
+        console.log(objNumber.toFixed());
+        console.log(objNumber.toPrecision());
+    </script> -->
+
+    <!-- <script>
+        var str = 'hello~!!';
+        var objStr = new String(str);
+        
+        console.log(typeof  str, str);
+        console.log(typeof objStr, objStr);
+        console.log('str==objStr => ',str==objStr);
+        console.log(str.length);
+        console.log(objStr.length);
+    </script> -->
+
+    <script>
+
+        var arr = [5,8,3,7,9,2];
+
+        // 소팅: 정렬
+        arr.sort(function(left, right){
+            //return left-right;
+            return right-left;
+        });
+
+        // 높은 숫자 3개만 가지는 배열 생성
+        arr = arr.slice(0,3);
+
+        arr.forEach(function(element){
+            console.log(element);
+        });
+
+        
+        
+
+
+
+    </script>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+</body>
+
+
+</html> 
