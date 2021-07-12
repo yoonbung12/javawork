@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border : 1px solid #AAA;
+            padding: 10px;
+
+        }
+        h1 { 
+            border: 3px solid #000;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            //     $('h1').click(function() {
+
+            //     var length = $('h1').length;
+            //     var oldhtml = $(this).html();
+
+            //     $('#wrap').append('<h1>'+length+' - ' + ' oldhtml' + '</h1>');
+
+            // });
+
+                $('#wrap').on('click', 'h1', function() {
+                    var length = $('h1').length;
+                    var oldhtml = $(this).html();
+                    $('#wrap').append('<h1>' + length + ' - ' + oldhtml + '</h1>');
+                });
+
+                $('textarea').keyup(function(){
+                   
+                    var cnt = $(this).val().length;
+                    var remain = 150 - cnt;
+
+                    console.log(cnt, remain);
+
+                    if(remain < 0) {
+                        alert('자소서는 150자 까지 작성이 가능합니다.');
+                        var str = $(this).val().substr(0, 50);
+                        $(this).val(str);
+                        $('span').text('150');
+                        return false;
+                        
+                    }
+
+
+
+                    $('span').text();
+
+
+                });
+
+                $('myForm').submit(function() {
+                   
+                    alert('myForm submit');
+                    
+                    return false;
+                
+                });
+
+                $('#allCheck').change(function(){
+
+                    // 선택 상태이면 true, 미 선택상태이면 false
+                    if(this.checked){
+                        //  #checkItem 안에 있는 input type=checkbox -> checked=true
+                        $('#checkItem').children().prop('checked', true);
+                    } else {
+                        $('#checkItem').children().prop('checked', false0);
+                    }
+                });
+
+
+
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <input type="checkbox" id="allCheck">
+    <label for="allCheck">all</label>
+
+    <div id="checkItem">
+        <input type="checkbox"><label>A type</label>
+        <input type="checkbox"><label>B type</label>
+        <input type="checkbox"><label>C type</label>
+
+    </div>
+
+
+
+
+    <form id="myForm">
+
+
+        <input type="submit">
+
+    </form>
+
+
+
+    <textarea cols="50" rows="10"></textarea>
+    <span >0</span>/150
+
+
+    <div id="wrap">
+        <h1>header</h1>
+
+    </div>
+
+</body>
+</html>
