@@ -1,16 +1,15 @@
 @charset "utf-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Sunflower:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic:wght@700&family=Sunflower:wght@500&display=swap');
 
-/* 나눔고딕, 선플라워만 했음 
-font-family: 'Nanum Gothic', sans-serif;
-font-family: 'Sunflower', sans-serif; 
+/* 나눔고딕,  주아, 선플라워
 font-family: 'Jua', sans-serif;
-*/
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Sunflower', sans-serif;
+ */
 
 /* 기본설정 */
-* {
+*{
     margin:0;
     padding:0;
 }
@@ -20,16 +19,17 @@ font-family: 'Jua', sans-serif;
     font-family: 'Jua', sans-serif;
 }
 
-/* header영역 */
-header{
-    padding:20px;
-    border-bottom: 1px solid #333;
+
+/* header 영역 */
+header {
+    padding: 20px;
+    border-bottom: 1px solid #aaa;
 }
-/* 여기 없는 부분 */
-hr { 
+
+hr {
     border: 0;
     border-top: 1px solid #AAA;
-    margin: 5px;
+    margin : 5px 0;
 }
 
 /* 회원 가입 폼 영역 */
@@ -39,33 +39,31 @@ hr {
 }
 
 form label {
-    /* 글자들을 위로 올리기 위해서 썼음 */
     display: block;
 }
 
-#regForm>table td {
-    width: 200px;
-    padding: 5px;
+#regForm>table td{
+    width : 200px;
+    padding : 5px;
 }
 
 #regForm input[type=text], #regForm input[type=password] {
-    height: 30px;
-    width: 200px;
-    font-size: 1.2em;
-    padding: 0 5px;
+    height : 30px;
+    width : 200px;
+    font-size : 1.2em;
+    padding : 0 5px;
 }
-
 #regForm input[type=submit], #editForm input[type=submit] {
 
-    width: 100px;
-    height: 56px;
+    width : 100px;
+    height : 56px;
 
-    border: 1px solid #aaa;
+    border: 2px solid #AAA;
 
     font-size: 1.5em;
     font-family: 'Jua', sans-serif;
 
-    background-color: rgb(134, 194, 44);
+    background-color: greenyellow;
 }
 
 div.msg {
@@ -73,8 +71,8 @@ div.msg {
     display: none;
 }
 
-/*  회원 리스트 영역 */
-#listArea{
+/* 회원 리스트 영역 */
+#listArea {
     padding: 20px 40px;
     border-bottom: 1px solid #AAA;
 }
@@ -83,19 +81,18 @@ div.msg {
     margin: 10px 0;
 
     width: 600px;
-
     border-collapse: collapse;
 }
 
-#listArea>table td, #listArea>table th{
-    padding: 10px;
+#listArea>table td, #listArea>table th {
+    padding : 10px;
     border: 1px solid #AAA;
     text-align: center;
 }
 
 /* 회원 정보 수정 영역 */
 #editFormArea {
-    width: 350px;
+    width : 350px;
 
     border: 1px solid #AAA;
     border-radius: 10px;
@@ -104,12 +101,12 @@ div.msg {
 
     padding: 20px;
 
-    position:absolute;
+    position: absolute;
     left: 50%;
     top: 100px;
-    margin-left: -178px;
+    margin-left: -175px;
 
-
+    display : none;
 }
 
 #div_header {
@@ -122,19 +119,18 @@ div.msg {
 
 #div_header>h2 {
     float:left;
-
 }
 #div_header>div {
-    float: right;
+    float:right;
 }
 
 #editFormArea>table {
     width:100%;
 
-    margin-top: 15px;
+    margin-top:15px;
 }
 
 #editForm>table td {
-    padding: 5px 10px;
+    padding : 5px 10px;
     text-align: center;
 }
