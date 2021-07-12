@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원관리 프로그램</title>
+    <link rel="stylesheet" href="default.css">
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+    <script>
+
+        // var regExp = /script/;
+        // var string = 'Javascript jquery Ajax'; 
+        
+        // var result = regExp.test(String);
+        // Member -> 생성자 함수 정의
+        function Member(id, pw, name) {
+            this.userid = id;
+            this.pw = pw;
+            this.username = name;   
+        }
+        // 메소드 공통으로 사용-prototype
+        Member.prototype.makeHtml = function() {
+            return '[id:' + this.userId + ' , pw' + this.pw+ ' , name: ' + this.userName + ']'
+        };
+
+        
+
+
+        ////////////////
+        
+
+
+
+        
+        $(document).ready(function(){
+
+            // document 객체를 -> jquey 객체로 변환
+            // var userid = document.querySelector('#userID');
+            // var pw = document.querySelector('#pw');
+            // var repw = document.querySelector('#repw');
+            // var userName = document.querySelector('#userName');
+            // 아이디
+            var userid = $('input[type=text]').val();
+            console.log(userid);
+            // 비밀번호
+            var pw = $('input[type=password]').val();
+            console.log(pw);
+            // 비밀번호 확인
+            var repw = $('input[type=password]').val();
+            console.log(repw);
+            // 이름
+            var userName = $('input[type=text]').val();
+            console.log(userName);
+            
+            // 회원 정보 저장하는 배열
+            var members = [];
+
+            // 사용자 입력 정보를 가지고 Member객체를 생성
+            // 이벤트 연결
+            $('submit').ready(function(){
+
+                if($('userId').val()=="") {
+                    alert('아이디를 입력해주세요.');
+                    $('#userId').focus();
+                    return false;
+                }
+                if($('#pw').val() ==""){
+                    alert('비밀번호를 입력해주세요.');
+                    $('#pw').focus();
+                    return false;
+                }
+                //암호 확인
+                var pw=$('#pw').val();
+                var repw=$('#repw').val();
+
+                if(pw != repw){
+                    alert('비밀번호와 재확인비밀번호가 일치하지 않습니다');
+                    $('#repw').focus();
+                    return false;
+                }
+
+                //이름 입력
+                if($('#userName').val() == "") {
+                    alert('이름을 입력해주세요.');
+                    $('#userName').focus();
+                    return false;
+                }
+
+                return false;
+            })
+
+            
+        });
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <!-- header 시작 -->
+    <header>
+        <h1 class="title_font">Member Manager</h1>
+    </header>
+    <!-- <hr> -->
+    <!-- header  끝 -->
+
+    <!-- 회원 등록 폼 시작 -->
+    <div id="regFormArea">
+        <h2 class="title_font">회원 정보 등록</h2>
+        <form id="regForm">
+            <table>
+                <tr>
+                    <td>
+                        <label for="userID">아이디</label>
+                        <input type="text" id="userID" placeholder="아이디를 입력해주세요.">
+                        <div class="msg"></div>
+                    </td>
+                    <td>
+                        <label for="pw">비밀번호</label>
+                        <input type="password" id="pw" placeholder="비밀번호를 입력해주세요.">
+                        <div class="msg"></div>
+                    </td>
+                    <td>
+                        <label for="repw">비밀번호 확인</label>
+                        <input type="password" id="repw" placeholder="비밀번호를 입력해주세요.">
+                        <div class="msg"></div>
+                    </td>
+                    <td>
+                        <label for="userName">이름</label>
+                        <input type="text" id="userName" placeholder="이름을 입력해주세요">
+                        <div class="msg"></div>
+                    </td>
+                    <td>
+                        <input type="submit" value="등록">
+                        <input type="reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <!-- 회원 등록 폼 끝 -->
+
+    <!-- 회원 리스트 시작 -->
+    <div id="listArea">
+        <h2 class="title_font">회원 리스트</h2>
+        <table>
+            <tbody id="list">
+                <tr>
+                    <th>순번(index)</th>
+                    <th>아이디</th>
+                    <th>비밀번호</th>
+                    <th>이름</th>
+                    <th>관리</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- 회원 리스트 끝 -->
+
+    <div id="editFormArea">
+
+        <div id="div_header">
+            <h2 class="title_font">회원 정보 수정</h2>
+            <div> <a href="javascript:editMemberClose()">닫기</a> </div>
+        </div>
+        <form id="editForm">
+            <table>
+                <tr>
+                    <td>아이디</td>
+                    <td><input type="text" id="editId" disabled> 
+                        <input type="hidden" id="index">
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="password" id="editPw" required> </td>
+                </tr>
+                <tr>
+                    <td>비밀번호 확인</td>
+                    <td><input type="password" id="editRePw" required> </td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td><input type="text" id="editName" required> </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="수정">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>
