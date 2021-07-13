@@ -20,12 +20,14 @@ public class Aliquot {
 		for(int i = 1; i <= N; i++) {
 			if(N % i == 0) { //1부터 N까지의 약수를 모두 찾는다
 				arr[i] = i;
-				System.out.println(K);
+				System.out.println(K); //
 			}
 		}
 		
-//		System.out.println(arr[K]);
+		System.out.println(arr[K]);
 		
 	}
 
 }
+//aaa
+//1234
