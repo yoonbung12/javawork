@@ -39,23 +39,23 @@ $(document).ready(function(){
     // 아이디
     
     // var:전역변수,함수
-    // var id = $('#userID');
-    // var pw = $('#pw');
-    // var repw = $('#repw');
-    // var name = $('#userName');
+    var id = $('#userID');
+    var pw = $('#pw');
+    var repw = $('#repw');
+    var name = $('#userName');
     
-    var id = $('input[type=text]').val();
-    // console.log(userid);
+    // var id = $('input[type=text]').val();
+    // // console.log(userid);
 
-    // 비밀번호
-    var pw = $('input[type=password]').val();
-    // console.log(pw);
-    // 비밀번호 확인
-    var repw = $('input[type=password]').val();
-    // console.log(repw);
-    // 이름
-    var name = $('input[type=text]').val();
-    // console.log(userName);
+    // // 비밀번호
+    // var pw = $('input[type=password]').val();
+    // // console.log(pw);
+    // // 비밀번호 확인
+    // var repw = $('input[type=password]').val();
+    // // console.log(repw);
+    // // 이름
+    // var name = $('input[type=text]').val();
+    // // console.log(userName);
     
     
 
