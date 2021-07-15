@@ -25,22 +25,35 @@ public class Trophy {
 //		//배열 트로피의 개수 = N
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//		ArrayList<Integer> arr = new ArrayList<Integer>();
+		
 		int N = Integer.parseInt(br.readLine()); //트로피 개수
 		int[] trophies = new int[N];
 		
-		for(int i=0; i<N; i++) {
+		for(int i=0; i<trophies.length; i++) {
 			trophies[i] = Integer.parseInt(br.readLine());
 		}
 		// 맥스값을 초기에 0으로 설정후 다음 인덱스를 하나씩 탐색-> max값보다 크면 결과값++
 		int  big = trophies[0];
 		int cnt = 1;
 		for(int i=1; i<trophies.length; i++) {
-			if
+			if(big<trophies[i]) { //앞의트로피보다 높이가 큰 트로피가 나오면 cnt++
+				cnt++;
+				big = trophies[i];
+			}
 		}
+		System.out.println(cnt);
 		
-		
-		
+		//반대방향 확인할 차례(배열의 순서를 마지막 순서부터 탐색하도록)
+		big = trophies[trophies.length-1]; 
+		//원본 배열의trophies의 마지막 인덱스(int i=trophies.length-1)부터 탐색
+		int cnt2 =1;
+		for(int i=trophies.length-1; i>=0; i--) {
+			if(big <trophies[i]) {
+				cnt2++;
+				big = trophies[i];
+			}
+		}
+		System.out.println(cnt2);
 	}
 
 }
