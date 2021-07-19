@@ -1,0 +1,5 @@
+C:\Users\PC\Documents\GitHub\javawork\jsp_project
+\.metadata
+\.plugins
+\org.eclipse.wst.server.core
+\tmp0\wtpwebapps
