@@ -113,8 +113,40 @@ public class DeptDao {
 	// 3. Dept 테이블의 데이터 수정 메소드
 	// 반영된 행의 개수 반환
 	// 사용자로부터 데이터를 받아서 처리 -> Dept 객체
-//	int editDept(Connection conn, Dept dept) {
-											 
+	
+		int editDept(Connection conn, Dept dept) {
+			
+			int result = 0;
+
+			// 전달받은 Dept 객체의 데이터로 Dept 테이블에 저장 -> 결과 값을 반환
+			PreparedStatement pstmt = null;
+
+			try {
+				String sql = "update dept set dname=?, loc=? where deptno=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, dept.getDname());
+				pstmt.setString(2, dept.getLoc());
+				pstmt.setInt(3, dept.getDeptno());
+				
+				result = pstmt.executeUpdate();
+				
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				if(pstmt != null) {
+					try {
+						pstmt.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+
+			return result;
+		}										 
 	// 4. DEPT 테이블의 데이터를 삭제
 	// 삭제된 행의개수를 반환
 	// 사용자로부터 deptno 받아서 처리

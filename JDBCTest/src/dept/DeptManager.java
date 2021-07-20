@@ -95,9 +95,81 @@ public class DeptManager {
 	
 	// 데이터 수정
 	// 사용자로부터 데이터를 받아 수정 -> dao editDept() 메소드 이용
+	void editDept() {
+		// Connection 객체 생성 -> 트렌젝션 처리
+		Connection conn = null;
+
+		// 2. 연결
+		String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user = "hr";
+		String pw = "tiger";
+
+		try {
+			conn = DriverManager.getConnection(jdbcUrl, user, pw);
+
+			System.out.println("부서 정보를 수정합니다.");
+			System.out.println("부서번호 부서이름 부서위치     형식으로 입력해주세요.");
+			System.out.println("입력된 부서번호의 부서이름과 부서위치가 수정됩니다.");
+			String editData = sc.nextLine();
+			String[] eData = editData.split(" ");
+
+			Dept dept = new Dept(Integer.parseInt(eData[0]), eData[1], eData[2]);
+
+			int result = dao.editDept(conn, dept);
+
+			if (result > 0) {
+				System.out.println("수정되었습니다.");
+			} else {
+				System.out.println("수정실패!!!");
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
 	
 	
 	// 데이터 삭제
+	void delDept() {
+		// Connection 객체 생성 -> 트렌젝션 처리
+		Connection conn = null;
+
+		// 2. 연결
+		String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user = "hr";
+		String pw = "tiger";
+		
+		try {
+			conn = DriverManager.getConnection(jdbcUrl, user, pw);
+			
+			deptList();
+			System.out.println("삭제를 원하시는 부서번호를 입력해주세요.");
+			int deptno = Integer.parseInt(sc.nextLine());
+			
+			int result = dao.deleteDept(conn, deptno);
+			
+			if(result>0) {
+				System.out.println("삭제되었습니다.");
+			} else {
+				System.out.println("해당 부서의 정보가 없습니다.");
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	
 }
