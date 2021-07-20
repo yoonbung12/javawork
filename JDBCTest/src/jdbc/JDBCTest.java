@@ -21,31 +21,40 @@ public class JDBCTest {
 		PreparedStatement pstmt = null;
 		
 		
-		
 		try {
 			//1.드라이버 로드
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+			// 오라클
+			//Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			//mysql
+			Class.forName("com.mysql.jdbc.Driver");
 			System.out.println("드라이버 로드 성골!");
 			
 			//2.연결
-			String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe"; //몇번씩 해볼것
-			String user = "hr";
-			String pw = "tiger";
+			//오라클
+			//String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe"; //몇번씩 해볼것
+			// mysql
+			String jdbcUrl = "jdbc:mysql://localhost:3306/project?serverTimezone=UTC";
+			
+			// 오라클
+			//String user = "hr";
+			//String pw = "tiger";
+			
+			// mysql
+			String user = "bit";
+			String pw = "12345678";
 			
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 			System.out.println("데이터베이스 연결 성공!!!");
 			
 			//3.sql처리
-		    
-			stmt = conn.createStatement();
+		    stmt = conn.createStatement();
 		    
 			int dno = 10;
 			String otype = "deptno";
 			
-			String sqlSelect = 
-					"select * from dept where deptno = "+dno+"order by " + otype;
-		    
-			
+			//String sqlSelect = "select * from dept where deptno = "+dno+"order by " + otype;
+		    String sqlSelect = "select * from dept";
 		    rs = stmt.executeQuery(sqlSelect);
 		    
 		    //rs.next() -> 다음행의 존재 유무 확인
