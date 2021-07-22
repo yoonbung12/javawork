@@ -27,7 +27,7 @@ public class JDBCTest {
 			//Class.forName("oracle.jdbc.driver.OracleDriver");
 			
 			//mysql
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("드라이버 로드 성골!");
 			
 			//2.연결
@@ -42,7 +42,7 @@ public class JDBCTest {
 			
 			// mysql
 			String user = "bit";
-			String pw = "12345678";
+			String pw = "bit";
 			
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 			System.out.println("데이터베이스 연결 성공!!!");
