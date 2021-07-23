@@ -4,6 +4,13 @@
 	request.setAttribute("name", "손흥민");
 	session.setAttribute("name", "이강인"	);
 	application.setAttribute("name", "메시");
+	
+	/* 이부분 다시 확인 */
+	Member member = new Member();
+	member.setId("cool");
+	member.setName("COOL");
+	memer.setPw("1234");
+	session.setAttribute("member", member);
 %>
 <!DOCTYPE html>
 <html>
@@ -43,6 +50,12 @@
 	<hr>
 	${true } / ${false } / ${100 } / ${'손흥민'} / ${null}
 	
+	<hr> <!-- member.getId() -->
+	${member} / ${member.id }
+	<br>								
+	<%= session.getAttribute("member") %> /
+	<!-- 이부분도 다시 --> 
+	<%= ((Member)session.getAttribute("member")).getId() %>
 
 </body>
 </html>
