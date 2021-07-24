@@ -13,6 +13,12 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+  <servlet>
+  	<servlet-name>Loader</servlet-name>
+  	<servlet-class>jdbc.util.Loader</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
   <!-- 에러페이지 등록 -->
   <!-- http 상태 코드로 등록 -->
   <error-page>

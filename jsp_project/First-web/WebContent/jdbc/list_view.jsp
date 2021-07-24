@@ -48,7 +48,8 @@
 			<td><%= list.get(i).getDname() %></td>
 			<td><%= list.get(i).getLoc() %></td>
 			<td>
-				<a href="#">수정</a><a href="#">삭제</a>
+				<a href="dept_editForm.jsp?deptno=<%= list.get(i).getDeptno() %>">수정</a>
+				<a href="javascript:delDept(<%= list.get(i).getDeptno() %>)">삭제</a>
 			</td>
 		</tr>	
 				<%
@@ -58,11 +59,19 @@
 
 					
 	</table>
-	
+	<script>
+		function delDept(deptno){
+			
+			if(confirm('정말 삭제하시겠습니까?')){
+				location.href = 'dept_delete.jsp?deptno='+deptno;
+			}
+			
+		}
+	</script>
 
-	 <%
+	 <%--
 	 out.println(list);  
-	 %>	
+	 --%>	
 	
 	
 	

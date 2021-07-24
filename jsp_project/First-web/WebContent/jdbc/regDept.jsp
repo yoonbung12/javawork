@@ -1,10 +1,13 @@
+<%@page import="dept.dao.DeptDao"%>
+<%@page import="jdbc.util.ConnectionProvider"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	// 1. 사용자가 입력한 데이터를 받고
+	// 1. 사용자가 입력한 데이터를 받고 -> 처리 -> 결과를 속성에 저장 -> view 저장
+	
 	
 	// 입력데이터의 한글 처리!!!!
 	request.setCharacterEncoding("utf-8");
@@ -17,36 +20,19 @@
 	int resultCnt = 0;
 	
 	// 2. DB 처리: insert
-	
 	// 데이터베이스 드라이버 로드
-	Class.forName("com.mysql.cj.jdbc.Driver");
-	
-	try {
 	// 연결
 	Connection conn = null;
-	PreparedStatement pstmt = null;
+	DeptDao dao = DeptDao.getInstance();
 	
-	String jdbcUrl = "jdbc:mysql://localhost:3306/projext?serverTimezone=UTC";
-	String user = "bit";
-	String pw = "bit";
 	
-	conn = DriverManager.getConnection(jdbcUrl, user, pw);
+
 	
-	// PreparedStatement
-	String sqlInsert = "insert into dept values(?, ?, ?)";
-	pstmt = conn.prepareStatement(sqlInsert);
-	pstmt.setInt(1, Integer.parseInt(deptno));
-	pstmt.setString(2, dname);
-	pstmt.setString(3, loc);
-	
-	resultCnt = pstmt.executeUpdate();
-	
-	out.println(resultCnt);
-	
-	// insert -> int
-	
-	// 3. dept_list.jsp 이동
-	//response.sendRedirect("dept_list.jsp");
+	try {
+
+		conn = ConnectionProvider.getConnection();
+
+		resultCnt = dao.insertDept(conn, new Dept(Integer.parseInt(deptno), dname, loc));
 	
 	} catch(Exception e){
 		
