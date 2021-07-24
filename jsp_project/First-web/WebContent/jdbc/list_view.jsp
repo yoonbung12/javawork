@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	List<Dept> list = (List<Dept>)request.getAttribute("result");
+	List<Dept> list = (List<Dept>) request.getAttribute("result");
 %>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
 	}
 	
 	button {
-		margin: 5px 15px;
+		margin: 5px 0;
 	}
 </style>
 <script>
@@ -29,7 +29,7 @@
 	<h1>부서 리스트</h1>
 	<hr>
 	
-	<button>부서정보 등록</button>
+	<button onclick="location.href='dept_regForm.jsp';">부서정보 등록</button>
 	
 	<table border =1>
 		<tr>
@@ -47,7 +47,9 @@
 			<td><%= list.get(i).getDeptno() %></td>
 			<td><%= list.get(i).getDname() %></td>
 			<td><%= list.get(i).getLoc() %></td>
-			<td><a href="#">수정</a><a href="#">삭제</a></td>
+			<td>
+				<a href="#">수정</a><a href="#">삭제</a>
+			</td>
 		</tr>	
 				<%
 			}
@@ -57,9 +59,11 @@
 					
 	</table>
 	
-	<%--
-		out.println(list);
-	--%>
+
+	 <%
+	 out.println(list);  
+	 %>	
+	
 	
 	
 	

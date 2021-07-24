@@ -53,7 +53,7 @@
 	
 	
 %>	
-  <jsp: forward page="List_view.jsp"/>  
+  <jsp:forward page="List_view.jsp"/>  
    <!-- list_view.js : view 의 역할만!!!! -->
 
   
