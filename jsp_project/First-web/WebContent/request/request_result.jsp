@@ -3,7 +3,7 @@
 <%
 
 	// 사용자가 전달한 데이터의 한글 처리!!!
-	request.setCharacterEncoding("utf-8");
+	//request.setCharacterEncoding("utf-8");
 
 	String userName = request.getParameter("username");
 	String job = request.getParameter("job");
