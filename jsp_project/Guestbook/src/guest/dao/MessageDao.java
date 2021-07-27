@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import guest.domain.Message;
+import guest.jdbc.JdbcUtil;
 
 public class MessageDao {
 
@@ -24,6 +25,7 @@ public class MessageDao {
 			resultCnt = pstmt.executeUpdate();
 			
 		} finally {
+			JdbcUtil.close(pstmt); //다형성 가능
 			// close
 		}
 		
