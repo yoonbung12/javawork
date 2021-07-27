@@ -1,3 +1,6 @@
+<%@page import="guest.exception.InvalidPasswordException"%>
+<%@page import="guest.exception.MessageNotFoundException"%>
+<%@page import="java.sql.SQLException"%>
 <%@page import="guest.service.DeleteMessageService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
