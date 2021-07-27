@@ -7,6 +7,7 @@ import guest.dao.MessageDao;
 import guest.domain.Message;
 import guest.domain.MessageRequest;
 import guest.jdbc.ConnectionProvider;
+import guest.jdbc.JdbcUtil;
 
 public class WriteMessageService {
 	
@@ -22,6 +23,9 @@ public class WriteMessageService {
 		try {
 			conn = ConnectionProvider.getConnection();
 			dao = new MessageDao();
+			conn.setAutoCommit(false);
+			// AutoCommit 의 기본값은 true -> 자동 커밋
+			// 프로그래머가 Java JDBC에서 트렌젝션을 컨트롤 -> conn.setAutoCommit(false);
 			
 			Message message = requestMessage.toMessage();
 			// 데이터 전처리가 필요한 부분은 처리
@@ -30,8 +34,12 @@ public class WriteMessageService {
 			
 			resultCnt = dao.writeMessage(conn, message);
 			
-		} catch (SQLException e) {
+			// 트렌젝션 완료
+			conn.commit();
 			
+		} catch (SQLException e) {
+			// 트렌젝션 rollback
+			JdbcUtil.rollback(conn);
 			e.printStackTrace();
 		}
 		
