@@ -23,3 +23,5 @@ where messageid=1;
 
 -- delete
 delete from project.guestbook_message where messageid=1;
+
+commit;
