@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%	
-	// 현재 세션 객체 소멸
-	session.invalidate(); 
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +8,14 @@
 <style>
 </style>
 <script>
-	alert('로그아웃 되었습니다.');
-	location.href='<%= request.getContextPath()%>';
 </script>
 </head>
 <body>
-
+	<h3>메시지를 삭제하려면 비밀번호를 입력하세요.</h3>
+	<form action="messageDelete.jsp" method="post">
+		비밀번호 <input type="password" name="password"> 
+		<input type="hidden" name="mid" value="${param.mid}"> <br>
+		<input type="submit" value="삭제">
+	</form>
 </body>
 </html>

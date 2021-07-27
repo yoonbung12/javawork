@@ -9,7 +9,7 @@
   </welcome-file-list>
   
   <!-- 드라이버 로드 서블릿 등록/설정 -->
-  <servlet>
+ <!-- <servlet>
   	<servlet-name>DriverLoader</servlet-name>
   	<servlet-class>jdbc.DriverLoader</servlet-class>
   	<init-param>
@@ -17,6 +17,47 @@
   		<param-value>com.mysql.cj.jdbc.Driver</param-value>
   	</init-param>
   	<load-on-startup>1</load-on-startup>
-  </servlet>
+  </servlet> --> 
+  
+  <!-- filter 등록 -->
+  <filter>
+  	<filter-name>CharacterEncodingFilter</filter-name>
+  	<filter-class>filter.CharacterEncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>/member/loginForm.jsp</param-value>
+  	</init-param>
+  </filter>
+  
+  <!-- filter Mapping 설정 -->
+  <filter-mapping>
+  		<filter-name>LoginCheckFilter</filter-name>
+  		<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+	  	<filter-name>LoginCheckFilter</filter-name>
+	  	<filter-class>filter.LoginCheckFilter</filter-class>
+	  	<init-param>
+	  			<param-name>loginFormUri</param-name>
+	  			<param-value>/loginForm</param-value>
+	  	</init-param>
+  </filter>
+  
+  <filter-mapping>
+  		<filter-name>LoginCheckFilter</filter-name>
+  		<url-pattern>/mypage/*</url-pattern>
+  </filter-mapping>
+  
+  <context-param>
+  		<param-name>jdbcdriver</param-name>
+  		<param-value>com.mysql.cj.jdbc.Driver</param-value>
+  </context-param>
+  
+  
+  <!--  Listner 등록 -->
+  <listener>
+  		<listener-class>jdbc.JdbcListener</listener-class>
+  </listener>
   
 </web-app>
