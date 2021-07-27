@@ -4,12 +4,15 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import guest.dao.MessageDao;
+import guest.domain.Message;
 import guest.exception.InvalidPasswordException;
 import guest.exception.MessageNotFoundException;
 import guest.jdbc.ConnectionProvider;
-import oracle.jdbc.driver.Message;
+import guest.jdbc.JdbcUtil;
+
 
 public class DeleteMessageService {
+	
 	// 싱글톤 처리
 	private DeleteMessageService() {}
 	private static DeleteMessageService service = new DeleteMessageService();
@@ -17,7 +20,8 @@ public class DeleteMessageService {
 		return service;
 	}
 	
-	public int deleteMessage(int mid, String pw) {
+	public int deleteMessage(int mid, String pw) 
+				throws SQLException, MessageNotFoundException, InvalidPasswordException {
 		
 		int resultCnt = 0;
 		
@@ -52,10 +56,21 @@ public class DeleteMessageService {
 			}
 			
 			
-		} catch() {	
+		} catch(SQLException e) {	
+				e.printStackTrace();
+				JdbcUtil.rollback(conn);
+				throw e; 
+		} catch(MessageNotFoundException e) {
+				e.printStackTrace();
+				JdbcUtil.rollback(conn);
+				throw e;
 		
-		} finally {
-			
+		} catch(InvalidPasswordException e) {		
+				e.printStackTrace();
+				JdbcUtil.rollback(conn);
+				throw e;			
+		}finally {
+				JdbcUtil.close(conn);
 		}
 		
 		return resultCnt;

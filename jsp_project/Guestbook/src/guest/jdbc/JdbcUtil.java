@@ -17,6 +17,7 @@ public class JdbcUtil {
 			}
 		}
 	}
+	
 	public static void close(Statement stmt) {
 		
 		if(stmt != null) {
@@ -27,6 +28,7 @@ public class JdbcUtil {
 			}
 		}
 	}
+	
 	public static void close(ResultSet rs) {
 		
 		if(rs != null) {

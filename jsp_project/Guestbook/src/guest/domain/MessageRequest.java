@@ -35,5 +35,12 @@ public class MessageRequest { //beans
 	public Message toMessage() {
 		return new Message(guestname, password, message);
 	}
+
+	@Override
+	public String toString() {
+		return "MessageRequest [guestname=" + guestname + ", password=" + password + ", message=" + message + "]";
+	}
+	
+	
 	
 }
