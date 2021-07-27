@@ -2,7 +2,9 @@ package guest.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import guest.domain.Message;
 import guest.jdbc.JdbcUtil;
@@ -40,6 +42,33 @@ public class MessageDao {
 		
 		
 		return resultCnt;
+	}
+
+	// 전체 게시물의 개수
+	public int selectAllCount(Connection conn) throws SQLException {
+		
+		int totalCount = 0;
+		Statement stmt = null;
+		ResultSet rs = null;
+		
+		try {
+			stmt = conn.createStatement();
+			
+			String sql = "select count(*) from guestbook_message;";
+			
+			rs = stmt.executeQuery(sql);
+		
+			if(rs != null) {
+				totalCount = rs.getInt(1);
+			}
+			
+		} finally {
+			JdbcUtil.close(rs);
+			JdbcUtil.close(stmt);
+		}
+		
+		
+		return 0;
 	}
 
 }
