@@ -4,6 +4,7 @@
 	request.setCharacterEncoding("utf-8");
 %>    
 <jsp:useBean id="messageRequest" class="guest.domain.MessageRequest" />
+<jsp:setProperty property="*" name="messageRequest"/>
 <!DOCTYPE html>
 <html>
 <head>
