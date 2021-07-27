@@ -8,6 +8,15 @@ import guest.domain.Message;
 import guest.jdbc.JdbcUtil;
 
 public class MessageDao {
+	
+	//싱글톤 처리
+	private MessageDao() {} //접근 제어자
+	
+	private static MessageDao dao = new MessageDao(); //전역 변수
+	
+	public static MessageDao getInstance() {
+		return dao;
+	}
 
 	public int writeMessage(Connection conn, Message message) throws SQLException {
 		
