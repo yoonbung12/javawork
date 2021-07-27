@@ -16,11 +16,11 @@
 	<table>
 		<tr>
 			<td>이름</td>
-			<td><input type="text" name="guestname"></td>
+			<td><input type="text" name="guestname" required></td>
 		</tr>
 		<tr>
 			<td>비밀번호</td>
-			<td><input type="password" name="password"></td>
+			<td><input type="password" name="password" required></td>
 		</tr>
 		<tr>
 			<td>메시지</td>
