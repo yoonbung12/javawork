@@ -11,6 +11,14 @@ import guest.jdbc.JdbcUtil;
 
 public class WriteMessageService {
 	
+	private WriteMessageService() {}
+	
+	private static WriteMessageService service = new WriteMessageService();
+	
+	public static WriteMessageService getInstance()	{
+		return service;
+	}
+	
 	// 메시지를 DB에 쓰고 처리된 결과 생성
 	public int writeMessage(MessageRequest requestMessage) {
 		
@@ -22,7 +30,7 @@ public class WriteMessageService {
 		
 		try {
 			conn = ConnectionProvider.getConnection();
-			dao = new MessageDao();
+			dao = MessageDao.getInstance(); //new MessageDao();
 			conn.setAutoCommit(false);
 			// AutoCommit 의 기본값은 true -> 자동 커밋
 			// 프로그래머가 Java JDBC에서 트렌젝션을 컨트롤 -> conn.setAutoCommit(false);
