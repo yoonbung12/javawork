@@ -29,7 +29,7 @@ if(p == null) {
 		
 		<%
 			for(int i = 0; i<product.getProductList().length; i++){
-				out.println("<option>"+prodcut.getProductList()[i]+"</option>");
+				out.println("<option>"+product.getProductList()[i]+"</option>");
 			}
 		%>
 		

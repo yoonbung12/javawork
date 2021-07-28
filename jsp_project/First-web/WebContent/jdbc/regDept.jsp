@@ -1,3 +1,4 @@
+<%@page import="dept.domain.Dept"%>
 <%@page import="dept.dao.DeptDao"%>
 <%@page import="jdbc.util.ConnectionProvider"%>
 <%@page import="java.sql.DriverManager"%>

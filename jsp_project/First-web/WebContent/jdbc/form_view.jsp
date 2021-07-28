@@ -1,7 +1,8 @@
+<%@page import="dept.domain.Dept"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	Dept dept = (Dept) request.getAttribute("dept");
+	Dept dept = (Dept)request.getAttribute("dept");
 %>
 <!DOCTYPE html>
 <html>

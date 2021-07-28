@@ -5,7 +5,7 @@
 	// 쿠키의 수정은 같은 이름의 쿠키를 만들어서 설정
 	// 새로운 쿠키 생성
 	//Cookie c = new Cookie("cname", "king");
-	response.addCookie(CookieBox.makeCookie(value)); //이부분 확인할것
+	response.addCookie(CookieBox.makeCookie("name", "이강인")); //이부분 확인할것
 
 %>
 
@@ -22,7 +22,7 @@
 <body>
 	<h1>쿠키 값이 변경되었습니다.</h1>
 	
-	<a herf="viewCookie.jsp">쿠키 보기</a>
+	<a href="viewCookie.jsp">쿠키 보기</a>
 	
 	
 	

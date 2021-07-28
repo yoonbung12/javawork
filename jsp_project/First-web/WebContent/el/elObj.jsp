@@ -1,3 +1,4 @@
+<%@page import="member.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -9,7 +10,7 @@
 	Member member = new Member();
 	member.setId("cool");
 	member.setName("COOL");
-	memer.setPw("1234");
+	member.setPw("1234");
 	session.setAttribute("member", member);
 %>
 <!DOCTYPE html>
