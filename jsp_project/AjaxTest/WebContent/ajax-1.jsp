@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" Content="text/html; charset="UTF-8">
+<meta http-equiv="Content-Type" Content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <style>
@@ -22,6 +22,6 @@
 </script>
 </head>
 <body>
-	
+ajax-1.jsp
 </body>
 </html>
