@@ -3,7 +3,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="member.domain.Member" %>
 	<!-- member_list.jsp에서 request에 저장한 데이터 블러오기 -->
-<%@ List<Member> memberList=(List<Member>)request.getAttribute  %> 
+<%@ List<Member> memberList=(List<Member>)request.getAttribute %> 
 <!DOCTYPE html>
 <html>
 <head>
