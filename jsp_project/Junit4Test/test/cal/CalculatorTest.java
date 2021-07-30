@@ -98,8 +98,8 @@ public class CalculatorTest {
 		//assertNull("메소드의 실행 값이 null이 예상되는 경우", new Object());
 		//assertNotNull("메소드의 실행 값이 null이 아닌 값이 예상되는 경우", null);
 		//assertSame("같은 값일 경우", 1, 1);
-		assertNotSame("같은 값일 경우", 1, 1);
-
+		//assertNotSame("같은 값일  경우", 1, 1);
+		assertTrue("메소드의 반환값이 true 일때 ", true);
 	}
 	
 	@Test
