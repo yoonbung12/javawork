@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<!-- 8/3 -->
+<!--  프러 퍼티 방식의 주입(기본 생성자 정의가 필요하다) --> 
+
+
+<!--  MemberDao bean등록-->
+
+<!--  MemberRegService bean등록-->
+<!-- 인스턴스 생성 -> setter 메소드 호출(실행) -->
+<bean id="regService" class="member.service.MemberRegService" p:dao-ref="memberDao">
+	
+	<!-- <property name="dao">
+		<ref bean="memberDao"/>
+	</property> -->
+
+</bean>
+
+<bean id="changePwService" class="member.service.ChangePasswordService">
+	<!-- <constructro-arg ref="memberDao"/> -->
+	<constructor-arg>
+	
+		<bean class="member.dao.MemberDao"/>
+	
+	</constructor-arg>
+	<property name="dao" ref="memberDao"/>
+</bean>

@@ -14,7 +14,6 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
-	<resources mapping="/css/**" location="/css/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -22,15 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<!-- 자동 bean 등록 : 애노테이션 찾아서 bean 생성 -->
-	<!-- 
-				@Component : 일반 객
-				@Controller : 기능 Controller
-				@Service : Service 객체
-				@Repository : DAO
-	 -->
-	
-	<context:component-scan base-package="com.bitcamp.firstSpring" />
+	<context:component-scan base-package="com.test.app" />
 	
 	
 	
