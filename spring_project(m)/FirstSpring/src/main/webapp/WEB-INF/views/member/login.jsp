@@ -14,34 +14,24 @@
 <body>
 	<h1>회원 가입</h1>
 	<hr>		 <!-- /web/member/login.jsp -->	
-	<form method="post"> 
+
 		<!-- action="/contextPath/member/login" --> 
 			<table>
 				<tr>
 					<td>아이디</td>
-					<td>
-						<input type="text" name="memberid">
-						<span id="msg" class="display_none"></span>
-						<img id="loading" class="display_none" alt="loading" src="<c:url value="/image/loading.gif"/>">					
-					</td>
+					<td>${id}, ${uid}, ${loginRequest}</td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>
-					<td><input type="password" name="password"></td>
+					<td>${pw}, ${upw }, ${liginRequest.pw}</td>
 				</tr>
 				<tr>
 					<td>이름</td>
-					<td><input type="file" name="membername"></td>
-				</tr>
-				<tr>
 					<td></td>
-					<td>
-						<input type="submit">
-						<input type="reset" >
-					</td>
 				</tr>
+				
 			</table>
-		</form>
+		
 	
 </body>
 </html>

@@ -10,7 +10,7 @@ import member.domain.Member;
 public class MemberDao implements Dao {
 
 	private static int nextId = 0;
-	private Map<String, Member> map = new HashMap();
+	private Map<String, Member > map = new HashMap();
 	// 			email,   Member
 	
 	

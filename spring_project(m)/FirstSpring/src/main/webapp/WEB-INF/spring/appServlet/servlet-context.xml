@@ -31,6 +31,7 @@
 	 -->
 	
 	<context:component-scan base-package="com.bitcamp.firstSpring" />
+<!-- 	<context:component-scan base-package="com.bitcamp.firstSpring" /> 이부분 신경쓸것 다른사람과 함께 프젝한다 ex)뒤에.hotel -->
 	
 	
 	
