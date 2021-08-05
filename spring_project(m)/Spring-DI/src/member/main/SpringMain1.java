@@ -17,7 +17,9 @@ public class SpringMain1 {
 	
 	public static void main(String[] args) {
 	
-		ctx = new GenericXmlApplicationContext("classpath:appCtx1.xml");
+		//ctx = new GenericXmlApplicationContext("classpath:appCtx1.xml");
+		ctx = new GenericXmlApplicationContext("classpath:appCtx2.xml");
+
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -55,7 +57,7 @@ public class SpringMain1 {
 		//ChangePasswordService service = new ChangePasswordService(dao);
 		//ChangePasswordService service = assembler.getPasswordService();
 		ChangePasswordService service = ctx.getBean("changePwService", ChangePasswordService.class);
-		
+														// ID값
 		try {
 			service.changePassword(values[1], values[2], values[3]);
 		

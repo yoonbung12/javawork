@@ -3,30 +3,23 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<!-- 프러퍼티 방식의 주입 -->
+
 	<!-- MemberDao bean 등록 -->
 	<bean id="memberDao" class="member.dao.MemberDao"></bean>
 	
 	
 	<!-- MemberRegService bean 등록 -->
+	<!-- 인스턴스 생성  - > setter 메소드 호출(실행) -->
 	<bean id="regService" class="member.service.MemberRegService">	
-		<constructor-arg ref="memberDao" /> 
-	</bean>
-
-<!-- 기본형 타입의 데이터 주입 -->
-	<bean id="regService1" class="member.service.MemberRegService">	
-		<constructor-arg value="10" /> 
-	</bean>
-
-<!-- 기본형 타입의 데이터 주입 -->
-	<bean id="regService2" class="member.service.MemberRegService">	
-		<constructor-arg index="0" ref="memberDao"/>
-		<constructor-arg index="1" value="10" /> 
+		<property name="dao">
+			<ref bean="memberDao"/>
+		</property>
 	</bean>
 
 	
 	<bean id="changePwService" class="member.service.ChangePasswordService">
-		<constructor-arg ref="memberDao"></constructor-arg>
-
+		<property name="dao" ref="memberDao"/>
 	</bean>
 </beans>
 	
