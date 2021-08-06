@@ -12,23 +12,21 @@
 </script>
 </head>
 <body>
-	<h1>회원 가입</h1>
-	<hr>		 <!-- /web/member/login.jsp -->	
-
+	<h1>Login Request Data</h1>
+	<hr>		 
+		
+		<!-- /web/member/login.jsp -->	
 		<!-- action="/contextPath/member/login" --> 
 			<table>
 				<tr>
-					<td>아이디</td>
-					<td>${id}, ${uid}, ${loginRequest}</td>
+						<td>아이디</td>
+						<td>${id}, ${uid}, ${loginReq.id}</td>
 				</tr>
 				<tr>
-					<td>비밀번호</td>
-					<td>${pw}, ${upw }, ${liginRequest.pw}</td>
+						<td>비밀번호</td>
+						<td>${pw}, ${upw }, ${liginReq.pw}</td>
 				</tr>
-				<tr>
-					<td>이름</td>
-					<td></td>
-				</tr>
+				
 				
 			</table>
 		

@@ -12,25 +12,35 @@
 </script>
 </head>
 <body>
-	<h1>LoginForm</h1>
-	<hr>		 <!-- /web/member/login.jsp -->	
-	<form action="<c:url value="/member/Login.jsp"/>">	<!-- /web/member/mypage/mypage.jsp -->
-		<table>
-			<tr>
-				<td>아이디</td>
-				<td><input type="text" name="id">
-			</tr>
-			<tr>
-				<td>비밀번호</td>
-				<td><input type="password" name="pw">
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="submit">
-			</tr>
-			
-		</table>
-	
-	</form>
+				<h1>회원가입</h1>
+				<hr>		 
+				<!-- /web/member/login.jsp -->	
+				<%-- <form action="<c:url value="/member/Login.jsp"/>"> --%>
+				<form method="post">	
+					
+													<table>
+																<tr>
+																			<td>아이디</td>
+																			<td>
+																						<input type="text" name="memberid" id="memberid">
+																						<span id="msg" class="display_none"></span>
+																						<img id="loadingimg" class="display_none" alt="loading" src="<c:url value="/image/loading.gif"/>">
+																			</td>
+																</tr>
+																<tr>
+																			<td>비밀번호</td>
+																			<td><input type="password" name="password"></td>
+																</tr>
+																<tr>
+																			<td></td>
+																			<td>
+																					<input type="submit">
+																					<input type="reset">
+																			</td>		
+																</tr>
+														
+													</table>
+												
+				</form>
 </body>
 </html>

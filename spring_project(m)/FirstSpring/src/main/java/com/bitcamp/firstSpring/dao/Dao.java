@@ -1,5 +1,8 @@
 package com.bitcamp.firstSpring.dao;
 
-public class Dao {
+public interface Dao {
 
+	
+	void insert();
+	
 }

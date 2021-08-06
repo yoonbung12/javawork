@@ -61,6 +61,7 @@ public class ViewController {
 				return null;
 			}
 		};
+		return model;
 	}
 	@RequestMapping("/view/view3")
 	public Map getPage3() {

@@ -12,35 +12,26 @@
 </script>
 </head>
 <body>
-	<h1>회원 가입</h1>
+	<h1>LoginForm</h1>
 	<hr>		 <!-- /web/member/login.jsp -->	
 	<form method="post"> 
 		<!-- action="/contextPath/member/login" --> 
 			<table>
 				<tr>
-					<td>아이디</td>
-					<td>
-						<input type="text" name="memberid">
-						<span id="msg" class="display_none"></span>
-						<img id="loading" class="display_none" alt="loading" src="<c:url value="/image/loading.gif"/>">					
-					</td>
+						<td>아이디</td>
+						<td><input type="text" name="id">
 				</tr>
 				<tr>
 					<td>비밀번호</td>
-					<td><input type="password" name="password"></td>
-				</tr>
-				<tr>
-					<td>이름</td>
-					<td><input type="file" name="membername"></td>
+					<td><input type="password" name="pw">
 				</tr>
 				<tr>
 					<td></td>
-					<td>
-						<input type="submit">
-						<input type="reset" >
-					</td>
+					<td><input type="submit">
 				</tr>
+				
 			</table>
+			
 		</form>
 	
 </body>

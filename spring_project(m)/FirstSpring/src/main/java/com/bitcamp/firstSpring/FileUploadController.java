@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,13 @@ import com.bitcamp.firstSpring.domain.Report;
 
 @Controller
 public class FileUploadController {
+
+	@Autowired
+	private FileUploadService uploadService;
+	
+	
+	
+	
 	
 	final String UPLOAD_URI = "/uploadfile"; // 파일저장하고자 하는 경로
 	
@@ -60,10 +68,10 @@ public class FileUploadController {
 			Model model
 			
 			
-			)  {
+			) throws IllegalStateException, IOException {
 		
 		String sno = request.getParameter("sno");
-		String snmae = request.getParameter("sname");
+		String sname = request.getParameter("sname");
 		MultipartFile report = request.getFile("report");
 		
 		System.out.println("학번 : " + sno);
@@ -74,7 +82,7 @@ public class FileUploadController {
 		model.addAttribute("sname", sname);
 		model.addAttribute("reportfile", report.getOriginalFilename());		
 		
-		saveFile(request, file);
+		saveFile(request, report);
 		
 		return "upload/upload";
 		
