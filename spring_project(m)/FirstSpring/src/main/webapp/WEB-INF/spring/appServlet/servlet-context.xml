@@ -31,8 +31,10 @@
 	</beans:bean>
 	
 	
-	
-	
+	<!-- <beans:bean id="fileDao" class="com.bitcamp.firstSpring.dao.Dao"/>
+	<beans:bean id="fileService" class="com.bitcamp.firstSpring.FileUploadService"/>
+	 -->
+	 
 	<!-- 자동 bean 등록 : 애노테이션 찾아서 bean 생성 -->
 	<!-- 
 				@Component : 일반 객
