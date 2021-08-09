@@ -16,7 +16,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Open Project :로그인</title>
-<%@ include file="/WEB-INF/" %>
+<%-- <%@ include file="/WEB-INF/" %> --%>
 
 </head>
 <body>
