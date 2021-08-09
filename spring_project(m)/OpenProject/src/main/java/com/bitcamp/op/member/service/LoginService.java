@@ -1,17 +1,17 @@
-package com.bitcamp.op.member.controller.member.service;
+package com.bitcamp.op.member.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bitcamp.op.jdbc.ConnectionProvider;
-import com.bitcamp.op.member.controller.member.dao.MemberDao;
+import com.bitcamp.op.member.dao.MemberDao;
 import com.bitcamp.op.member.domain.Member;
 
 @Service
@@ -23,8 +23,9 @@ public class LoginService {
 	public boolean login(
 			String id,
 			String pw,
+			String reid,
 			HttpSession session,
-			HttpServlet response) {
+			HttpServletResponse response) {
 		
 		boolean loginChk = false;
 		

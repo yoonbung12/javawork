@@ -1,16 +1,18 @@
 package com.bitcamp.op.member.controller;
 
-import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.bitcamp.op.member.controller.member.service.LoginService;
+import com.bitcamp.op.member.service.LoginService;
+
 
 @Controller
 @RequestMapping("/member/login")
@@ -22,7 +24,13 @@ public class LoginController {
 	
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String loginForm() {
+	public String loginForm(
+			@RequestHeader(value="referer", required=false) String redirectUri,
+			Model model
+			
+			) {
+		
+		model.addAttribute("redirectUri", redirectUri);
 		return "member/loginForm";
 	}
 	
@@ -31,9 +39,10 @@ public class LoginController {
 			
 			@RequestParam("memberid") String memberid,
 			@RequestParam("password") String password,
+			@RequestParam(value = "redirectUri", required = false) String redirectUri,
 			@RequestParam(value = "reid", required=false) String reid,			
 			HttpSession session,
-			HttpServlet response,
+			HttpServletResponse response,
 			Model model
 			) {
 		
@@ -41,7 +50,24 @@ public class LoginController {
 		boolean loginChk = loginService.login(memberid, password, reid, session, response);
 		model.addAttribute("loginChk", loginChk);
 		
-		return "member/login";
+		String view = "member/login";
+		
+		if(redirectUri != null && loginChk) {
+			view = "redirect:" + redirectUri;
+		}
+		
+		
+		return view;
+	}
+	
+	private boolean chkURI(String uri) {
+		boolean chk = true;
+		
+		if(!uri.startsWith("http://localhost:8080/")) {
+			chk = false;
+		}
+		
+		return chk;
 	}
 	
 }

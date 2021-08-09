@@ -1,4 +1,4 @@
-package com.bitcamp.op.member.controller.member.dao;
+package com.bitcamp.op.member.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

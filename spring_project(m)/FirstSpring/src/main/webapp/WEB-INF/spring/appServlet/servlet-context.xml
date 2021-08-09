@@ -37,12 +37,12 @@
 	 
 	 
 	 <!-- 로그인 체크 인터셉터 등록 -->
-	 <interceptors>
+<!-- 	 <interceptors>
 	 		<interceptor>
 	 				<mapping path="/member/mypage/**"/>
-	 				<beans:bean class="com.bitcamp.firstSpring.member.intercepter.AuthCheckInterceptor" /> <!-- 여러개 할경우 interceptors 밖에 beans ref 사용 -->		
+	 				<beans:bean class="com.bitcamp.firstSpring.member.intercepter.AuthCheckInterceptor" /> 여러개 할경우 interceptors 밖에 beans ref 사용		
 		 	</interceptor>
-	 </interceptors>
+	 </interceptors> -->
 	 
 	 
 	<!-- 자동 bean 등록 : 애노테이션 찾아서 bean 생성 -->
