@@ -58,13 +58,13 @@ public class LoginService {
 		
 		// 아이디 저장을 위한 Cookie 설정
 		if(reid != null && reid.length() > 0) {
-			Cookie cookie = new Cookie("reid", reid);
+			Cookie cookie = new Cookie("reid", id);
 			cookie.setPath("/");
 			cookie.setMaxAge(60 * 60 * 24* 365);
 			
 			response.addCookie(cookie);
 		} else {
-			Cookie cookie = new Cookie("reid", reid);
+			Cookie cookie = new Cookie("reid", id);
 			cookie.setPath("/");
 			cookie.setMaxAge(0);
 			

@@ -3,6 +3,7 @@ package com.bitcamp.op.member.service;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bitcamp.op.jdbc.ConnectionProvider;
+import com.bitcamp.op.jdbc.JdbcUtil;
 import com.bitcamp.op.member.dao.MemberDao;
 import com.bitcamp.op.member.domain.Member;
 import com.bitcamp.op.member.domain.MemberRegRequest;
@@ -32,6 +34,7 @@ public class MemberRegService {
 		
 		int resultCnt = 0;
 		Connection conn  = null;
+		File newFile = null;
 		
 		try {
 		// 1.파일 저장
@@ -79,6 +82,9 @@ public class MemberRegService {
 			if(newFile != null && newFile.exists()) {
 				newFile.delete();
 			}
+			e.printStackTrace();
+		} finally {
+			JdbcUtil.close(conn);
 		}
 			
 		
