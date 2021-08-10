@@ -4,7 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Open Project : 로그인</title>
+
+<%@ include file="/WEB-INF/views/frame/metaheader.jsp" %>
+
+
 </head>
 <body>
 
@@ -12,14 +16,39 @@
 	
 	<%@ include file="/WEB-INF/views/frame/nav.jsp" %>
 	
-	<div class="content">
+	<div id="content">
+			<h2>Login</h2>
+			<hr>
 		
-		<h2>Login</h2>
-		<hr>
-		<h2>
-					${loginInfo }
-		</h2>
-				
+			<form method="post">
+									<table>
+													<tr>
+																	<th>ID</th>
+																	<!-- reid -->
+																	<td><input type="text" name="memberid"
+																					value="${cookie.reid.value }"></td>
+													</tr>
+													<tr>
+																	<th>PW</th>
+																	<!-- checked -->
+																	<td>
+																	<input type="checkbox" name="reid" value="on"
+																			${cookie.reid ne null ? 'checked' : '' } > 아이디 기억하기
+																			
+																			<!-- <input type="hidden" name "redirectUri" value=${redirectUri ne null ? redirectUri : ''}"> -->
+																			<input type="hidden" name="redirectUri"	value="${param.referer }">
+																			
+																	</td>
+													
+													</tr>
+													<tr>
+																<th></th>
+																<td><input type="submit"></td>
+													
+													</tr>
+									
+									</table>
+			</form>	
 	
 	</div>
 

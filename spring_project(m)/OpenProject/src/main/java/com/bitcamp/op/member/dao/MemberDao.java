@@ -17,40 +17,40 @@ public class MemberDao {
 
 
 
-//	public int insertMember(Connection conn, Member member) throws SQLException {
-//
-//		int resultCnt = 0;
-//
-//		PreparedStatement pstmt = null;
-//
-//		String sql1 = "insert into member (memberid,password,membername) values (?, ?, ?)";
-//		String sql2 = "insert into member (memberid,password,membername, memberphoto) values (?, ?, ?,?)";
-//
-//		try {
-//			
-//			if(member.getMemberphoto() == null) {
-//				pstmt = conn.prepareStatement(sql1);
-//				pstmt.setString(1, member.getMemberid());
-//				pstmt.setString(2, member.getPassword());
-//				pstmt.setString(3, member.getMembername());
-//			} else {
-//				pstmt = conn.prepareStatement(sql2);
-//				pstmt.setString(1, member.getMemberid());
-//				pstmt.setString(2, member.getPassword());
-//				pstmt.setString(3, member.getMembername());
-//				pstmt.setString(4, member.getMemberphoto());
-//			}
-//			
-//			resultCnt = pstmt.executeUpdate();
-//
-//		}  finally {
-//			JdbcUtil.close(pstmt);
-//			
-//		}
-//
-//		return resultCnt;
-//
-//	}
+	public int insertMember(Connection conn, Member member) throws SQLException {
+
+		int resultCnt = 0;
+
+		PreparedStatement pstmt = null;
+
+		String sql1 = "insert into member (memberid,password,membername) values (?, ?, ?)";
+		String sql2 = "insert into member (memberid,password,membername, memberphoto) values (?, ?, ?,?)";
+
+		try {
+			
+			if(member.getMemberphoto() == null) {
+				pstmt = conn.prepareStatement(sql1);
+				pstmt.setString(1, member.getMemberid());
+				pstmt.setString(2, member.getPassword());
+				pstmt.setString(3, member.getMembername());
+			} else {
+				pstmt = conn.prepareStatement(sql2);
+				pstmt.setString(1, member.getMemberid());
+				pstmt.setString(2, member.getPassword());
+				pstmt.setString(3, member.getMembername());
+				pstmt.setString(4, member.getMemberphoto());
+			}
+			
+			resultCnt = pstmt.executeUpdate();
+
+		}  finally {
+			JdbcUtil.close(pstmt);
+			
+		}
+
+		return resultCnt;
+
+	}
 
 //	public List<Member> selectList(Connection conn) {
 //
