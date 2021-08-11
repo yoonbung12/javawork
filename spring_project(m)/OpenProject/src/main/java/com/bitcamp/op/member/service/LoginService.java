@@ -10,70 +10,59 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bitcamp.op.jdbc.ConnectionProvider;
-import com.bitcamp.op.member.dao.MemberDao;
+import com.bitcamp.op.member.dao.JdbcTemplateMemberDao;
 import com.bitcamp.op.member.domain.Member;
 
 @Service
 public class LoginService {
 
+//	@Autowired
+//	MemberDao dao;
+
 	@Autowired
-	MemberDao dao;
+	private JdbcTemplateMemberDao dao;
 	
 	public boolean login(
-			String id,
-			String pw,
-			String reid,
-			HttpSession session,
-			HttpServletResponse response) {
+				String id,
+				String pw,
+				String reid,
+				HttpSession session,
+				HttpServletResponse response) {
 		
-		boolean loginChk = false;
+			boolean loginChk = false;
 		
 		
-		Connection conn = null;
-		
-		try {
-			conn = ConnectionProvider.getConnection();
-			
+			Connection conn = null;
 			
 			// 전달받은 id와 pw 로 DB에서 검색
-			// => 있다면 로그인 처리 true return ,
-			// =>없다면 false return
-			
-			Member member = dao.selectByIdPw(conn, id, pw);
+			// => 있다면 로그인 처리 true return
+			// => 없다면 false return
+			Member member = dao.selectByIdPw(id, pw);
 			
 			if(member != null) {
-				// 로그인 처리
-				session.setAttribute("loginInfo", member.toLoginInfo());
-				
-				loginChk = true;
+					// 로그인 처리
+					session.setAttribute("loginInfo", member.toLoginInfo());
+					
+					loginChk = true;
 			}
 			
+			// 아이디 저장을 위한 Cookie 설정
+			if(reid != null && reid.length() > 0) {
+				Cookie cookie = new Cookie("reid", id);
+				cookie.setPath("/");
+				cookie.setMaxAge(60*60*24*365);
+				
+				response.addCookie(cookie);
+			} else {
+				Cookie cookie = new Cookie("reid", id);
+				cookie.setPath("/");
+				cookie.setMaxAge(0);
+				
+				response.addCookie(cookie);
+			}
 			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+			return loginChk;
 		
-		// 아이디 저장을 위한 Cookie 설정
-		if(reid != null && reid.length() > 0) {
-			Cookie cookie = new Cookie("reid", id);
-			cookie.setPath("/");
-			cookie.setMaxAge(60 * 60 * 24* 365);
-			
-			response.addCookie(cookie);
-		} else {
-			Cookie cookie = new Cookie("reid", id);
-			cookie.setPath("/");
-			cookie.setMaxAge(0);
-			
-			response.addCookie(cookie);
-		}
-		
-	
-		
-		
-		return loginChk;
 	}
+	
 }
