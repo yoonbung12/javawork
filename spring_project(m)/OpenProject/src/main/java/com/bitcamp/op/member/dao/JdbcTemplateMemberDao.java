@@ -27,40 +27,8 @@ public class JdbcTemplateMemberDao {
 
 
 
-	public int insertMember(Connection conn, Member member) throws SQLException {
+	public int insertMember(Member member) throws SQLException {
 
-//		template.
-//		
-//		
-//		int resultCnt = 0;
-//
-//		PreparedStatement pstmt = null;
-
-		
-
-//		try {
-//			
-//			if(member.getMemberphoto() == null) {
-//				pstmt = conn.prepareStatement(sql1);
-//				pstmt.setString(1, member.getMemberid());
-//				pstmt.setString(2, member.getPassword());
-//				pstmt.setString(3, member.getMembername());
-//			} else {
-//				pstmt = conn.prepareStatement(sql2);
-//				pstmt.setString(1, member.getMemberid());
-//				pstmt.setString(2, member.getPassword());
-//				pstmt.setString(3, member.getMembername());
-//				pstmt.setString(4, member.getMemberphoto());
-//			}
-//			
-//			resultCnt = pstmt.executeUpdate();
-//
-//		}  finally {
-//			JdbcUtil.close(pstmt);
-//			
-//		}
-		
-		
 
 		int resultCnt = 0;
 		String sql1 = "insert into member (memberid,password,membername) values (?, ?, ?)";
@@ -87,56 +55,37 @@ public class JdbcTemplateMemberDao {
 
 	public int insertMember1(final Member member) throws SQLException {
 
-		
-
-		int resultCnt = 0;
-		String sql1 = "insert into member (memberid,password,membername) values (?, ?, ?)";
-		final String sql2 = "insert into member (memberid,password,membername, memberphoto) values (?, ?, ?,?)";
-		
-		
+		int resultCnt = 0;		
 		
 		// 자동 증가한 컬럼의 값을 저장할 객체
 		KeyHolder holder = new GeneratedKeyHolder();
 		
-		template.update(
+		resultCnt = template.update(
 				new PreparedStatementCreator() {
 					
 					@Override
 					public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
 
-						
+						String sql2 = "insert into member (memberid,password,membername, memberphoto) values(?,?,?,?)";
 						PreparedStatement pstmt = con.prepareStatement(sql2, new String[] {"idx"});
 						pstmt.setString(1, member.getMemberid());
 						pstmt.setString(2, member.getPassword());
 						pstmt.setString(3, member.getMembername());
 						pstmt.setString(4, member.getMemberphoto());
-						return null;
+						return pstmt;
 					}
 				}
 				, holder);
 		
 		Number idx = holder.getKey();
+		member.setIdx(idx.intValue());
 		
 		
 		
-		if(member.getMemberphoto() != null	) {
-			resultCnt = template.update(sql2,
-										member.getMemberid(),
-										member.getPassword(),
-										member.getMembername(),
-										member.getMemberphoto()
-										);
-		} else {
-			resultCnt = template.update(sql1,
-						member.getMemberid(),
-						member.getPassword(),
-						member.getMembername()
-					);
-			
-		}
 		return resultCnt;
 
 	}
+	
 	
 	
 	public List<Member> selectList(Connection conn) {
@@ -166,7 +115,6 @@ public class JdbcTemplateMemberDao {
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			JdbcUtil.close(rs);
@@ -180,81 +128,39 @@ public class JdbcTemplateMemberDao {
 	
 	public Member selectByIdPw(Connection conn, String id, String pw) {
 		
-//		Member member = null;
-//		PreparedStatement pstmt = null;
-//		ResultSet rs = null;
-//		
-//		String sql = "select * from member where memberid=? and password=?";
-//		
-//		try {
-//			pstmt = conn.prepareStatement(sql);
-//			pstmt.setString(1, id);
-//			pstmt.setString(2, pw);
-//			rs = pstmt.executeQuery();
-//			
-//			if(rs.next()) {
-//				member = new Member();
-//				member.setIdx(rs.getInt("idx"));
-//				member.setMemberid(rs.getString("memberid"));
-//				member.setPassword(rs.getString("password"));
-//				member.setMembername(rs.getString("membername"));
-//				member.setRegdate(rs.getTimestamp("regdate"));
-//			}
-//			
-//			
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} finally {
-//			JdbcUtil.close(rs);
-//			JdbcUtil.close(pstmt);
-//		}
-//		
-		//jdbc 템플릿 이용해서 만든 코드
-		Member member = null;
+
+		// String sql = "select * from member where memberid=? and password=?";
+		List<Member> list = template.query("select * from member where memberid=? and password=?",
+							new MemberRowMapper(), id, pw);
 		
-		
-		String sql = "select * from member where memberid=? and password=?";
-		List<Member> list = template.query(sql, new MemberRowMapper(), id, pw );
 		//Member = list.isEmpty()	? null : list.get(0);
 		
 		return list.isEmpty()	? null : list.get(0);
 	}
 	
-	 // ID 중목여부 확인을 위한 id 값으로 검색 -> 개수 반
-	public int selectByIdPw(Connection conn, String memberId) throws SQLException {
-		//8/11
-//		String sql ="select count(*) from member where memberid=?"
-//		int cnt = template.queryForObject(sql, Integer.class, memberId);
-//		return cnt;
-//		return template.queryForObject("select count(*) from member where memberid=?", null);
+	 // ID 중목여부 확인을 위한 id 값으로 검색 -> 개수 반환
+	public Member selectByIdPw(String id, String pw) throws SQLException {
+		
+		// String sql = "select * from member where memberid=? and password=?";
+		List<Member> list = template.query("select * from member where memberid=? and password=?", 
+							new MemberRowMapper(), id, pw);
+		// Member member = list.isEmpty() ? null : list.get(0);
+		
+		return list.isEmpty() ? null : list.get(0);
+		
+		
+		
 	}
 	
+		
+		
+		
+		
+	
 	// ID 중복여부 확인을 위한 id 값으로 검색 -> 개수 반환
-	public int selectById(Connection conn, String memberId) throws SQLException {
+	public int selectById( String memberId) throws SQLException {
+		return template.queryForObject("select count(*) from member where memberid=?", Integer.class, memberId );
 		
-		int cnt = 0;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		
-		String sql = "select count(*) from member where memberid=?";
-		
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, memberId);
-			
-			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
-				cnt = rs.getInt(1);
-			}
-			
-		} finally {
-			JdbcUtil.close(rs);
-			JdbcUtil.close(pstmt);
-		}
-		
-		return cnt;
 	}	
 	
 	
