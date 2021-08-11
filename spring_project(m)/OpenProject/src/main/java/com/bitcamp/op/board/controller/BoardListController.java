@@ -10,5 +10,5 @@ public class BoardListController {
 	@RequestMapping("/board/list")
 	public String getList() {
 		return "board/list";
-	}
+	 }
 }
