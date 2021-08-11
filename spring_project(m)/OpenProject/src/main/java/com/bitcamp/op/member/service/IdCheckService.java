@@ -16,24 +16,28 @@ public class IdCheckService {
 //	@Autowired
 //	MemberDao dao;
 	
+	@Autowired
 	private JdbcTemplateMemberDao dao;
 	
 	public String idCheck(String id) {
 		
 		String result = "Y";
-		//Connection conn = null;
+		// Connection conn = null;
 		
-			try {
-				// conn = ConnectionProvider.getConnection();
-				if(dao.selectById(id) >0) {
-					result="N";
+		
+		try {
+
+				//conn = ConnectionProvider.getConnection();
+				if(dao.selectById(id)>0) {
+					result = "N";
 				}
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		
-		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return result;
+
 	}
+	
+	
+	
 }
