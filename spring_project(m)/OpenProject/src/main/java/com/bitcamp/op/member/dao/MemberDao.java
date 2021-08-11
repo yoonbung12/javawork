@@ -131,7 +131,7 @@ public class MemberDao {
 		return member;
 	}
 	
-	 // ID 중목여부 확인을 위한 id 값으로 검색 -> 개수 반
+	 // ID 중목여부 확인을 위한 id 값으로 검색 -> 개수 반환
 	public int selectByIdPw(Connection conn, String memberId) throws SQLException {
 		
 		int cnt = 0;
