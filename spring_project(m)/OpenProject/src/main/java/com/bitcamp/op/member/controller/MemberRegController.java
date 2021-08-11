@@ -19,6 +19,8 @@ public class MemberRegController {
 	@Autowired
 	private MemberRegService regService;
 	
+	
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public String regForm() {
 		return "member/regForm";
@@ -27,7 +29,7 @@ public class MemberRegController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String reg(
 			
-			@ModelAttribute("regReqeust")MemberRegRequest regRequest,
+			@ModelAttribute("regReqeust") MemberRegRequest regRequest,
 			HttpServletRequest request,
 			Model model
 			) {
