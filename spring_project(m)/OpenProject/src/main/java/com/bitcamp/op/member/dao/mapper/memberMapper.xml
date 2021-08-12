@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="com.bitcamp.op.member.dao.memberMapper">
+ 
+ 	<select id="selectAll"
+ 					resultType="com.bitcamp.op.member.domain.Member"
+ 	>
+ 	select * from member
+ 	<!--  where memberid= and password= -->
+ 	
+ 	</select>
+	
+	<select id="selectById">
+	
+		select count(*) from member where memberid=#{id}
+		<!-- #{arg0} #{arg1} -->
+	</select>
+	
+	<!-- 로그인을 위한 select -->
+	<select id="selectByIdPw"
+					parameterType="com.bitcamp.op.member.domain.SearchIdPw"
+					resultType="com.bitcamp.op.member.domain.Member"	
+	>
+	
+		select * from member where memberid=#{id} and password=#{pw}
+	</select>
+ 
+ 
+ </mapper>
