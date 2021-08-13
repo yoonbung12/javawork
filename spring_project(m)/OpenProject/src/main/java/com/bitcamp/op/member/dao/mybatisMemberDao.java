@@ -29,7 +29,7 @@ public class mybatisMemberDao {
 	@Autowired
 	private SqlSessionTemplate template;
 	
-	private final String NAME_SPACE
+	private final String NAME_SPACE ="com.bitcamp.op.member.dao.memberMapper";
 	
 	
 	
@@ -39,6 +39,8 @@ public class mybatisMemberDao {
 	public int insertMember(Member member) throws SQLException {
 
 
+		return template.update(NAME_SPACE+".insertMember", member);
+		
 //		int resultCnt = 0;
 //		String sql1 = "insert into member (memberid,password,membername) values (?, ?, ?)";
 //		String sql2 = "insert into member (memberid,password,membername, memberphoto) values (?, ?, ?,?)";
@@ -166,7 +168,8 @@ public class mybatisMemberDao {
 	
 	// ID 중복여부 확인을 위한 id 값으로 검색 -> 개수 반환
 	public int selectById( String memberId) throws SQLException {
-		return template.queryForObject("select count(*) from member where memberid=?", Integer.class, memberId );
+
+		return template.selectOne(NAME_SPACE+".selectById", memberId);
 		
 	}	
 	

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="com.bitcamp.op.member.dao.memberMapper">
+ <!-- 인터페이스의 full name을 namespace로 설정해야한다!!!  -->
+ 
+	
+	<!-- sql tag 식별은 인터페이스의 메소드 이름과 일치 시킨다 -->
+	<!-- 로그인을 위한 select -->
+	<select id="selectByIdPw"
+					resultType="com.bitcamp.op.member.domain.Member"	
+	>
+	
+		select * from member where memberid=#{param1} and password=#{param2}
+	</select>
+ 
+ <select id="selectById" resultType="int">
+ 		select count(*) from member where memberid=#{}
+ 
+ </select>
+ 
+ </mapper>

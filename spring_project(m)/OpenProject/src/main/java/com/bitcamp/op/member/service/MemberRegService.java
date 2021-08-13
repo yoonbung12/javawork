@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import com.bitcamp.op.jdbc.ConnectionProvider;
 import com.bitcamp.op.jdbc.JdbcUtil;
 import com.bitcamp.op.member.dao.MemberDao;
+import com.bitcamp.op.member.dao.mybatisMemberDao;
 import com.bitcamp.op.member.domain.Member;
 import com.bitcamp.op.member.domain.MemberRegRequest;
 
@@ -21,8 +22,12 @@ public class MemberRegService {
 
 	final String UPLOAD_URI = "/uploadfile"; // 파일저장하고자 하는 경로
 
+	//@Autowired
+	//private MemberDao dao;
+	
 	@Autowired
-	private MemberDao dao;
+	private mybatisMemberDao dao;
+
 	
 	public int  memberReg(
 			MemberRegRequest regRequest,
@@ -33,11 +38,70 @@ public class MemberRegService {
 		
 		
 		int resultCnt = 0;
-		Connection conn  = null;
+		//Connection conn  = null;
 		File newFile = null;
 		
 		try {
 		// 1.파일 저장
+			
+		// Member 객체 생성 -> 저장된 파일의 이름을 set
+		Member member = regRequest.toMember();
+		
+		// 파일 저장
+		if(regRequest.getPhoto() != null && !regRequest.getPhoto().isEmpty()) {
+			
+			
+			// 새로운 저장 폴더 : File
+			File newDir = new File(request.getSession().getServletContext().getRealPath(UPLOAD_URI));
+			
+			// 폴더가 존재하지 않으면 폴더 생성
+			if(!newDir.exists()) {
+				newDir.mkdir();
+				System.out.println("저장 폴더를 생성했습니다.");
+				
+			}
+			
+			// 파일 저장시에 파일 이름이 같으면 덮어쓴다 -> 회원별 고유한 파일 이름을 만들자!!, 새로운 파일 이름에 확장자 추가
+			String newFileName = regRequest.getMemberid()
+					+ System.currentTimeMillis()
+					+ chkFileType(regRequest.getPhoto());
+			
+			// cool123123893845
+			
+			// 새로운 File 객체
+			newFile = new File(newDir, new FileName);
+			
+			regRequest.getPhoto().transferTo(newFile);
+			member.setMemberphoto(newFileName);
+			
+		} else {
+			member.setMemberphoto("photo.png");
+		}
+		
+		// 2. dao저장
+		// conn = ConnectionProvider.getConnection();
+		
+		resultCnt = dao.insertMember1(member);
+		
+		System.out.println("새롭게 등록된 idx => " + member.getIdx());
+		
+		// idx 값은 자식 테이블의 insert 시 외래키로 사용
+		
+		// 자식테이블 insert 구문.....
+		
+	} catch(IllegalStateException | IOException e) {
+		e.printStackTrace();
+	} catch(SQLException e) {
+			//DB 예외 발생 시 -> 저장된 파일을 삭제
+			if(newFile != null && newFile.exists()) {
+				newFile.delete();
+				
+	}
+			e.printStackTrace();
+	} catch(Exception e) {
+		System.out.println(e.getMessage());
+		e.printStackTrace();
+	}
 		
 		// 시스템 경로
 		String path = request.getSession().getServletContext().getRealPath(UPLOAD_URI);
@@ -70,6 +134,13 @@ public class MemberRegService {
 		member.setMemberphoto(newFileName);
 		
 		resultCnt = dao.insertMember(conn, member);
+		
+		System.out.println("새롭게 등록된 idx => " + member.getIdx());
+		
+		// idx 갑은 자식 테이블의 insert 시 외래키로 사용
+		
+		// 자식테이블 insert 구문...
+		
 		
 		} catch (IllegalStateException e) {
 			// TODO Auto-generated catch block

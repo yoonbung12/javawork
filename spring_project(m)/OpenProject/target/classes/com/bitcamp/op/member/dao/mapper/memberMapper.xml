@@ -5,6 +5,18 @@
 
  <mapper namespace="com.bitcamp.op.member.dao.memberMapper">
  
+ 	<insert id="insertMember"
+ 					parameterType="com.bitcamp.oop.domain.Member"
+ 					useGeneratedKeys="true"
+ 					keyProperty="idx"
+ 	>
+ 		insert into member(memberid, password, membername, memberphoto)
+ 		values(#{memberid},#{password},#{membername},#{memberphoto})
+ 	</insert>
+ 
+ 
+ 
+ 
  	<select id="selectAll"
  					resultType="com.bitcamp.op.member.domain.Member"
  	>
@@ -12,10 +24,18 @@
  	<!--  where memberid= and password= -->
  	
  	</select>
+ 	
+ 	<!-- 파라미터가 하나이고 기본형 또는 문자열인 경우 parameterType 생략 -->
+ 	<!-- resultType="int" : int -> Integer -->
+ 	<select id="selectById"
+ 						resultType="int"
+ 	>
+ 		select count(*) from member where memberid=#{id}
+ 	</select>
 	
 	<select id="selectById">
 	
-		select count(*) from member where memberid=#{id}
+		
 		<!-- #{arg0} #{arg1} -->
 	</select>
 	
