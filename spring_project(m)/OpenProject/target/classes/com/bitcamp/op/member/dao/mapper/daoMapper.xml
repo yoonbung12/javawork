@@ -45,26 +45,24 @@
  		
  		select * from member
  		
+ 		where or memberid like concat('%',)
+ 		
  		 <where>
  		
  			<if test="searchType == 'id'">
- 				 memberid like concat('%', #{keyword}, '%')
+ 				 <!-- memberid like concat('%', #{keyword}, '%') -->
  			</if>
  		
  			<if test="searchType == 'name'">
- 				 membername like concat('%', #{keyword}, '%')
+ 				 <!-- membername like concat('%', #{keyword}, '%') -->
  			</if> 		
  
   			<if test="searchType == 'both'">
- 				 memberid like concat('%', #{keyword}, '%') or membername like concat('%', #{keyword}, '%')
+ 				 <!-- memberid like concat('%', #{keyword}, '%') or membername like concat('%', #{keyword}, '%') -->
  			</if>		
  		
  		</where>
  		
- 		<sql id="searchId">
- 		 memberid like concat('%', #{keyword}, '%')
- 			
- 		</sql>
  		
  		
  		
@@ -78,5 +76,18 @@
  		
  		
  	</select>
+ 	
+ 	<sql id="searchId">
+ 		 memberid like concat('%', #{keyword}, '%')
+ 			
+ 		</sql>
+ 		
+ 		<sql id="searchName">
+ 			membername like concat('%', #{keyword}, '%')
+ 		</sql>
+ 		
+ 		<sql id="searchBoth">
+ 			memberid like concat('%', #{keyword}, '%') or membername like concat('%', #{keyword}, '%')
+ 		</sql>
  
  </mapper>
