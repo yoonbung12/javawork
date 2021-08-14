@@ -6,12 +6,28 @@
  <mapper namespace="com.bitcamp.op.member.dao.memberMapper">
  <!-- 인터페이스의 full name을 namespace로 설정해야한다!!!  -->
  
+ 
+ 	<!-- Select 의 결과를 매핑하는 설정 -->
+ 	<resultMap 	id="memberListResult"
+ 							type="com.bitcamp.op.member.domain.Member" >
+ 		<id  column="idx" property="idx"/>
+ 		<result column="member_id" property="memberid" />
+ 		<result column="membername" property="membername"/>
+ 		<result column="password" property="password"/>
+ 		<result column="memberphoto" property="memberphoto" />
+ 		<result column="regdate" property="regdate" />		 			
+ 			
+ 	</resultMap>
+ 
+ 
 	
 	<!-- sql tag 식별은 인터페이스의 메소드 이름과 일치 시킨다 -->
 	<!-- 로그인을 위한 select -->
+	<!-- <select id="selectByIdPw"
+					resultType="com.bitcamp.op.member.domain.Member">
+	 -->
 	<select id="selectByIdPw"
-					resultType="com.bitcamp.op.member.domain.Member"	
-	>
+					resultType="com.bitcamp.op.member.domain.Member">				
 	
 		select * from member where memberid=#{param1} and password=#{param2}
 	</select>
@@ -20,5 +36,47 @@
  		select count(*) from member where memberid=#{}
  
  </select>
+ 
+ <!-- 검색을 통한 회원 리스트 8/13 -->
+ <select id="selectMember"
+ 					parameterType="com.bitcamp.op.member.domain.SearchType"
+ 					resultType="com.bitcamp.op.member.domain.Member"
+ 		>
+ 		
+ 		select * from member
+ 		
+ 		 <where>
+ 		
+ 			<if test="searchType == 'id'">
+ 				 memberid like concat('%', #{keyword}, '%')
+ 			</if>
+ 		
+ 			<if test="searchType == 'name'">
+ 				 membername like concat('%', #{keyword}, '%')
+ 			</if> 		
+ 
+  			<if test="searchType == 'both'">
+ 				 memberid like concat('%', #{keyword}, '%') or membername like concat('%', #{keyword}, '%')
+ 			</if>		
+ 		
+ 		</where>
+ 		
+ 		<sql id="searchId">
+ 		 memberid like concat('%', #{keyword}, '%')
+ 			
+ 		</sql>
+ 		
+ 		
+ 		
+ 			idx >0
+ 		
+ 		where memberid like concat('%',#{keyword} ,'%')
+
+ 		where membername like concat('%',#{keyword} ,'%')
+
+ 		where memberid like concat('%',#{keyword} ,'%') or membername like concat('%', #{keyword), '%')
+ 		
+ 		
+ 	</select>
  
  </mapper>

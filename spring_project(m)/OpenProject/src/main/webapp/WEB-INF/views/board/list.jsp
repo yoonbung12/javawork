@@ -16,6 +16,7 @@
 
 <%@ include file="/WEB-INF/views/frame/metaheader.jsp" %>
 
+	
 
 
 </head>
@@ -24,6 +25,7 @@
 <%@ include file="/WEB-INF/views/frame/header.jsp" %>
 
 <%@ include file="/WEB-INF/views/frame/nav.jsp" %>
+	
 	
 
 	
