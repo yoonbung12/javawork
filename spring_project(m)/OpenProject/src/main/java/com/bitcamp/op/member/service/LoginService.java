@@ -1,8 +1,5 @@
 package com.bitcamp.op.member.service;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -12,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bitcamp.op.member.dao.Dao;
-import com.bitcamp.op.member.dao.JdbcTemplateMemberDao;
-import com.bitcamp.op.member.dao.mybatisMemberDao;
 import com.bitcamp.op.member.domain.Member;
 
 @Service
@@ -31,24 +26,23 @@ public class LoginService {
 	@Autowired
 	private SqlSessionTemplate template;
 	
-	
 	private Dao dao;
 	
-	
 	public boolean login(
-				String id,
-				String pw,
-				String reid,
-				HttpSession session,
-				HttpServletResponse response) {
-		
+					String id,
+					String pw,
+					String reid,
+					HttpSession session,
+					HttpServletResponse response) {
+
 			boolean loginChk = false;
-		
-		
+			
 			//Connection conn = null;
 			
 			// 인터페이스 Dao 구현체 Mapper
 			dao = template.getMapper(Dao.class);
+			
+			System.out.println("인터페이스 메퍼 dao 생성");
 			
 			// 전달받은 id와 pw 로 DB에서 검색
 			// => 있다면 로그인 처리 true return
@@ -56,7 +50,7 @@ public class LoginService {
 			Member member = dao.selectByIdPw(id, pw);
 			
 			if(member != null) {
-					// 로그인 처리
+					//로그인 처리
 					session.setAttribute("loginInfo", member.toLoginInfo());
 					
 					loginChk = true;
@@ -70,15 +64,19 @@ public class LoginService {
 				
 				response.addCookie(cookie);
 			} else {
-				Cookie cookie = new Cookie("reid", id);
-				cookie.setPath("/");
-				cookie.setMaxAge(0);
-				
-				response.addCookie(cookie);
+					Cookie cookie = new Cookie("reid", id);
+					cookie.setPath("/");
+					cookie.setMaxAge(0);
+					
+					response.addCookie(cookie);
 			}
 			
 			return loginChk;
+			
 		
+			
 	}
+	
+	
 	
 }
