@@ -36,7 +36,7 @@
 		<servlet-class>com.bitcamp.op.jdbc.DriverLoader</servlet-class>
 		<init-param>
 			<param-name>driver</param-name>
-			<param-value>com.mysql.cj.jdbc.Driver</param-value>
+			<param-value>com.mysql.jdbc.Driver</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 		
