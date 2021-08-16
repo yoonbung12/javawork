@@ -29,5 +29,15 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
+	
+	<!-- DB Driver로드 -->
+	<servlet>
+					<servlet-name>DriverLoader</servlet-name>
+					<servlet-class>com.bitcamp.mm.jdbc.DriverLoader</servlet-class>
+					<init-param>
+											<param-name>driver</param-name>
+											<param-value>com.mysql.jdbc.Driver</param-value>
+					</init-param>
+					<load-on-startup>1</load-on-startup>
+	</servlet>
 </web-app>

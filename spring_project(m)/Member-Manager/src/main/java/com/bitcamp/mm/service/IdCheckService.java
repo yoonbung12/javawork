@@ -6,6 +6,10 @@ import java.sql.SQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bitcamp.mm.dao.MemberDao;
+import com.bitcamp.mm.jdbc.ConnectionProvider;
+import com.bitcamp.mm.jdbc.JdbcUtil;
+
 @Service
 public class IdCheckService {
 

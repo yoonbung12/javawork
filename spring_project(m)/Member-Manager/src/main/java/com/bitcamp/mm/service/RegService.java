@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bitcamp.mm.dao.MemberDao;
+import com.bitcamp.mm.dto.Member;
+
 @Service
 public class RegService {
 
