@@ -19,9 +19,9 @@ gtext text not null,
 primary key(gidx)
 );
 desc table project.goods;
-drop table goods;
-select * from goods;
-commit;
+-- drop table goods;
+-- select * from goods;
+
 -- -------------------------------
 -- 장바구니 생성
 create table project.basket(
@@ -31,7 +31,7 @@ midx int not null,
 gidx int not null,
 primary key(bidx)
 );
-
+desc basket;
 alter table project.basket add foreign key(midx) references project.member(midx);
 alter table project.basket add foreign key(gidx) references project.goods(gidx);
 
@@ -119,3 +119,4 @@ foreign key(midx) references member(midx)
 desc  project.comment;
 
 commit;
+
