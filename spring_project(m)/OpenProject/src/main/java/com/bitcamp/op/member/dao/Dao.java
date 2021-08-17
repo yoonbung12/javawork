@@ -7,7 +7,7 @@ import com.bitcamp.op.member.domain.SearchType;
 
 public interface Dao {
 
-	// 로그
+	// 로그인
 	Member selectByIdPw(String id, String pw);
 
 	// 아이디 체크
@@ -34,6 +34,7 @@ public interface Dao {
 	// 검색을 통한 회원 리스트
 	List<Member> selectMember(SearchType searchType);
 	
-	
+	// Rest get : idx 값으로 Member 객체 반환
+	Member selectByIdx(int idx);
 	
 }

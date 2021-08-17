@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/rest/simple")
@@ -16,6 +17,7 @@ public class RestTestController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
+	@ResponseBody
 	public String simple(
 			@RequestBody String body 
 			) {
@@ -26,7 +28,8 @@ public class RestTestController {
 		
 		System.out.println("body : " + body);
 		
-		return null;
+		return body;
+		//return "@ResponseBody 를 이용한 응답";
 	}
 
 	

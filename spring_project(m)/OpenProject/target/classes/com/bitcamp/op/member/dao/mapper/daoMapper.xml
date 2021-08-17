@@ -33,8 +33,14 @@
 	</select>
  
  <select id="selectById" resultType="int">
- 		select count(*) from member where memberid=#{}
+ 		select count(*) from member where memberid=#{mid}
  
+ </select>
+ 
+ <select id="selectByIdx"
+ 					resultType="com.bitcamp.op.member.domain.Member"
+ >
+ 	select * from member where idx=#{idx}
  </select>
  
  <!-- 검색을 통한 회원 리스트 8/13 -->
