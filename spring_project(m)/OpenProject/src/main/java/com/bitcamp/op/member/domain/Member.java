@@ -3,13 +3,20 @@ package com.bitcamp.op.member.domain;
 import java.sql.Timestamp;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Member {
 
 	private int idx;
 	private String memberid;
+	@JsonIgnore
 	private String password;
 	private String membername;
 	private String memberphoto;
+//	@JsonFormat(shape = Shape.STRING)
+	@JsonFormat(pattern = "yyyy. MM.dd. HH:mm:ss")
 	private Timestamp regdate;
 
 	public Member(int idx, String memberid, String password, String username, String memberphoto, Timestamp regdate) {
