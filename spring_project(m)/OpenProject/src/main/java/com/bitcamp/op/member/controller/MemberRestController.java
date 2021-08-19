@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -42,6 +43,7 @@ public class MemberRestController {
 		return member;
 	}
 	@GetMapping("/members")
+	@CrossOrigin // 어디에서 들어오든 상관없이 할수 있음 8.18
 	public List<Member> getMembers(){
 		return restService.getMembers();
 	}
@@ -53,6 +55,7 @@ public class MemberRestController {
 	}
 	
 	@PostMapping("/members/reg1")
+	@CrossOrigin
 	public String regMember1(
 			MemberRegRequest regRequest,
 			HttpServletRequest request
@@ -62,6 +65,7 @@ public class MemberRestController {
 	}
 	
 	@PostMapping("/members/reg2")
+	@CrossOrigin
 	public String regMember2(
 			@RequestBody MemberRegRequest regRequest,
 			HttpServletRequest request

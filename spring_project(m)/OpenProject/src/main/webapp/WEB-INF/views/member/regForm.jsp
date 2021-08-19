@@ -25,10 +25,12 @@
 </style>
 <script>
 	$(document).ready(function() {
+		
 		$('#memberid').focusin(function() {
 			$('#msg').addClass('display_none');
 			$('#msg').removeClass('color_blue');
 			$('#msg').removeClass('color_red');
+			
 			$(this).val('');
 		});
 		$('#memberid').focusout(function() {
