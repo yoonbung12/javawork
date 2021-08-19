@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+* {
+	margin:0;
+	padding: 0;
+}
+
+header {
+	padding :20px;
+}
+
+nav >ul {
+	 overflow: hidden;
+	 lisg-style: none;
+	 border-top: 1px solid  #AAA;
+	 border-bottom: 1px solid #AAA;
+}
+
+nav>ul>li {
+	float: left;
+	
+	width: 150px;
+	text-align: center;
+	
+	height: 35px;
+	line-height: 35px;
+}
+
+#content {
+	
+	padding: 20px;
+	
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+a:hover {
+	text-decoration: underLine;
+}
+
+a:visited {
+	color: #333;
+}
+
+hr {
+	border : 0;
+	border-top : 1px solid #CCC;
+	
+	margin : 20px 0;
+	
+}
+
+td {
+	padding: 5px;
+}
+
+
+
+
+
+

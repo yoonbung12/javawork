@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+		<!-- DataSource 설정 -->
+		<bean id="datasource"
+						class="com.zaxxer.hikari.HikariDataSource"
+						p:driverClassName="com.mysql.jdbc.Driver"
+						p:jdbcUrl="jdbc:mysql://localhost:3306/project?serverTimezone=UTC"
+						p:username="bit"
+						p:password="bit"
+						
+		>
+		</bean>
+		
+		<!-- jdbcTemplate 클래스 등록 -->
+		<bean id="jdbcTemplate"
+					class="org.springframework.jdbc.core.JdbcTemplate"
+					p:dataSource-ref="datasource"
+		
+		>
+		</bean>
+		
+		<!-- SqlSessionFactoryBean 등록 -->
+		<bean id="sqlSessionFactoryBean"
+					class="org.mybatis.spring.SqlSessionFactoryBean"
+					p:dataSource-ref="datasource"
+					p:mapperLocations="classpath:com/bitcamp/op/member/dao/mapper/*.xml"
+		>
+		<!-- /WEB-INF/mapper/*.xml -->
+		
+		
+		</bean>
+		
+		<!-- SqlSessionTemplate 등록 -->
+		<bean id="sqlSessionTemplate"
+					class="org.mybatis.spring.SqlSessionTemplate"
+			
+		>
+		
+		<constructor-arg ref="sqlSessionFactoryBean"></constructor-arg>
+		</bean>
+		
+		
+		
+		
+		
+		
+		
+</beans>

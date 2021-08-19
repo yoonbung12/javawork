@@ -15,7 +15,7 @@ public class DeptDao {
 	
 	// 싱글톤 패턴
 	// 1. 인스턴스 생성을 막는다!!!
-	private DeptDao() {}
+	private DeptDao() {}	// Test 하기 위한 잠시동안의 public테스트 완료후 private로 바꿀
 	// 2. 클래스 내부에서 인스턴스를 생성!!
 	private static DeptDao dao = new DeptDao();
 	// 3. 외부에서 참조값을 반환 받을수 있는 메소드

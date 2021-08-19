@@ -8,7 +8,7 @@ public class ConnectionProvider {
 	
 	public static Connection  getConnection() throws SQLException {
 		
-		String jdbcUrl = "jdbc:mysql://localhost:3306/projext?serverTimezone=UTC";
+		String jdbcUrl = "jdbc:mysql://localhost:3306/project?serverTimezone=UTC";
 		String user = "bit";
 		String pw = "bit";
 		
