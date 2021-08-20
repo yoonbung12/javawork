@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shop</title>
-    <link rel="stylesheet" href="shoptest.css">
+    <title>gim</title>
+    <link rel="stylesheet" href="product.css" >
 </head>
 <body>
     <!-- 맨 위에 부분 -->
@@ -16,6 +16,7 @@
             <img class="normal_logo _front_img" src="../images/KakaoTalk_Photo_2021-08-19-00-01-01.png"  width="180" style="max-width: 100%;height: auto; image-rendering: -webkit-optimize-contrast;">
             
         </div>
+
         <!-- 로그아웃, 마이페이지, 베스킷, 양조장 예약 {a href=""}-->
         <section id="select-menus">
             <div id="select_area_in">
@@ -26,10 +27,10 @@
             </div>
         </section>
 
-    </div>       
+    </div>     
 
     <!-- Diversity, ABOUT, SHOT BREWERY REVIEW -->
-    <!-- href="" 어디로 갈지 봐야함 -->
+    
     <div id="main-menus">
         <span data-hover>DIVERSITY</span>
         <span data-hover>ABOUT</span>
@@ -37,16 +38,29 @@
         <span data-hover>BREWERY</span>
         <span data-hover>REVIEW</span>
     </div>
-
-    <!-- 상품 목록  href="이동할 경로"-->
     <div>
-        <img class="gim_logo" src="../images/김부각.png" alt="김부각" >
-        <img class="garnish_logo" src="../images/신촌 감귤칩.png" alt="감귤칩...">
-        <img class="card_logo" src="../images/화투.png" alt="화투">
-        <img class="glass_logo" src="../images/맥주잔(131).png" alt="맥주잔...">
+        <img class="gim_logo" src="../images/김부각.png" alt="김부각가가가가 " >
+        <div class="product_1">
+            <h2 class="product_name">CRISPY LAVAR SNACK</h2>
+            <h3>제주에서 만난 찹쌀 김부각(20ea)</h3>
+            <h2 class="price">12,100원</h2>
+            <tr>
+                <td>수량</td>
+                <hr>
+                <td>
+                    <input type='button' onclick='count("plus")' value='+'>
+                    <input type="text" name="pop_out" value="0" readonly="readonly" style="text-align:center;"/>
+                    <input type='button' onclick='count("minus")' value="-">
+                    <input type="text" name="sum" size="11" readonly>원
+                </td>
+            </tr>
 
-
+            
+        </div>
     </div>
     
+
 </body>
 </html>
+
+    

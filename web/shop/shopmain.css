@@ -1,0 +1,29 @@
+element.style {
+    width: 189px;
+}
+#s20200705c4b59f1a27ef7 .inline-col-group, #s20200705c4b59f1a27ef7 .inline-col-group .inline-col {
+    vertical-align: middle;
+}
+#s20200705c4b59f1a27ef7 .inline-col-group {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 50px;
+}
+.inline-col-group:first-child {
+    border-left: 0;
+}
+.inline-col-group {
+    position: relative;
+    display: table-cell;
+    /* vertical-align: middle; */
+}
+html * {
+    font-family: 'Gotham A', 'Gotham B', 'Spoqa Han Sans';
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+* {
+    /* -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; */
+    box-sizing: border-box;
+}
