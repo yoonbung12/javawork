@@ -2,9 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Sunflower:wght@500&display=swap');
 
 *{
+    
     margin: 0;
     padding: 0;
 }
+
 #logo_area{
     text-align: center;
     padding-top: 30px;
@@ -15,13 +17,10 @@
     float:right;
     padding: 40px;
     margin-right: 30px;
-    margin-bottom: 350px;
+    margin-bottom: 100px;
     
 }
-/* .logout_btn {
-    border-color: 0;
-    outline: 0;
-} */
+
 #main-menus{
     
     font-weight: 800;
@@ -31,32 +30,40 @@
     word-spacing: 30px;
     font-size: larger;
 }
-.gim_logo{
-    float: left;
-    width: 690px;
-    height: 400px;
-    padding-top: 40px;
+/*  화면 줄였을때 글자 사라지게 만들기(diversity,shop,등~) */
+@media screen and (max-width: 1300px) {
+    .smenus{
+        display: none;
+    }    
 }
-.garnish_logo{
-    height: 400px;
-    width: 680px;
-    margin-top: -267px;
-    margin-left: 60px;
+/* 상품 부분  시작*/
+/* 플렉스 도전 */
+#thumbnail_wrap{
+    margin-top: -800px;
+}
+
+#thumbnail {
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
     
+  }
+  
+  #thumbnail img {
+    display: flex;
+    width: 50%;
+    justify-content: flex-start;
+  }
+  
+  @media (max-width: 990px) {
+    #thumbnail img {
+      width: 100%;
+    }
+    #thumbnail {
+      flex-direction: column;
+    }
+  }
 
 
-}
-.card_logo{
-    float:left;
-    height: 400px;
-    width: 690px;
-    margin-top: 10px;
-    
-}
-.glass_logo{
-    margin-top: 6px;
-    margin-right: 12px;
-    float:right;
-    height: 400px;
-    width: 680px;
-}
+/* 상품 부분 끝-------------------- */

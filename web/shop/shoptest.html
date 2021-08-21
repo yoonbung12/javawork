@@ -7,9 +7,9 @@
     <title>shop</title>
     <link rel="stylesheet" href="shoptest.css">
 </head>
-<body>
+<body class="doz_sys" id="doz_body">
     <!-- 맨 위에 부분 -->
-    <div id="main_wrap">
+    <div id="main_wrap" grid>
 
         <!-- 신촌 맥주 로고  -->
         <div id="logo_area">
@@ -31,21 +31,23 @@
     <!-- Diversity, ABOUT, SHOT BREWERY REVIEW -->
     <!-- href="" 어디로 갈지 봐야함 -->
     <div id="main-menus">
-        <span data-hover>DIVERSITY</span>
-        <span data-hover>ABOUT</span>
-        <span data-hover style="color: #5ae5ec">SHOP</span>
-        <span data-hover>BREWERY</span>
-        <span data-hover>REVIEW</span>
+        <div class="smenus">
+            <span data-hover>DIVERSITY</span>
+            <span data-hover>ABOUT</span>
+            <span data-hover style="color: #5ae5ec">SHOP</span>
+            <span data-hover>BREWERY</span>
+            <span data-hover>REVIEW</span>
+        </div>
     </div>
 
-    <!-- 상품 목록  href="이동할 경로"-->
-    <div>
-        <img class="gim_logo" src="../images/김부각.png" alt="김부각" >
-        <img class="garnish_logo" src="../images/신촌 감귤칩.png" alt="감귤칩...">
-        <img class="card_logo" src="../images/화투.png" alt="화투">
-        <img class="glass_logo" src="../images/맥주잔(131).png" alt="맥주잔...">
-
-
+    <!-- 상품 목록  a href="이동할 경로" grid?? 썸내일로 바꿀것-->
+    <div id="thumbnail_wrap">
+        <div id="thumbnail">
+            <img a href="" class="gim_thumbnail" src="../images/김부각2.png" alt="김부각">
+            <img class="garnish_thumbnail" src="../images/감귤칩2.png" alt="감귤칩">
+            <img class="card_thumbnail" src="../images/화투2.png" alt="화투">
+            <img class="glass_thumbnail" src="../images/맥주잔2.png" alt="맥주잔">
+        </div>
     </div>
     
 </body>
