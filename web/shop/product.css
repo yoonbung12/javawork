@@ -18,6 +18,9 @@
     margin-bottom: 350px;
     
 }
+.price{
+    margin-bottom: 38px;
+}
 #main-menus{
     
     font-weight: 800;
@@ -42,4 +45,81 @@
 }
 hr {
     margin-top: 10px;
+}
+.edge_color{
+    background-color: #f3f2f2;
+}
+.count_btn1{
+    margin-right: -4px;
+    background-color: #fff;
+    width: 20px;
+    border-width: 1px;
+    
+}
+.count_btn2{
+    margin-left: -4px;
+    background-color: #fff;
+    width: 20px;
+    
+    border-width: 0.1px;
+}
+.amount_number{
+    width: 40px;
+    border-width: 1px;
+    text-align: right;
+}
+.button_form1{
+    margin-top: 20px;
+    border-radius: 28px;
+    width: 140px;
+    height: 65px;
+    outline: 0px;
+    border: 0px;
+}
+.button_form2{
+    margin-top: 20px;
+    margin-left: 4px;
+    border-radius: 28px;
+    width: 140px;
+    height: 65px;
+    border-color: #5ae5ec;
+    background-color: #fff;
+    
+
+}
+
+
+form {
+    padding-top: 5px;
+        
+}
+
+.goods_detail{
+    margin-top: 100px;
+    text-align: center;
+}
+.goods_down{
+
+    margin-top: 20px;
+    margin-left: 280px;
+    width: 900px;
+    align-self: right;
+    
+    
+}
+
+.gim_logo2{
+    margin-top: 30px;
+    margin-left: 330px;
+}
+.detail_comment{
+    margin-top: 20px;
+    margin-left: 330px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.short_comment{
+    margin-top: 30px;
+    font-size: 20px;
+    color: gray;
 }

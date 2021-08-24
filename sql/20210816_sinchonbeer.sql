@@ -21,6 +21,9 @@ primary key(gidx)
 desc table project.goods;
 -- drop table goods;
 -- select * from goods;
+insert into project.goods(gidx,gname,gprice,gphoto,gtext) value(2,'감귤칩', 11000,'감귤칩2.png','감귤칩 과자');
+insert into project.goos(gidx,ganme,gprice,gphoto,gtext) value(3, '화투', 
+
 
 -- -------------------------------
 -- 장바구니 생성
@@ -34,6 +37,14 @@ primary key(bidx)
 desc basket;
 alter table project.basket add foreign key(midx) references project.member(midx);
 alter table project.basket add foreign key(gidx) references project.goods(gidx);
+-- 장바구니 테이블 시퀀스 생성 해야하나??
+
+
+
+
+
+
+
 
 -- drop table project.basket;
 -- desc  project.basket;

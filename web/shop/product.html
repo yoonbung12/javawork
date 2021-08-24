@@ -38,27 +38,61 @@
         <span data-hover>BREWERY</span>
         <span data-hover>REVIEW</span>
     </div>
-    <div>
-        <img class="gim_logo" src="../images/김부각.png" alt="김부각가가가가 " >
+    <div id="goods-wrap">
+        <img class="gim_logo" src="../images/김부각2.png " alt="김부각가가가가" >
         <div class="product_1">
             <h2 class="product_name">CRISPY LAVAR SNACK</h2>
             <h3>제주에서 만난 찹쌀 김부각(20ea)</h3>
             <h2 class="price">12,100원</h2>
-            <tr>
-                <td>수량</td>
-                <hr>
-                <td>
-                    <input type='button' onclick='count("plus")' value='+'>
-                    <input type="text" name="pop_out" value="0" readonly="readonly" style="text-align:center;"/>
-                    <input type='button' onclick='count("minus")' value="-">
-                    <input type="text" name="sum" size="11" readonly>원
-                </td>
-            </tr>
+            <tr >
+                <!-- 수량 +,-시 가격 변동하는 방법 찾아볼것!!!  -->
+                <div class="edge_color">
+                    <td>수량</td>
+                    <hr>
+                    <form >
+                        <input type="button" class="count_btn1" value="+" onclick="javascript:this.form.amount.value++;">
+                        <input class="amount_number" type="number" name="amount" value="1" >
+                        <input type="button" class="count_btn2" value="-" onclick="javascript:this.form.amount.value--;">
+                        <!-- <p class="sum" text="font-size:10px">12,100원</p>
+                        <div class="sum">12.100원</div> -->
+                    </form>
+                </div>
+                <div class="opt_block">
+                    <p style="padding-top: 30px;">
+                        <span class="totalcount" style="text-align: left;">총 상품금액</span>
+                        <span class="totalsum" style="text-align: right; padding-left: 110px;">12,100원</span>
+                    </p>
+                </div>
+                <div class="buy_basket">
+                    <!-- 이부분 고쳐야하는디.. a href=""-->
+                    <button type="button" class="button_form1" style="color: #fff; background-color: #5ae5ec;">BUY NOW</button>
+                    <button type="button" class="button_form2"  style="color: #5ae5ec; background-color: #fff;">BASKET</button>
 
+                </div>
+                
+            </tr>
             
         </div>
     </div>
-    
+
+    <div >
+        <h4 class="goods_detail">상세 정보</h4>
+        <hr  class="goods_down" >
+        <img class="gim_logo2" src="../images/김부각3.png">
+        <div class="detail_comment">
+            <p style="color: gray;">신촌맥주와</p>
+            <p style="color: gray;">환상적인 찰떡 궁합</p>
+            <p >신촌에서 만난</p>
+            <p>찹쌀 김부각</p>
+            <div class="short_comment"> 
+                <p>전국 산지에서 찾은 상급의 김 원물을 받아</p>
+                <p>한 장씩 사람의 손으로 직접 튀긴 찹쌀 김부각입니다.</p>
+                <p>짭짤하면서 고소한,감칠맛이 매력적이며</p>
+                <p>신촌 맥주와 잘 어울려요!!!</p>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 </html>
