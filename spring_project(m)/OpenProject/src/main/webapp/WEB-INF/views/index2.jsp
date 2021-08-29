@@ -16,7 +16,8 @@
     
 
     <!-- Bootstrap core CSS -->
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet">
+
 
 
 
@@ -39,9 +40,10 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="offcanvas.css" rel="stylesheet">
-  </head>
-  <body class="bg-light">
+ <link href="<c:url value="/css/offcanvas.css"/>" rel="stylesheet">
+ 	
+ </head>
+ <body class="bg-light">
     
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
   <a class="navbar-brand mr-auto mr-lg-0" href="#">Offcanvas navbar</a>
@@ -178,12 +180,19 @@
 </main>
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+    		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+    		crossorigin="anonymous"></script>
+    		
+      <script>
+      	window.jQuery
      				|| document
-     				.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+     							.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js">
+     	</script>
+			
+			<script src="<c:url value="/js/bootstrap.bundle.min.js"/>"></script>	
 
-      
-        <script src="offcanvas.js"></script>
+		      
+        <script src="<c:url value="/js/offcanvas.js"/>"></script>
   </body>
 </html>

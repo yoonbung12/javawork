@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="../frame/header+nav.css"> -->
+    <link rel="stylesheet" type="text/css" href="header+footer.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../frame/sidebar.css"> -->
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="../bootstrap/css/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div id="header">
+        <div class="col-group">
+            <div class="col-left">
+                <a href="#"><img class="logo-transform" src="../images/logo.png"></a>
+            </div>
+            <div class="col-center">
+                <a href="#"><img class="logo-fixed" src="../images/logo.png"></a>
+            </div>
+            <div class="col-right">
+                <ul class="service-menu">
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">JOIN</a></li>
+                    <li><a href="#">CART</a></li>
+                    <a href="#"><button class="rez-btn-icon">양조장 예약</button></a>
+                </ul>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
+                    aria-expanded="false">
+                    <img class="navbar-toggler-icon" src="../images/navbar_toggle_icon.png">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="collapsibleNavbar" class="navbar-collapse collapse">
+        <div class="slide-menu-header">
+            <div>
+                <a href="#"><img class="logo-transform" src="../images/logo.png"></a>
+            </div>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavbar">
+                <img class="navbar-closer-icon" src="../images/navbar_closer_icon.png">
+            </button>
+        </div>
+        <ul class="slide-menu-nav">
+            <li class="nav-service-menu">
+                <a href="#">LOGIN</a>
+                <a href="#">JOIN</a>
+                <a href="#">CART</a>
+            </li>
+            <li class="nav-rez-btn"><a href="#">양조장 예약</a></li>
+        </ul>
+        <div class="slide-menu-list">
+            <ul>
+                <li><a href="#">DIVERSITY</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SHOP</a></li>
+                <li><a href="#">BREWERY</a></li>
+                <li><a href="#">REVIEW</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const x = window.matchMedia("(min-width: 990px)")
+
+        x.addListener(function (a) {
+            $('#collapsibleNavbar').removeClass('show');
+        });
+    </script>
+
+    <div id="gnb">
+        <div class="col-group">
+            <ul>
+                <li><a href="#"><span>DIVERSITY</span></a></li>
+                <li><a href="#"><span>ABOUT</span></a></li>
+                <li><a href="#"><span>SHOP</span></a></li>
+                <li><a href="#"><span>BREWERY</span></a></li>
+                <li><a href="#"><span>REVIEW</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 장바구니 영역 -->
+    <div class="container">
+        <div class="row text-center m-5">
+            <div class="col">
+                <p class="p_f">CART</p>
+                <p>당신의 신촌은 어떤가요?</p>
+            </div>
+        </div>
+
+        <!-- 장바구니 헤더 -->
+        <h2 class="m-3">장바구니</h2>
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th style="width: 3%">
+                        <input type="checkbox" checked>
+                    </th>
+                    <th class="text-left" style="width:35%">item</th>
+                    <th style="width:15.0%">수량</th>
+                    <th style="width:15.0%">배송수단</th>
+                    <th style="width:20%">가격</th>
+                    <th style="width:15%"></th>
+                </tr>
+            </thead>
+            <!-- 장바구니 상품 목록 -->
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox" checked>
+                    </td>
+                    <td class="text-left">
+                        <a>
+                            <img src="https://cdn.imweb.me/thumbnail/20210826/7e165490558f5.jpg" width="60" height="60" class="float-left"
+                                alt="cart item">
+                            <p class="float-left ml-2">신촌에서 만난 김부각(4ea)</p>
+                        </a>
+                    </td>
+                    <td>
+                        2개
+                        <!-- 수량 변경 btn 추가 -->
+                        <input type="button">
+                    </td>
+                    <td>
+                        택배
+                    </td>
+                    <td> 상품가격:24000원</td>
+                    <td>
+                        <button>삭제</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <p>상품 가격</p>
+                    </td>
+                    <td>
+                        <p>
+                            <span>36,300원</span>
+                        </p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <script></script>
+            <script></script>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td>
+                        <!-- 자바스크립트 -->
+                        <a href="#" class="btn btn-primary">선택상품 삭제</a>
+                    </td>
+                    <td></td>
+                    
+                  
+                    <td>
+                        <span>결제금액</span>
+                    </td>
+                    <td>
+                        <span>36,300원</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+        <script type="text/javascript'">
+                // 수량변경 버튼 클릭시 body에 클래스 토글
+        </script>
+        
+    
+
+
+</div>
+
+
+
+    <div id="footer">
+        <p class="company-info">신촌맥주 주식회사<span>|</span>대표이사 한잔<br>본사 : 서울특별시 마포구 백범로 23
+            (서울특별시 마포구 신수동 63-14)<br>사업자등록번호 : 214-85-24928
+            <span>|</span>통신판매업신고번호 : 제 2020-서울신촌-0101 호<br>개인정보보호책임자 한잔
+            <span>|</span>고객센터 : 02-707-1480,<ahref="mailto:sinchonbeer@gmail.com">sinchonbeer@gmail.com</a>
+        </p>
+        <p class="copyright"><br>COPYRIGHT 2021@ SINCHON BEER COMPANY</p>
+    </div>
+
+    <ul id="floating-btn">
+        <li class="channelTalk">
+            <a href="#" class="channel-talk-button">
+                <img src="https://cdn.imweb.me/upload/S20200702f03eaee38b16e/2616c012b78f3.png"></a>
+        </li>
+        <li class="share">
+            <a href="javascript:SNS_NEW.set('popup');">
+                <img src="https://jbimweb.s3.ap-northeast-2.amazonaws.com/resource/images/button-share.png"></a>
+        </li>
+        <li class="top">
+            <a href="#"><img src="https://jbimweb.s3.ap-northeast-2.amazonaws.com/resource/images/button-top.png"></a>
+        </li>
+    </ul>
+</body>
+
+</html>

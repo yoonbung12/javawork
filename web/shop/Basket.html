@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop</title>
+    <link rel="stylesheet" href="basket.css">
+
+    <!-- <link rel="stylesheet" href="product.css" > -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="../shop/main_logout.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        const x = window.matchMedia("(min-width: 990px)")
+
+        x.addListener(function(a) {
+            $('#collapsibleNavbar').removeClass('show');
+        });
+    </script>
+    <script type="text/javascript" src="../shop/basket.js"></script>
+</head>
+
+
+<body>
+    <div id="header">
+        <div class="col-group">
+            <div class="col-left">
+                <a href="#"><img class="logo-transform" src="../images/logo.png"></a>
+            </div>
+            <div class="col-center">
+                <a href="#"><img class="logo-fixed" src="../images/logo.png"></a>
+            </div>
+            <div class="col-right">
+                <ul class="service-menu">
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">JOIN</a></li>
+                    <li><a href="#">CART</a></li>
+                    <a href="#"><button class="rez-btn-icon">양조장 예약</button></a>
+                </ul>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <img class="navbar-toggler-icon" src="../images/navbar_toggle_icon.png">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="slide-menu">
+        <div class="navbar-collapse collapse" id="collapsibleNavbar" style="">
+            <div class="slide-menu-header">
+                <div>
+                    <a href="#"><img class="logo-transform" src="../images/logo.png"></a>
+                </div>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                    data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false">
+                    <img class="navbar-closer-icon" src="../images/navbar_closer_icon.png">
+                </button>
+            </div>
+            <ul class="slide-menu-nav">
+                <li class="nav-service-menu">
+                    <a href="#">LOGIN</a>
+                    <a href="#">JOIN</a>
+                    <a href="#">CART</a>
+                </li>
+                <li class="nav-rez-btn"><a href="#">양조장 예약</a></li>
+            </ul>
+            <div class="slide-menu-list">
+                <ul>
+                    <li><a href="#">DIVERSITY</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SHOP</a></li>
+                    <li><a href="#">BREWERY</a></li>
+                    <li><a href="#">REVIEW</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="gnb">
+        <div class="col-group">
+            <ul>
+                <li><a href="#"><span>DIVERSITY</span></a></li>
+                <li><a href="#"><span>ABOUT</span></a></li>
+                <li><a href="#"><span>SHOP</span></a></li>
+                <li><a href="#"><span>BREWERY</span></a></li>
+                <li><a href="#"><span>REVIEW</span></a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- basket 로고-->
+    <div id="basket_logo">
+        <h1 class="sinchon"  style=" color: #5ae5ec; ">CART</h1>
+        <h4 style="color: rgb(160, 157, 157);">당신의 신촌은 어떤가요?</h4>
+    </div>
+
+    <!-- 장바구니 폼 -->
+    <div class="korean_basket">
+        <h2  style="color:  #5ae5ec;">장바구니</h2>
+    </div>
+    
+    <!-- 장바구니 아이템 리스트 가져옴 -->
+    <div class="container">
+        <form name="orderform" id="orderform" method="post" class="orderform" action="/Page" onsubmit="return false;" style="width: 100%;">
+            <!-- <div class="container"> -->
+                <input type="hidden" name="cmd" value="order">
+                <div class="basketdiv" id="basket">
+                    <div class="row head">
+                        <div class="subdiv">
+                            <div class="check">선택</div>
+                            <div class="img">이미지</div>
+                            <div class="pname">상품명</div>
+                        </div>
+                        <div class="subdiv">
+                            <div class="basketprice">가격</div>
+                            <div class="num">수량</div>
+                            <div class="sum">합계</div>
+                        </div>
+                        <div class="subdiv">
+        
+                            <div class="basketcmd">삭제</div>
+                        </div>
+                        <div class="split"></div>
+                    </div>
+            
+                    <div class="row data">
+                        <div class="subdiv">
+                            <div class="check"><input type="checkbox" name="buy" value="260" checked="" onclick="javascript:basket.checkItem();">&nbsp;</div>
+                            <div class="img"><img src="../images/김부각2.png" width="60"></div>
+                            <div class="pname">
+                                <span>신촌맥주 김부각</span>
+                            </div>
+                        </div>
+                        <div class="subdiv">
+                            <div class="basketprice"><input type="hidden" name="p_price" id="p_price1" class="p_price" value="12100">12,100원</div>
+                            <div class="num">
+                                <div class="updown">
+                                    <input type="text" name="p_num1" id="p_num1" size="2" maxlength="4" class="p_num" value="1" onkeyup="javascript:basket.changePNum(1);">
+                                    <span onclick="javascript:basket.changePNum(1);"><i class="fas fa-arrow-alt-circle-up up"></i></span>
+                                    <span onclick="javascript:basket.changePNum(1);"><i class="fas fa-arrow-alt-circle-down down"></i></span>
+                                </div>
+                            </div>
+                            <div class="sum">12,100원</div>
+                        </div>
+                        <div class="subdiv">
+                            <div class="basketcmd"><a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delItem();">삭제</a></div>
+                        </div>
+                    </div>
+                    <div class="row data">
+                        <div class="subdiv">
+                            <div class="check"><input type="checkbox" name="buy" value="261" checked="" onclick="javascript:basket.checkItem();">&nbsp;</div>
+                            <div class="img"><img src="../images/감귤칩2.png" width="60"></div>
+                            <div class="pname">
+                                <span>신촌맥주 감귤칩</span>
+                            </div>
+                        </div>
+                        <div class="subdiv">
+                            <div class="basketprice"><input type="hidden" name="p_price" id="p_price2" class="p_price" value="11000">11,000원</div>
+                            <div class="num">
+                                <div class="updown">
+                                    <input type="text" name="p_num2" id="p_num2" size="2" maxlength="4" class="p_num" value="1" onkeyup="javascript:basket.changePNum(2);">
+                                    <span onclick="javascript:basket.changePNum(2);"><i class="fas fa-arrow-alt-circle-up up"></i></span>
+                                    <span onclick="javascript:basket.changePNum(2);"><i class="fas fa-arrow-alt-circle-down down"></i></span>
+                                </div>
+                            </div>
+                            <div class="sum">11,000원</div>
+                        </div>
+                        <div class="subdiv">
+                            <div class="basketcmd"><a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delItem();">삭제</a></div>
+                        </div>
+                    </div>
+                    <div class="row data">
+                        <div class="subdiv">
+                            <div class="check"><input type="checkbox" name="buy" value="262" checked="" onclick="javascript:basket.checkItem();">&nbsp;</div>
+                            <div class="img"><img src="../images/화투2.png" width="50"></div>
+                            <div class="pname">
+                                <span>조약돌 화투</span>
+                            </div>
+                        </div>
+                        <div class="subdiv">
+                            <div class="basketprice"><input type="hidden" name="p_price" id="p_price3" class="p_price" value="8800">8,800원</div>
+                            <div class="num">
+                                <div class="updown">
+                                    <input type="text" name="p_num3" id="p_num3" size="2" maxlength="4" class="p_num" value="1" onkeyup="javascript:basket.changePNum(3);">
+                                    <span onclick="javascript:basket.changePNum(3);"><i class="fas fa-arrow-alt-circle-up up"></i></span>
+                                    <span onclick="javascript:basket.changePNum(3);"><i class="fas fa-arrow-alt-circle-down down"></i></span>
+                                </div>
+                            </div>
+                            <div class="sum">8,800원</div>
+                        </div>
+                        <div class="subdiv">
+                            <div class="basketcmd"><a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delItem();">삭제</a></div>
+                        </div>
+                    </div>
+                    <div class="row data">
+                        <div class="subdiv">
+                            <div class="check"><input type="checkbox" name="buy" value="262" checked=" " onclick="javascript:basket.checkItem();">&nbsp;</div>
+                            <div class="img"><img src="../images/맥주잔2.png" width="50"></div>
+                            <div class="pname">
+                                <span>신촌 맥주잔 377ml</span>
+                            </div>
+                        </div>
+                        <div class="subdiv">
+                            <div class="basketprice"><input type="hidden" name="p_price" id="p_price4" class="p_price" value="5500">5,500원</div>
+                            <div class="num">
+                                <div class="updown">
+                                    <input type="text" name="p_num4" id="p_num4" size="2" maxlength="4" class="p_num" value="1" onkeyup="javascript:basket.changePNum(4);">
+                                    <span onclick="javascript:basket.changePNum(4);"><i class="fas fa-arrow-alt-circle-up up"></i></span>
+                                    <span onclick="javascript:basket.changePNum(4);"><i class="fas fa-arrow-alt-circle-down down"></i></span>
+                                </div>
+                            </div>
+                            <div class="sum">5,500원</div>
+                        </div>
+                        <div class="subdiv">
+                            <div class="basketcmd">
+                                <a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delItem();">삭제</a>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+        
+                <div class="right-align basketrowcmd">
+                    <a href="javascript:void(0)"  class="abutton" onclick="javascript:basket.delCheckedItem();">선택상품삭제</a>
+                    <a href="javascript:void(0)"  class="abutton" onclick="javascript:basket.delAllItem();">장바구니비우기</a>
+                </div>
+                <div class="select_clear">
+                    <div class="bigtext right-align sumcount" id="sum_p_num">상품갯수: 4개</div>
+                    <div class="bigtext right-align box blue summoney" id="sum_p_price">합계금액: 37,400원</div>
+                </div>
+
+        
+                <div id="goorder" class="">
+                    <div class="clear"></div>
+                    <div class="buttongroup center-align cmd">
+                        <a href="javascript:void(0);">선택한 상품 주문</a>
+                    </div>
+                </div>
+    </div>    
+        
+            
+            
+           
+        </form>
+        <!-- footer부분시작 -->
+    <div id="footer">
+        <p class="company-info">신촌맥주 주식회사<span>|</span>대표이사 한잔<br>본사 : 서울특별시 마포구 백범로 23
+            (서울특별시 마포구 신수동 63-14)<br>사업자등록번호 : 214-85-24928
+            <span>|</span>통신판매업신고번호 : 제 2020-서울신촌-0101 호<br>개인정보보호책임자 한잔
+            <span>|</span>고객센터 : 02-707-1480,<ahref="mailto:sinchonbeer@gmail.com">sinchonbeer@gmail.com</a>
+        </p>
+        <p class="copyright"><br>COPYRIGHT 2021@ SINCHON BEER COMPANY</p>
+    </div>
+
+    <ul id="floating-btn">
+        <li class="channelTalk">
+            <a href="#" class="channel-talk-button">
+                <img src="https://cdn.imweb.me/upload/S20200702f03eaee38b16e/2616c012b78f3.png"></a>
+        </li>
+        <li class="share">
+            <a href="javascript:SNS_NEW.set('popup');">
+                <img src="https://jbimweb.s3.ap-northeast-2.amazonaws.com/resource/images/button-share.png"></a>
+        </li>
+        <li class="top">
+            <a href="#"><img src="https://jbimweb.s3.ap-northeast-2.amazonaws.com/resource/images/button-top.png"></a>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Sunflower:wght@500&display=swap');
 
-*{
+/* *{
     
     margin: 0;
     padding: 0;
@@ -29,18 +29,35 @@
     margin-left: 355px;
     word-spacing: 30px;
     font-size: larger;
-}
+} */
 /*  화면 줄였을때 글자 사라지게 만들기(diversity,shop,등~) */
-@media screen and (max-width: 1300px) {
+/* @media screen and (max-width: 1300px) {
     .smenus{
         display: none;
     }    
-}
+} */
 /* 상품 부분  시작*/
 /* 플렉스 도전 */
-#thumbnail_wrap{
-    margin-top: -800px;
+/* .gim_thumbnail{
+  width: auto;
 }
+.garnish_thumbnail{
+  width: auto;
+}
+.card_thumbnail{
+  width: auto;
+}
+.glass_thumbnail{
+  width: auto;
+} */
+#thumbnail a {
+  /* display: flex; */
+
+ }
+ /* #thumbnail_wrap{
+    width:100%;
+     
+}  */
 
 #thumbnail {
 
@@ -52,7 +69,7 @@
   
   #thumbnail img {
     display: flex;
-    width: 50%;
+    width: 100%;
     justify-content: flex-start;
   }
   
@@ -61,9 +78,8 @@
       width: 100%;
     }
     #thumbnail {
-      flex-direction: column;
+      flex-direction:column;
     }
   }
-
 
 /* 상품 부분 끝-------------------- */
