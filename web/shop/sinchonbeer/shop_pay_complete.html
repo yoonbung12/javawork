@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신촌맥주 양조장 투어 예약</title>
+
+    <!-- meta_haeder -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS files -->
+    <link rel="stylesheet" type="text/css" href="css/main_logout.css">
+
+    <style>
+        body {
+            background-color: #f3f3f3;
+        }
+
+        #header, #gnb, #footer {
+            background-color: white;
+        }
+
+        .text-gray {
+            color: #757575 !important;
+        }
+
+        .text-sinchon {
+            color: #05cdd5 !important;
+        }
+
+        .text-28 {
+            font-size: 28px !important;
+        }
+
+        .text-26 {
+            font-size: 26px !important;
+        }
+
+        .text-24 {
+            font-size: 24px !important;
+        }
+
+        .text-22 {
+            font-size: 22px !important;
+        }
+
+        .text-18 {
+            font-size: 18px !important;
+        }
+
+        .text-16 {
+            font-size: 16px !important;
+        }
+
+        .text-15 {
+            font-size: 15px !important;
+        }
+
+        .text-14 {
+            font-size: 14px !important;
+        }
+
+        .text-13 {
+            font-size: 13px !important;
+        }
+
+        .btn-sinchon{
+            color: white !important;
+            background-color: #05cdd5;
+            border-color: #05cdd5;
+        }
+
+        .btn-sinchon:hover {
+            color: #05cdd5 !important;
+            background-color: white;
+            border-color: #05cdd5;
+        }
+
+        .btn-pay {
+            color: white !important;
+            background-color: #05cdd5;
+            border-color: #05cdd5;
+            border-radius: 0 !important;
+        }
+
+        .btn-pay:hover {
+            color: white !important;
+            background-color: #189fa6;
+            border-color: #189fa6;
+        }
+
+        .mb-3px {
+            margin-bottom: 2px;
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                width: 80%;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .container {
+                width: 550px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Header 영역 -->
+    <div id="header">
+        <div class="col-group">
+            <div class="col-left">
+                <a href="#"><img class="logo-transform" src="images/logo.png"></a>
+            </div>
+            <div class="col-center">
+                <a href="#"><img class="logo-fixed" src="images/logo.png"></a>
+            </div>
+            <div class="col-right">
+                <ul class="service-menu">
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">JOIN</a></li>
+                    <li><a href="#">CART</a></li>
+                    <a href="#"><button class="rez-btn-icon">양조장 예약</button></a>
+                </ul>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <img class="navbar-toggler-icon" src="images/navbar_toggler_icon.png">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar-collapse collapse" id="collapsibleNavbar">
+        <div class="slide-menu-header">
+            <div>
+                <a href="#"><img class="logo-transform" src="images/logo.png"></a>
+            </div>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false">
+                <img class="navbar-closer-icon" src="images/navbar_closer_icon.png">
+            </button>
+        </div>
+        <ul class="slide-menu-nav">
+            <li class="nav-service-menu">
+                <a href="#">LOGIN</a>
+                <a href="#">JOIN</a>
+                <a href="#">CART</a>
+            </li>
+            <li class="nav-rez-btn"><a href="#">양조장 예약</a></li>
+        </ul>
+        <div class="slide-menu-list">
+            <ul>
+                <li><a href="#">DIVERSITY</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SHOP</a></li>
+                <li><a href="#">BREWERY</a></li>
+                <li><a href="#">REVIEW</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="gnb">
+        <div class="col-group">
+            <ul>
+                <li><a href="#"><span>DIVERSITY</span></a></li>
+                <li><a href="#"><span>ABOUT</span></a></li>
+                <li><a href="#"><span>SHOP</span></a></li>
+                <li><a href="#"><span>BREWERY</span></a></li>
+                <li><a href="#"><span>REVIEW</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Content 영역 -->
+    <div class="container my-5 mw-25">
+
+        <h1 class="text-22 font-weight-bold text-center">결제가 완료됐습니다</h1>
+        <h1 class="text-22 font-weight-bold text-center">주문배송은 마이페이지에서 조회 가능합니다</h1>
+
+        <div class="my-5">
+            <div class="row mb-3px bg-white">
+                <div class="col-sm-4 text-gray p-4">
+                    배송지
+                </div>
+
+                <div class="col-sm-8 p-4">
+                    <div id="userName">
+                        채호연
+                    </div>
+                    <div id="userPhone">
+                        010-1234-5678
+                    </div>
+                    <div id="userAddress">
+                        경기 화성시 00로 777(00동, 00마을000아파트)
+                    </div>
+                    <div id="userDetailAddress">
+                        111동 222호
+                    </div>
+                    <div id="userZipcode">
+                        (123456)
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3px bg-white">
+                <div class="col-sm-4 text-gray p-4">
+                    배송 방법
+                </div>
+
+                <div class="col-sm-8 p-4">
+                    <div id="delvType">
+                        택배
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3px bg-white">
+                <div class="col-sm-4 text-gray p-4">
+                    주문번호
+                </div>
+
+                <div class="col-sm-8 p-4">
+                    <div id="orderNumber">
+                        2021082712345
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3px bg-white">
+                <div class="col-sm-4 text-gray p-4">
+                    배송메모
+                </div>
+
+                <div class="col-sm-8 p-4">
+                    <div id="delvMemo">
+                        부재시 문앞에 놓아주세요.!!
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3px bg-white">
+                <div class="col-sm-4 text-gray p-4">
+                    결제정보
+                </div>
+
+                <div class="col-sm-8 p-4">
+                    <div id="payType">
+                        카카오페이
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-0 bg-white">
+                <div class="col-sm-4 text-gray p-4">
+                    결제금액
+                </div>
+
+                <div class="col-sm-8 text-sinchon p-4">
+                    <div id="amountOfPayment" class="font-weight-bold">
+                        12,100원
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 p-0">
+                    <a href="#" class="btn btn-secondary btn-block btn-lg text-18 rounded-0">주문서로</a>
+                </div>
+                <div class="col-sm-6 p-0">
+                    <a href="#" class="btn btn-pay btn-block btn-lg text-white text-18 rounded-0">마이페이지</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer 영역 -->
+    <div id="footer">
+        <p class="company-info">신촌맥주 주식회사<span>|</span>대표이사 한잔<br>본사 : 서울특별시 마포구 백범로 23
+            (서울특별시 마포구 신수동 63-14)<br>사업자등록번호 : 214-85-24928
+            <span>|</span>통신판매업신고번호 : 제 2020-서울신촌-0101 호<br>개인정보보호책임자 한잔
+            <span>|</span>고객센터 : 02-707-1480,<ahref="mailto:sinchonbeer@gmail.com">sinchonbeer@gmail.com</a>
+        </p>
+        <p class="copyright"><br>COPYRIGHT 2021@ SINCHON BEER COMPANY</p>
+    </div>
+    
+    <script>
+        const x = window.matchMedia("(min-width: 990px)")
+
+        x.addListener(function(a) {
+            $('#collapsibleNavbar').removeClass('show');
+        });
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

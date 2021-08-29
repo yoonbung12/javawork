@@ -1,0 +1,29 @@
+#footer {
+    color: #999;
+}          
+.company-info {
+    font-size: 14px;
+     line-height: 1.8em; 
+}
+.company-info span {
+    font-size: 14px;
+    color: #bbb;
+    margin: 0 20px;
+}
+
+.company-info a {
+    display: inline-block;
+    text-decoration: none;
+    color: #999;
+}
+.copyright {
+    font-size: 12px;
+}
+@media(max-width:990px) {
+    #footer p {
+        white-space: pre-line;
+    }
+    .company-info span{
+        display: none;
+    }
+}

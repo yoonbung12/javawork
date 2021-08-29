@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신촌맥주 양조장 투어 예약</title>
+
+    <!-- meta_haeder -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS files -->
+    <link rel="stylesheet" type="text/css" href="css/main_logout.css">
+
+    <style>
+        body {
+            font-size: 20px;
+            color: #55585b;
+            /* padding: 20px; */
+        }
+
+        .btn-sinchon,
+        .btn-sinchon:hover {
+            color: white;
+            background-color: #05cdd5;
+            border-color: #05cdd5;
+        }
+
+        .text-13 {
+            font-size: 13px;
+        }
+
+        .text-14 {
+            font-size: 14px;
+        }
+
+        .text-15 {
+            font-size: 15px;
+        }
+
+        .text-16 {
+            font-size: 16px;
+        }
+
+        .text-18 {
+            font-size: 18px;
+        }
+
+        .text-22 {
+            font-size: 22px;
+        }
+
+        .text-32 {
+            font-size: 32px;
+        }
+
+        .text-48 {
+            font-size: 48px;
+        }
+
+        .text-light-gray {
+            color: rgba(33, 33, 33, 0.4);
+        }
+
+        .text-sinchon {
+            color: #05cdd5 !important;
+        }
+
+        .border-sinchon {
+            border-color: #05cdd5 !important;
+        }
+
+        .border-2 {
+            border-width: 2px !important;
+        }
+
+        .link-unstyle,
+        .link-unstyle:link,
+        .link-unstyle:hover {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        #profileImage {
+            width: 85px;
+            height: 85px;
+            object-fit: cover;
+        }
+
+        #sideBar {
+            display: block;
+        }
+
+        #scrollableNavBar {
+            display: none;
+        }
+
+        @media (max-width: 992px) {
+            #sideBar {
+                display: none;
+            }
+
+            #scrollableNavBar {
+                display: block;
+                width: 90%;
+                align-items: center;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .profileContent {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .profileContent {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header 영역 -->
+    <div id="header">
+        <div class="col-group">
+            <div class="col-left">
+                <a href="#"><img class="logo-transform" src="images/logo.png"></a>
+            </div>
+            <div class="col-center">
+                <a href="#"><img class="logo-fixed" src="images/logo.png"></a>
+            </div>
+            <div class="col-right">
+                <ul class="service-menu">
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">JOIN</a></li>
+                    <li><a href="#">CART</a></li>
+                    <a href="#"><button class="rez-btn-icon">양조장 예약</button></a>
+                </ul>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <img class="navbar-toggler-icon" src="images/navbar_toggler_icon.png">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar-collapse collapse" id="collapsibleNavbar">
+        <div class="slide-menu-header">
+            <div>
+                <a href="#"><img class="logo-transform" src="images/logo.png"></a>
+            </div>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false">
+                <img class="navbar-closer-icon" src="images/navbar_closer_icon.png">
+            </button>
+        </div>
+        <ul class="slide-menu-nav">
+            <li class="nav-service-menu">
+                <a href="#">LOGIN</a>
+                <a href="#">JOIN</a>
+                <a href="#">CART</a>
+            </li>
+            <li class="nav-rez-btn"><a href="#">양조장 예약</a></li>
+        </ul>
+        <div class="slide-menu-list">
+            <ul>
+                <li><a href="#">DIVERSITY</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SHOP</a></li>
+                <li><a href="#">BREWERY</a></li>
+                <li><a href="#">REVIEW</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="gnb">
+        <div class="col-group">
+            <ul>
+                <li><a href="#"><span>DIVERSITY</span></a></li>
+                <li><a href="#"><span>ABOUT</span></a></li>
+                <li><a href="#"><span>SHOP</span></a></li>
+                <li><a href="#"><span>BREWERY</span></a></li>
+                <li><a href="#"><span>REVIEW</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Content 영역 -->
+
+
+    <div class="my-5 text-center pb-5">
+        <p class="text-center text-48 text-sinchon font-weight-bold mb-0">MY PAGE</p>
+        <p class="text-center text-14">안녕하세요 제주맥주입니다.</p>
+    </div>
+
+    <div id="scrollableNavBar">
+        <div class="row justify-content-between mb-5 pb-5">
+            <div class="col text-center text-14">
+                <a href="#" class="link-unstyle">
+                    <span class="pb-1 border-bottom border-sinchon text-sinchon">주문 내역</span>
+                </a>
+            </div>
+            <div class="col text-center text-14">
+                <a href="#" class="link-unstyle">예약 내역</a>
+            </div>
+            <div class="col text-center text-14">
+                <a href="#" class="link-unstyle">정보 수정</a>
+            </div>
+            <div class="col text-center text-14">
+                <a href="#" class="link-unstyle">회원 탈퇴</a>
+            </div>
+        </div>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-2" id="sideBar">
+                <ul class="text-14 list-unstyled" id="sideBar">
+                    <li class="mb-4">
+                        <a href="#" class="link-unstyle">
+                            <span class="pb-1 border-bottom border-sinchon text-sinchon">주문 내역</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#" class="link-unstyle">예약 내역</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#" class="link-unstyle">정보 수정</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#" class="link-unstyle">회원 탈퇴</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-10 pb-5">
+                <div class="profile border border-sinchon">
+                    <div class="row p-5 justify-content-center">
+                        <div class="col-2 d-none d-lg-block">
+                            <div class="mt-2">
+                                <img id="profileImage" src="images/lake.jpeg" alt="프로필 사진" class="rounded-circle">
+                            </div>
+                        </div>
+
+                        <div class="col-7 border-right">
+                            <div class="text-22 font-weight-bold mb-2 profileContent">
+                                <span class="text-sinchon font-weight-bold">일반</span> 채호연 님 안녕하세요.
+                            </div>
+                            <div class="text-15 mb-2">
+                                누적 구매금액: 0원
+                            </div>
+                            <button class="text-14 btn btn-outline-secondary rounded-0">
+                                등급혜택 보기
+                            </button>
+
+                        </div>
+
+                        <div class="col-3">
+                            <div class="text-center text-14 pt-3">
+                                쿠폰
+                            </div>
+                            <div class="text-center text-32 font-weight-bold">
+                                0
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center text-15 text-light-gray my-5 py-5">
+                    주문 내역이 없습니다.
+
+                </div>
+            </div>
+        </div>
+
+        <div class="py-5 my-5"></div>
+    </div>
+
+    <!-- Footer 영역 -->
+    <div id="footer">
+        <p class="company-info">신촌맥주 주식회사<span>|</span>대표이사 한잔<br>본사 : 서울특별시 마포구 백범로 23
+            (서울특별시 마포구 신수동 63-14)<br>사업자등록번호 : 214-85-24928
+            <span>|</span>통신판매업신고번호 : 제 2020-서울신촌-0101 호<br>개인정보보호책임자 한잔
+            <span>|</span>고객센터 : 02-707-1480,<a href="mailto:sinchonbeer@gmail.com">sinchonbeer@gmail.com</a>
+        </p>
+        <p class="copyright"><br>COPYRIGHT 2021@ SINCHON BEER COMPANY</p>
+    </div>
+
+    <script>
+        // 동의 후 확인 클릭
+        $('#modalButton').click(function () {
+            console.log('hi')
+            $('#agreementTermsOfUse').val('Y');
+            $('#agreementTermsOfUse').prop('checked', true);
+        });
+
+        // slide button 켜고, 늘렸다 줄일 경우 button close 처리
+        const x = window.matchMedia("(min-width: 990px)")
+
+        x.addListener(function (a) {
+            $('#collapsibleNavbar').removeClass('show');
+        });
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
