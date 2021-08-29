@@ -6,94 +6,276 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gim</title>
     <link rel="stylesheet" href="product.css" >
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../shop/main_logout.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="product.js"></script>
+    <script>
+        const x = window.matchMedia("(min-width: 990px)")
+
+        x.addListener(function(a) {
+            $('#collapsibleNavbar').removeClass('show');
+        });
+    </script>
+    
 </head>
 <body>
-    <!-- 맨 위에 부분 -->
-    <div id="main_wrap">
-
-        <!-- 신촌 맥주 로고  -->
-        <div id="logo_area">
-            <img class="normal_logo _front_img" src="../images/KakaoTalk_Photo_2021-08-19-00-01-01.png"  width="180" style="max-width: 100%;height: auto; image-rendering: -webkit-optimize-contrast;">
-            
-        </div>
-
-        <!-- 로그아웃, 마이페이지, 베스킷, 양조장 예약 {a href=""}-->
-        <section id="select-menus">
-            <div id="select_area_in">
-                <button class="logout_btn">LOGOUT</button>
-                <button class="mypage_btn" >MYPAGE</button>
-                <button class="basket_btn">BASKET</button>
-                <button class="reserve_btn">양조장 예약</button>
+    <div id="header">
+        <div class="col-group">
+            <div class="col-left">
+                <a href="#"><img class="logo-transform" src="../images/logo.png"></a>
             </div>
-        </section>
-
-    </div>     
-
-    <!-- Diversity, ABOUT, SHOT BREWERY REVIEW -->
-    
-    <div id="main-menus">
-        <span data-hover>DIVERSITY</span>
-        <span data-hover>ABOUT</span>
-        <span data-hover style="color: #5ae5ec">SHOP</span>
-        <span data-hover>BREWERY</span>
-        <span data-hover>REVIEW</span>
+            <div class="col-center">
+                <a href="#"><img class="logo-fixed" src="../images/logo.png"></a>
+            </div>
+            <div class="col-right">
+                <ul class="service-menu">
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">JOIN</a></li>
+                    <li><a href="#">CART</a></li>
+                    <a href="#"><button class="rez-btn-icon">양조장 예약</button></a>
+                </ul>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <img class="navbar-toggler-icon" src="../images/navbar_toggle_icon.png">
+                </button>
+            </div>
+        </div>
     </div>
-    <div id="goods-wrap">
-        <img class="gim_logo" src="../images/김부각2.png " alt="김부각가가가가" >
-        <div class="product_1">
-            <h2 class="product_name">CRISPY LAVAR SNACK</h2>
-            <h3>제주에서 만난 찹쌀 김부각(20ea)</h3>
-            <h2 class="price">12,100원</h2>
-            <tr >
-                <!-- 수량 +,-시 가격 변동하는 방법 찾아볼것!!!  -->
-                <div class="edge_color">
-                    <td>수량</td>
-                    <hr>
-                    <form >
-                        <input type="button" class="count_btn1" value="+" onclick="javascript:this.form.amount.value++;">
-                        <input class="amount_number" type="number" name="amount" value="1" >
-                        <input type="button" class="count_btn2" value="-" onclick="javascript:this.form.amount.value--;">
-                        <!-- <p class="sum" text="font-size:10px">12,100원</p>
-                        <div class="sum">12.100원</div> -->
-                    </form>
-                </div>
-                <div class="opt_block">
-                    <p style="padding-top: 30px;">
-                        <span class="totalcount" style="text-align: left;">총 상품금액</span>
-                        <span class="totalsum" style="text-align: right; padding-left: 110px;">12,100원</span>
-                    </p>
-                </div>
-                <div class="buy_basket">
-                    <!-- 이부분 고쳐야하는디.. a href=""-->
-                    <button type="button" class="button_form1" style="color: #fff; background-color: #5ae5ec;">BUY NOW</button>
-                    <button type="button" class="button_form2"  style="color: #5ae5ec; background-color: #fff;">BASKET</button>
 
+    <div id="slide-menu">
+        <div class="navbar-collapse collapse" id="collapsibleNavbar" style="">
+            <div class="slide-menu-header">
+                <div>
+                    <a href="#"><img class="logo-transform" src="../images/logo.png"></a>
                 </div>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                    data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false">
+                    <img class="navbar-closer-icon" src="../images/navbar_closer_icon.png">
+                </button>
+            </div>
+            <ul class="slide-menu-nav">
+                <li class="nav-service-menu">
+                    <a href="#">LOGIN</a>
+                    <a href="#">JOIN</a>
+                    <a href="#">CART</a>
+                </li>
+                <li class="nav-rez-btn"><a href="#">양조장 예약</a></li>
+            </ul>
+            <div class="slide-menu-list">
+                <ul>
+                    <li><a href="#">DIVERSITY</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SHOP</a></li>
+                    <li><a href="#">BREWERY</a></li>
+                    <li><a href="#">REVIEW</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="gnb">
+        <div class="col-group">
+            <ul>
+                <li><a href="#"><span>DIVERSITY</span></a></li>
+                <li><a href="#"><span>ABOUT</span></a></li>
+                <li><a href="#"><span>SHOP</span></a></li>
+                <li><a href="#"><span>BREWERY</span></a></li>
+                <li><a href="#"><span>REVIEW</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container"> 
+            <img class="gim_thumbnail" src="../images/김부각2.png " alt="김부각가가가가" >
+            <div class="product_1">
+                <h1 class="product_name">CRISPY LAVAR SNACK</h1>
+                <h3 style="color: rgb(83, 81, 81);">제주에서 만난 찹쌀 김부각(20ea)</h3>
+                <h1 class="price" >12,100원</h1>
+                <h2 style="color:#5ae5ec" >회원가입하면 언제 어디서나 무료 배송</h2>
+                <tr >
+                    <!-- 수량 +,-시 가격 변동하는 방법 찾아볼것!!!  -->
+                    <div class="edge_color">
+                        <td>수량</td>
+                        <hr >
+                        <form  name= "form1">
+                            <!-- this.form.amount.value++ -->
+                            
+                            <a href="javascript:SITE_SHOP_DETAIL;" input type="button"  class="count_btn1" value="+" onclick="SITE_SHOP_DETAIL.increaseOrderCount('mobile', function(){SITE_SHOP_DETAIL.updateSelectedOptions('prod')});">  
+                            <input class="amount_number" type="number" name="amount" value="1" >
+                            <input type="button" class="count_btn2" value="-" onclick="javascript:this.form.amount.value--;">
+                            <!-- <p class="sum" text="font-size:10px">12,100원</p>
+                            <div class="sum">12.100원</div> -->
+                            <div class="opt_block">
+                                <p style="padding-top: 10px;">
+                                    <span class="totalcount" id="sum_p_num" style="text-align: left;">총 상품금액(1개)</span>
+                                    <span class="totalsum" style="text-align: right; padding-left: 110px;" >12,100원</span>
+                                </p>
+                            </div>
+
+                        </form>
+                        
+                    </div>
+                    
+                    <div class="row">
+                        <a href="">
+                            <button type="button" class="button_form1" style="color: #fff; background-color: #5ae5ec;">BUY NOW</button>
+                        </a>
+                        <a href="cart.html">
+                            <button type="button" class="button_form2"  style="color: #5ae5ec; background-color: #fff;">BASKET</button>
+                        </a>
+
+                    </div>
+                    
+                </tr>
                 
-            </tr>
+            </div>
+    
+        
+        <div id="description">
             
-        </div>
-    </div>
+            <h4 class="goods_detail">상세 정보</h4>
+            <hr   class="goods_down" >
+            <img class="gim_thumbnail2" src="../images/김부각3.png">
+            <div class="detail_comment">
+                <p style="color: gray;">신촌맥주와</p>
+                <p style="color: gray;">환상적인 찰떡 궁합</p>
+                <p >신촌에서 만난</p>
+                <p>찹쌀 김부각</p>
+                <div class="short_comment"> 
+                    <p>전국 산지에서 찾은 상급의 김 원물을 받아</p>
+                    <p>한 장씩 사람의 손으로 직접 튀긴 찹쌀 김부각입니다.</p>
+                    <p>짭짤하면서 고소한,감칠맛이 매력적이며</p>
+                    <p>신촌 맥주와 잘 어울려요!!!</p>
+                </div>
+                <table color="goods_description">
+                    <thead >
+                        <tr>
+                            <th  style="color: #5ae5ec; font-size: 30px;">상품 정보</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size: 18px;">
+                        <tr>
+                            <td>제품명</td>
+                            <td>신촌에서 만난 찹쌀 김부각</td>
+                        </tr>
+                        <tr>
+                            <td>식품 유형</td>
+                            <td>기타 수산물 가공품</td>
+                        </tr>
+                        <tr>
+                            <td>포장재질</td>
+                            <td>외포장:지함,내포장:폴리프로필렌</td>
+                        </tr>
+                        <tr>
+                            <td>내용량</td>
+                            <td>160g(40g * 4)</td>
+                        </tr>
+                        <tr>
+                            <td>영양성분</td>
+                            <td>영양 정보 참조</td>
+                        </tr>
+                        <tr>
+                            <td>유통기한</td>
+                            <td>제품 정보 표시면 표기일까지</td>
+                        </tr>
+                        <tr>
+                            <td>성분명 및 함량</td>
+                            <td>제품 정보 참조</td>
+                        </tr>
+                        <tr>
+                            <td>업소명</td>
+                            <td>라이스영농조합법인</td>
+                        </tr>
+                        <tr>
+                            <td>소비자 상담 전화번호</td>
+                            <td>부정,불량 식품 신고는 국번없음 13399</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="kcal">
+                    <thead>
+                        <tr>
+                            <th colspan="2" style="color: #5ae5ec;">영양정보</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>총 내용량</td>
+                            <td>160g</td>
+                        </tr>
+                        <tr>
+                            <td>열량</td>
+                            <td>601.6kcal(10g당 37kcal)</td>
+                        </tr>
+                        <tr>
+                            <td>나트륨</td>
+                            <td>17.5mg         0.9%</td>
+                        </tr>
+                        <tr>
+                            <td>당류</td>
+                            <td>0g             0%</td>
+                        </tr>
+                        <tr>
+                            <td>탄수화물</td>
+                            <td>34.7g          10.7%%</td>
+                        </tr>
+                        <tr>
+                            <td>지방</td>
+                            <td>4.0g           7.4%</td>
+                        </tr>
+                        <tr>
+                            <td>트랜스지방</td>
+                            <td>0g             0%</td>
+                        </tr>
+                        <tr>
+                            <td>콜레스테롤</td>
+                            <td>0ㅡg            0%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="exchange">
+                <div>
+                    <h3 style="color: #5ae5ec;">교환 및 환불 안내</h3>
+                    <ul>
+                        <li>제주맥주에서 구매하신 제품은 받으셨을 때와 동일한 상태로, 구매후 7일 이내에 교환/환불 가능</li>
+                        <li>단순 변심으로 인한 교환 시 왕복 배송비 6천원, 환불시 3천원을 청구합니다.</li>
+                        <li>오배송, 불량으로 인한 교환/환불 시 배송비 무료입니다.</li>
+                        <li>제품 배송 이후 환불 요청 시에는 제품 회수 후에 환불이 완료됩니다.</li>
+                        <li>자세한 사항은 고객센터 혹은 문의 게시판에 문의해주세요.</li>
+                    </ul>
 
-    <div >
-        <h4 class="goods_detail">상세 정보</h4>
-        <hr  class="goods_down" >
-        <img class="gim_logo2" src="../images/김부각3.png">
-        <div class="detail_comment">
-            <p style="color: gray;">신촌맥주와</p>
-            <p style="color: gray;">환상적인 찰떡 궁합</p>
-            <p >신촌에서 만난</p>
-            <p>찹쌀 김부각</p>
-            <div class="short_comment"> 
-                <p>전국 산지에서 찾은 상급의 김 원물을 받아</p>
-                <p>한 장씩 사람의 손으로 직접 튀긴 찹쌀 김부각입니다.</p>
-                <p>짭짤하면서 고소한,감칠맛이 매력적이며</p>
-                <p>신촌 맥주와 잘 어울려요!!!</p>
+                </div>
+
+
             </div>
         </div>
+
+    </div>
+    <div id="footer">
+        <p class="company-info">신촌맥주 주식회사<span>|</span>대표이사 한잔<br>본사 : 서울특별시 마포구 백범로 23
+            (서울특별시 마포구 신수동 63-14)<br>사업자등록번호 : 214-85-24928
+            <span>|</span>통신판매업신고번호 : 제 2020-서울신촌-0101 호<br>개인정보보호책임자 한잔
+            <span>|</span>고객센터 : 02-707-1480,<ahref="mailto:sinchonbeer@gmail.com">sinchonbeer@gmail.com</a>
+        </p>
+        <p class="copyright"><br>COPYRIGHT 2021@ SINCHON BEER COMPANY</p>
     </div>
 
-
+    <ul id="floating-btn">
+        <li class="channelTalk">
+            <a href="#" class="channel-talk-button">
+                <img src="https://cdn.imweb.me/upload/S20200702f03eaee38b16e/2616c012b78f3.png"></a>
+        </li>
+        <li class="share">
+            <a href="javascript:SNS_NEW.set('popup');">
+                <img src="https://jbimweb.s3.ap-northeast-2.amazonaws.com/resource/images/button-share.png"></a>
+        </li>
+        <li class="top">
+            <a href="#"><img src="https://jbimweb.s3.ap-northeast-2.amazonaws.com/resource/images/button-top.png"></a>
+        </li>
+    </ul>
 </body>
 </html>
 
