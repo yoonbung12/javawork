@@ -103,14 +103,14 @@
                         <form  name= "form1">
                             <!-- this.form.amount.value++ -->
                             <input type="button"  class="count_btn1" value="+" onclick="javascript:this.form.amount.value++;">  
-                            <input class="amount_number" type="number" name="amount" value="1" >
+                            <input class="amount_number" type="text" name="amount" value="1" >
                             <input type="button" class="count_btn2" value="-" onclick="javascript:this.form.amount.value--;">
                             <!-- <p class="sum" text="font-size:10px">12,100원</p>
                             <div class="sum">12.100원</div> -->
                             <div class="opt_block">
                                 <p style="padding-top: 10px;">
                                     <span  class="totalcount" id="sum_p_num" style="text-align: left;">총 상품금액(1개)</span>
-                                    <span  id="demo" class="totalsum" style="text-align: right; padding-left: 110px;" >12,100원</span>
+                                    <span  id="demo" class="total_price" style="text-align: right; padding-left: 110px;" >12,100원</span>
                                 </p>
                             </div>
 
@@ -120,10 +120,10 @@
                     
                     <div class="row">
                         <a href="">
-                            <button type="button" class="button_form1" style="color: #fff; background-color: #5ae5ec;">BUY NOW</button>
+                            <button href="javascript:;" onclick="SITE_SHOP_DETAIL.addOrder('normal', )" type= "button" class="button_form1" style="color: #fff; background-color: #5ae5ec;">BUY NOW</button>
                         </a>
-                        <a href="cart.html">
-                            <button type="button" class="button_form2"  style="color: #5ae5ec; background-color: #fff;">BASKET</button>
+                        <a href="">
+                            <button href="javascript:;"  onclick="SITE_SHOP_DETAIL.addCart()" type="button" class="button_form2"  style="color: #5ae5ec; background-color: #fff;">BASKET</button>
                         </a>
 
                     </div>
@@ -278,3 +278,4 @@
     </ul>
 </body>
 </html>
+<script src="shop.js"></script>
