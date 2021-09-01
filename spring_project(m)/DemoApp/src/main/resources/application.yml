@@ -1,6 +1,24 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/project?servertimezone=UTC
+    url: jdbc:mysql:// mysql205.c0inhtd4aeqi.ap-northeast-2.rds.amazonaws.com:3306/project?servertimezone=UTC
     username: bit
     password: bit
+    
+
+
+  thymeleaf:
+    prefix: classpath:templates/
+    check-template-location: true
+    suffix: .html
+    mode: HTML5
+    cache: false
+    template-resolver-order: 0    
+    
+    
+mybatis:
+  mapper-locations: com/bitcamp/app/member/domain/mapper/**/*.xml
+    
+    
+server:
+  port: 8081
